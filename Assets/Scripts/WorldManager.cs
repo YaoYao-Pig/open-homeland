@@ -11,8 +11,9 @@ public class WorldManager : MonoBehaviour
     public List<Repository> repositoryList;
 
     public List<Node> repoNodeList;
-    public List<Node> userNodeList;
+    public Dictionary<Node,List<Node>> userNodeDic;
 
+    public Transform repoRoot;
     public List<string> GetFles(string _path)
     {
         string[] _files = Directory.GetFiles(_path);
@@ -78,14 +79,16 @@ public class WorldManager : MonoBehaviour
         int i = 0;
         foreach(var repo in repositoryList)
         {
-            repoNodeList.Add(new RepoNode(i.ToString(), i, NodeType.Repo));i++;
-            
+            Node repoNode = new RepoNode(i.ToString(), i, NodeType.Repo); i++;
+            repoNodeList.Add(repoNode);
+
+            List<Node> nodes = new List<Node>();
             foreach(var u in repo.developerNetwork.nodes)
             {
                 //TODO:这里有问题，所有Repo的User节点都混在一起了
-                userNodeList.Add(new UserNode(u._name, 0, NodeType.User));
+                nodes.Add(new UserNode(u._name, 0, NodeType.User));
             }
-
+            userNodeDic.Add(repoNode, nodes);
         }
     }
 
@@ -93,7 +96,9 @@ public class WorldManager : MonoBehaviour
     private void Awake()
     {
         repoNodeList = new List<Node>();
-        userNodeList = new List<Node>();
+        userNodeDic = new Dictionary<Node, List<Node>>();
+        if (repoRoot == null) throw new System.Exception("WorldManager:Awake()=>repoRoot don't initialize");
+        
     }
     private void Start()
     {
@@ -112,7 +117,7 @@ public class WorldManager : MonoBehaviour
         Vector3 areaCenter=Vector3.zero; // 区域中心
         Vector3 areaSize=new Vector3(100,100,100); // 区域的大小
 
-        foreach(RepoNode node in repoNodeList)
+        foreach(RepoNode repoNode in repoNodeList)
         {
             Vector3 randomPosition = new Vector3(
                 Random.Range(areaCenter.x - areaSize.x / 2, areaCenter.x + areaSize.x / 2),
@@ -121,40 +126,43 @@ public class WorldManager : MonoBehaviour
                 );
 
             // 设置节点的位置
-            node.position = randomPosition;
+            repoNode.position = randomPosition;
+
+            foreach (UserNode userNode in userNodeDic[repoNode])
+            {
+                // 计算随机位置
+                Vector3 nodeRandomPosition = new Vector3(
+                    Random.Range(areaCenter.x - areaSize.x / 2, areaCenter.x + areaSize.x / 2),
+                    Random.Range(areaCenter.y - areaSize.y / 2, areaCenter.y + areaSize.y / 2),
+                    Random.Range(areaCenter.z - areaSize.z / 2, areaCenter.z + areaSize.z / 2)
+                );
+
+                // 设置节点的位置
+                userNode.position = nodeRandomPosition;
+            }
         }
         
-        foreach (UserNode node in userNodeList)
-        {
-            // 计算随机位置
-            Vector3 randomPosition = new Vector3(
-                Random.Range(areaCenter.x - areaSize.x / 2, areaCenter.x + areaSize.x / 2),
-                Random.Range(areaCenter.y - areaSize.y / 2, areaCenter.y + areaSize.y / 2),
-                Random.Range(areaCenter.z - areaSize.z / 2, areaCenter.z + areaSize.z / 2)
-            );
 
-            // 设置节点的位置
-            node.position = randomPosition;
-        }
 
     }
 
     private bool InstanceNode()
     {
-        foreach(var n in repoNodeList)
+        foreach(var rn in repoNodeList)
         {
-            GameObject g = GameObject.Instantiate(nodePrefab, transform);
+            GameObject rg = GameObject.Instantiate(nodePrefab, repoRoot);
             //RepoNode rn= g.AddComponent<RepoNode>();
             //rn =(RepoNode) n;
-            g.transform.position = n.position;
+            rg.transform.position = rn.position;
+            foreach (var un in userNodeDic[rn])
+            {
+                GameObject ug = GameObject.Instantiate(nodePrefab, rg.transform);
+                //UserNode un = g.AddComponent<UserNode>();
+                //un = (UserNode)n;
+                ug.transform.position = un.position;
+            }
         }
-        foreach(var n in userNodeList)
-        {
-            GameObject g = GameObject.Instantiate(nodePrefab, transform);
-            //UserNode un = g.AddComponent<UserNode>();
-            //un = (UserNode)n;
-            g.transform.position = n.position;
-        }
+        
 
         return true;
     }
