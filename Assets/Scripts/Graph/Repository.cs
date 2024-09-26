@@ -90,17 +90,19 @@ public class RepoDeveloperNet
 
 }
 
+public class RepoRepoNet
+{
 
+}
 
 
 public class Repository
 {
 
     public RepoDeveloperNet developerNetwork;
-    public Repository(RepoDeveloperNet _rdn)
-    {
-        developerNetwork = _rdn;
-    }
+
+    public RepoRepoNet repoRepoNet;
+
 
     public override string ToString()
     {

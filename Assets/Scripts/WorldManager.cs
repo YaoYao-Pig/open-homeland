@@ -10,28 +10,60 @@ public class WorldManager : MonoBehaviour
     public GameObject nodePrefab; //节点的prefab
     public List<Repository> repositoryList;
 
-    public List<Node> repoNodeList;
-    public Dictionary<Node,List<Node>> userNodeDic;
+    [SerializeField] private List<Node> repoNodeList;
+
+    public Dictionary<Node,List<Node>> repo2UserNodeDic;//用于表示repoNode->userNodeList的映射关系
 
     public Transform repoRoot;
-    public List<string> GetFles(string _path)
+    
+
+    public Dictionary<string, Node> userNodeDic; //user节点的存储，存储一个统一的实例，所有其他位置都是对这个实例的引用
+    public Dictionary<string, GameObject> userNodeInstanceDic;//存储user节点的实例，实例化之后就存入这里，防止同一个user被重复创建.
+
+    private List<string> repoNameList;//用于存储repo的name；
+    public List<GameObject> repoObjectList;
+    [SerializeField] private Material lineMaterial; //存储子节点和父节点连线的材质
+
+    private void Awake()
     {
-        string[] _files = Directory.GetFiles(_path);
+        repoNodeList = new List<Node>();
+        repo2UserNodeDic = new Dictionary<Node, List<Node>>();
+        userNodeDic = new Dictionary<string, Node>();
+        userNodeInstanceDic = new Dictionary<string, GameObject>();
+        repoNameList = new List<string>();
+        if (repoRoot == null) throw new System.Exception("WorldManager:Awake()=>repoRoot don't initialize");
+
+
+        //LoadData()
+        LoadData();
+        repositoryList.ToString();
+        IniteNodesByRepo();
+
+        //tmp
+        GiveRandomPosition();
+        InstanceNode();
+
+    }
+
+    public List<string> GetFles(string _path,out List<string> _fileNames)
+    {
+        string[] _files = Directory.GetFiles(_path,"*.json");
         List<string> files = new List<string>();
+        _fileNames = new List<string>();
 
         foreach (var f in _files)
         {
             string directory = Path.GetDirectoryName(f);
             string fileName = Path.GetFileName(f); // 获取文件或目录名
-
             fileName = fileName.Split(".")[0];
             // 分割路径
             string[] parts = directory.Split(Path.DirectorySeparatorChar);
             if (parts.Length >= 1)
             {
                 string lastPart = parts[^1]; // directory最后一部分
-                files.Add(lastPart+ Path.DirectorySeparatorChar + fileName);
-             
+                string seconPart = parts[^2];
+                files.Add(seconPart+ Path.DirectorySeparatorChar + lastPart + Path.DirectorySeparatorChar + fileName);
+                _fileNames.Add(fileName);
             }
             else
             {
@@ -46,6 +78,7 @@ public class WorldManager : MonoBehaviour
     {
         //加载Repo-DevelopNet数据
         LoadRepoDevelopNetData(WorldInfo.repo_developerNetFilePath, out repositoryList);
+        
 
     }
 
@@ -57,18 +90,36 @@ public class WorldManager : MonoBehaviour
     public void LoadRepoDevelopNetData(string _filepath,out List<Repository> repositories)
     {
         repositories = new List<Repository>();
-        List<string> filePaths = GetFles(_filepath);
+
+        List<string> filePaths = GetFles(_filepath,out repoNameList);
 
         foreach(string path in filePaths)
         {
-            //Debug.Log(path);
             string data = Utils.LoadJsonFromResources(path);
             LitJson.JsonData jsonData = LitJson.JsonMapper.ToObject(data);
-            repositories.Add(new Repository(RepoDeveloperNet.ParseJson(jsonData)));
+            var tmp = new Repository();
+            tmp.developerNetwork = RepoDeveloperNet.ParseJson(jsonData);
+            
+            repositories.Add(tmp);
         }
     }
-    
 
+    //TODO:明天从这里开始
+    
+    public void LoadRepoRepoNetData(string _filepath, out List<Repository> repositories)
+    {
+        repositories = new List<Repository>();
+
+        List<string> filePaths = GetFles(_filepath, out repoNameList);
+        foreach (string path in filePaths)
+        {
+            string data = Utils.LoadJsonFromResources(path);
+            LitJson.JsonData jsonData = LitJson.JsonMapper.ToObject(data);
+            
+        }
+
+
+    }
     /// <summary>
     /// 通过RepoList初始化各种节点
     /// </summary>
@@ -77,39 +128,34 @@ public class WorldManager : MonoBehaviour
     {
 
         int i = 0;
-        foreach(var repo in repositoryList)
+
+        foreach(Repository repo in repositoryList)
         {
-            Node repoNode = new RepoNode(i.ToString(), i, NodeType.Repo); i++;
+
+            Node repoNode = new RepoNode(repoNameList[i], i, NodeType.Repo); i++;
             repoNodeList.Add(repoNode);
 
             List<Node> nodes = new List<Node>();
-            foreach(var u in repo.developerNetwork.nodes)
+            foreach(RepoDeveloperNet._Read_Node u in repo.developerNetwork.nodes)
             {
-                //TODO:这里有问题，所有Repo的User节点都混在一起了
-                nodes.Add(new UserNode(u._name, 0, NodeType.User));
+                Node userNode =new UserNode();
+                if (!userNodeDic.TryGetValue(u._name, out userNode))
+                {
+                    userNode = new UserNode(u._name, 0, NodeType.Repo);
+                    userNodeDic[u._name] = userNode;
+                }
+                nodes.Add(userNode);
+
             }
-            userNodeDic.Add(repoNode, nodes);
+            repo2UserNodeDic.Add(repoNode, nodes);
         }
     }
 
 
-    private void Awake()
-    {
-        repoNodeList = new List<Node>();
-        userNodeDic = new Dictionary<Node, List<Node>>();
-        if (repoRoot == null) throw new System.Exception("WorldManager:Awake()=>repoRoot don't initialize");
-        
-    }
+
     private void Start()
     {
-        //LoadData()
-        LoadData();
-        repositoryList.ToString();
-        IniteNodesByRepo();
 
-        //tmp
-        GiveRandomPosition();
-        InstanceNode();
     }
 
     private void GiveRandomPosition()
@@ -128,7 +174,8 @@ public class WorldManager : MonoBehaviour
             // 设置节点的位置
             repoNode.position = randomPosition;
 
-            foreach (UserNode userNode in userNodeDic[repoNode])
+            //对于每个RepoNode，对应的UserNodeList
+            foreach (UserNode userNode in repo2UserNodeDic[repoNode])
             {
                 // 计算随机位置
                 Vector3 nodeRandomPosition = new Vector3(
@@ -151,15 +198,43 @@ public class WorldManager : MonoBehaviour
         foreach(var rn in repoNodeList)
         {
             GameObject rg = GameObject.Instantiate(nodePrefab, repoRoot);
-            //RepoNode rn= g.AddComponent<RepoNode>();
-            //rn =(RepoNode) n;
+            rg.name = rn.nodeName;
+            //添加NodeComponet
+            RepoNodeComponent repoNode=rg.AddComponent<RepoNodeComponent>();
+            repoNode.lineMaterial = lineMaterial;
+
+
+            repoNode.node = rn;
+
+            //设置生成节点位置和缩放
             rg.transform.position = rn.position;
-            foreach (var un in userNodeDic[rn])
+            rg.transform.localScale *= rn.scale;
+            repoObjectList.Add(rg);
+            foreach (var un in repo2UserNodeDic[rn])
             {
-                GameObject ug = GameObject.Instantiate(nodePrefab, rg.transform);
-                //UserNode un = g.AddComponent<UserNode>();
-                //un = (UserNode)n;
-                ug.transform.position = un.position;
+                GameObject ug = null;
+                if(!userNodeInstanceDic.TryGetValue(un.nodeName,out ug))
+                {
+                    ug = GameObject.Instantiate(nodePrefab, rg.transform);
+
+                    UserNodeComponent userNode = ug.AddComponent<UserNodeComponent>();
+                    userNode.lineMaterial = lineMaterial;
+
+                    ug.AddComponent<DrawLineToParent>();
+
+                    userNode.node = un;
+                    ug.name = un.nodeName;
+
+                    ug.transform.position = un.position;
+                    ug.transform.localScale *= un.scale;
+
+                    userNodeInstanceDic[un.nodeName] = ug;
+                }
+                else
+                {
+                    continue;
+                }
+                
             }
         }
         

@@ -56,15 +56,20 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Graph\Node\Node.cs" />
-    <Compile Include="Assets\Scripts\Graph\Node\UserNode.cs" />
-    <Compile Include="Assets\Scripts\WorldManager.cs" />
-    <Compile Include="Assets\Scripts\WorldInfo.cs" />
-    <Compile Include="Assets\Scripts\Graph\Node\RepoNode.cs" />
     <Compile Include="Assets\Scripts\Graph\Edge\Edge.cs" />
-    <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\Scripts\Graph\Repository.cs" />
+    <Compile Include="Assets\Scripts\Graph\Node\UserNode.cs" />
+    <Compile Include="Assets\Scripts\ForceDirectedGraph.cs" />
+    <Compile Include="Assets\Scripts\Graph\Node\Node.cs" />
+    <Compile Include="Assets\Scripts\WorldInfo.cs" />
+    <Compile Include="Assets\Scripts\UI\DrawLineToParent.cs" />
+    <Compile Include="Assets\Scripts\Utils.cs" />
+    <Compile Include="Assets\Scripts\WorldManager.cs" />
+    <Compile Include="Assets\Scripts\Graph\Node\RepoNode.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Material\Shader\LineShader.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -319,14 +324,14 @@
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="LitJSON">
+      <HintPath>Assets\Plugins\LitJSON.dll</HintPath>
+    </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="LitJSON">
-      <HintPath>Assets\Plugins\LitJSON.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:\Software\GameDevelopment\2021.3.16f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

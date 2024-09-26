@@ -2,13 +2,10 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float moveSpeed = 10f;    // 相机移动速度
+    public float moveSpeed = 10f;     // 相机移动速度
     public float lookSpeed = 2f;      // 相机旋转速度
     public float scrollSpeed = 2f;    // 相机缩放速度
-
     private float rotationX = 0f;     // 记录旋转角度
-
-
 
     private void RotateCamera()
     {
@@ -48,9 +45,6 @@ public class CameraController : MonoBehaviour
         RotateCamera();
         MoveCamera();
         ScaleCamera();
-
-
-
 
     }
 }
