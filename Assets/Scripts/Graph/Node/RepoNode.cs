@@ -8,7 +8,8 @@ public class RepoNode : Node
 {
     public RepoNode(string _name, int _id, NodeType _type) : base(_name, _id, _type)
     {
-        scale = 4.0f;
+        scale = 10.0f;
+        radius *= scale;
     }
 }
 public class RepoNodeComponent : NodeComponent

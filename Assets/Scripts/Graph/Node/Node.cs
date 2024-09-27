@@ -17,14 +17,18 @@ public class Node
     public NodeType nodeType; //标记节点类型
     public float scale;
 
+    public float radius;
     public Vector3 position { get; set; }
     public Node() { }
     public Node(string _name,int _id,NodeType _type){
+        radius = 1.0f;
         nodeName = _name;
         nodeId = _id;
         nodeType = _type;
         position = Vector3.zero;
+
         scale = 1.0f;
+        radius *= scale;
     }
 
     

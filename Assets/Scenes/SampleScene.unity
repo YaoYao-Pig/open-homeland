@@ -193,7 +193,8 @@ MonoBehaviour:
   maximumDistance: 5
   childMinimumDistance: 0.1
   childMaximumDistance: 1
-  damping: 0.5
+  childrenPerParent: 5
+  childRadius: 2
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

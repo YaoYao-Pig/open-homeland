@@ -31,94 +31,51 @@ public class WorldManager : MonoBehaviour
         userNodeDic = new Dictionary<string, Node>();
         userNodeInstanceDic = new Dictionary<string, GameObject>();
         repoNameList = new List<string>();
+        repositoryList = new List<Repository>();
         if (repoRoot == null) throw new System.Exception("WorldManager:Awake()=>repoRoot don't initialize");
 
 
-        //LoadData()
-        LoadData();
-        repositoryList.ToString();
+
+    }
+
+    public void Inite()
+    {
+        LoadData(WorldInfo.repo_developerNetFilePath);
+        /*worldManager.repositoryList.ToString();*/
         IniteNodesByRepo();
 
         //tmp
         GiveRandomPosition();
         InstanceNode();
-
     }
-
-    public List<string> GetFles(string _path,out List<string> _fileNames)
-    {
-        string[] _files = Directory.GetFiles(_path,"*.json");
-        List<string> files = new List<string>();
-        _fileNames = new List<string>();
-
-        foreach (var f in _files)
-        {
-            string directory = Path.GetDirectoryName(f);
-            string fileName = Path.GetFileName(f); // 获取文件或目录名
-            fileName = fileName.Split(".")[0];
-            // 分割路径
-            string[] parts = directory.Split(Path.DirectorySeparatorChar);
-            if (parts.Length >= 1)
-            {
-                string lastPart = parts[^1]; // directory最后一部分
-                string seconPart = parts[^2];
-                files.Add(seconPart+ Path.DirectorySeparatorChar + lastPart + Path.DirectorySeparatorChar + fileName);
-                _fileNames.Add(fileName);
-            }
-            else
-            {
-                Debug.Log("路径部分不足两层");
-            }
-
-        }
-
-        return files;
-    }
-    public void LoadData()
-    {
-        //加载Repo-DevelopNet数据
-        LoadRepoDevelopNetData(WorldInfo.repo_developerNetFilePath, out repositoryList);
-        
-
-    }
-
     /// <summary>
-    /// 加载Repo-DevelopNet数据
+    /// 
     /// </summary>
-    /// <param name="_filepath">文件路径</param>
-    /// <returns>RepoDeveloperNet</returns>
-    public void LoadRepoDevelopNetData(string _filepath,out List<Repository> repositories)
+    /// <param name="_filepath">文件夹目录</param>
+    /// <param name="repositories"></param>
+    public void LoadData(string _filepath)
     {
-        repositories = new List<Repository>();
 
-        List<string> filePaths = GetFles(_filepath,out repoNameList);
-
+        List<string> filePaths = Utils.GetFles(_filepath, out repoNameList);
         foreach(string path in filePaths)
         {
-            string data = Utils.LoadJsonFromResources(path);
-            LitJson.JsonData jsonData = LitJson.JsonMapper.ToObject(data);
-            var tmp = new Repository();
-            tmp.developerNetwork = RepoDeveloperNet.ParseJson(jsonData);
-            
-            repositories.Add(tmp);
+            Repository repository = new Repository();
+            repository.developerNetwork = LoadRepoDevelopNetData(path);
+            //加载Repo-DevelopNet数据
+            repositoryList.Add(repository);
         }
     }
-
-    //TODO:明天从这里开始
-    
-    public void LoadRepoRepoNetData(string _filepath, out List<Repository> repositories)
+    /// <summary>
+    /// 获得一个repo的DeveloperNetData
+    /// </summary>
+    /// <param name="_filepath">具体的位置</param>
+    /// <returns></returns>
+    public RepoDeveloperNet LoadRepoDevelopNetData(string _filepath)
     {
-        repositories = new List<Repository>();
-
-        List<string> filePaths = GetFles(_filepath, out repoNameList);
-        foreach (string path in filePaths)
-        {
-            string data = Utils.LoadJsonFromResources(path);
-            LitJson.JsonData jsonData = LitJson.JsonMapper.ToObject(data);
-            
-        }
-
-
+        string data = Utils.LoadJsonFromResources(_filepath);
+        LitJson.JsonData jsonData = LitJson.JsonMapper.ToObject(data);
+        RepoDeveloperNet repoDNet = RepoDeveloperNet.ParseJson(jsonData);
+        return repoDNet;
     }
     /// <summary>
     /// 通过RepoList初始化各种节点
@@ -155,10 +112,11 @@ public class WorldManager : MonoBehaviour
 
     private void Start()
     {
+        Inite();
 
     }
 
-    private void GiveRandomPosition()
+    public void GiveRandomPosition()
     {
         Vector3 areaCenter=Vector3.zero; // 区域中心
         Vector3 areaSize=new Vector3(100,100,100); // 区域的大小
@@ -193,7 +151,7 @@ public class WorldManager : MonoBehaviour
 
     }
 
-    private bool InstanceNode()
+    public bool InstanceNode()
     {
         foreach(var rn in repoNodeList)
         {

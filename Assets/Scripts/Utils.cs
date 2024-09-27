@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class Utils 
@@ -13,5 +14,37 @@ public class Utils
     {
         UnityEngine.TextAsset s = Resources.Load(_path) as TextAsset;
         return s.text;
+    }
+
+
+
+    public static List<string> GetFles(string _path, out List<string> _fileNames)
+    {
+        string[] _files = Directory.GetFiles(_path, "*.json");
+        List<string> files = new List<string>();
+        _fileNames = new List<string>();
+
+        foreach (var f in _files)
+        {
+            string directory = Path.GetDirectoryName(f);
+            string fileName = Path.GetFileName(f); // 获取文件或目录名
+            fileName = fileName.Split(".")[0];
+            // 分割路径
+            string[] parts = directory.Split(Path.DirectorySeparatorChar);
+            if (parts.Length >= 1)
+            {
+                string lastPart = parts[^1]; // directory最后一部分
+                string seconPart = parts[^2];
+                files.Add(seconPart + Path.DirectorySeparatorChar + lastPart + Path.DirectorySeparatorChar + fileName);
+                _fileNames.Add(fileName);
+            }
+            else
+            {
+                Debug.Log("路径部分不足两层");
+            }
+
+        }
+
+        return files;
     }
 }

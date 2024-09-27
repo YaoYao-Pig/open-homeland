@@ -12,6 +12,7 @@ public class UserNode : Node
     public UserNode(string _name,int _id,NodeType _type): base(_name,_id,_type)
     {
         scale = 0.2f;
+        radius *= scale;
     }
 }
 
