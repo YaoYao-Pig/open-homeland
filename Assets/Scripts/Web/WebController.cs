@@ -89,7 +89,7 @@ public class WebController : MonoBehaviour
 
     }
 
-    public static IEnumerator GetRepoDetail(string _repoName,string _m)
+    public static IEnumerator GetRepoDetail(string _repoName,string _m,Action<string> parseJson)
     {
         string url = new string(WorldInfo.requestHead +
                     WorldInfo.platform + WorldInfo.httpSeparatorChar +
@@ -105,7 +105,8 @@ public class WebController : MonoBehaviour
             {
                 // 请求成功，处理 JSON 数据
                 string jsonResponse = request.downloadHandler.text;
-                Debug.Log(jsonResponse);
+                parseJson(jsonResponse);
+                
 
             }
 

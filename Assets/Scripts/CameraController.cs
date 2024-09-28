@@ -13,6 +13,16 @@ public class CameraController : MonoBehaviour
 
 
 
+    public float moveDuration = 2f; // 移动时间
+    private bool canMove = true; // 控制输入的开关
+    public float offset = 10f;
+
+
+    private Vector3 startPosition;
+    private Vector3 targetPosition;
+    private Quaternion startRotation;
+    private Quaternion targetRotation;
+
     private void Awake()
     {
         // 确保只存在一个实例
@@ -79,15 +89,7 @@ public class CameraController : MonoBehaviour
     }
 
 
-    public float moveDuration = 1f; // 移动时间
-    private bool canMove = true; // 控制输入的开关
-    public float offset = 10f;
 
-
-    private Vector3 startPosition;
-    private Vector3 targetPosition;
-    private Quaternion startRotation;
-    private Quaternion targetRotation;
     
     public void MoveCameraToSphere(Vector3 spherePosition)
     {

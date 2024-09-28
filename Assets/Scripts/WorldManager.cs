@@ -7,7 +7,12 @@ public class WorldManager : MonoBehaviour
 {
 
 
-    public GameObject nodePrefab; //节点的prefab
+    public GameObject repoPrefab; //repo节点的prefab
+    public GameObject userPrefab; //User节点的Prefab
+
+
+
+
     public List<Repository> repositoryList;
 
     [SerializeField] private List<Node> repoNodeList;
@@ -71,11 +76,11 @@ public class WorldManager : MonoBehaviour
     /// </summary>
     /// <param name="_filepath">具体的位置</param>
     /// <returns></returns>
-    public RepoDeveloperNet LoadRepoDevelopNetData(string _filepath)
+    public Repo_Read_RepoDeveloperNet LoadRepoDevelopNetData(string _filepath)
     {
         string data = Utils.LoadJsonFromResources(_filepath);
         LitJson.JsonData jsonData = LitJson.JsonMapper.ToObject(data);
-        RepoDeveloperNet repoDNet = RepoDeveloperNet.ParseJson(jsonData);
+        Repo_Read_RepoDeveloperNet repoDNet = Repo_Read_RepoDeveloperNet.ParseJson(jsonData);
         return repoDNet;
     }
     /// <summary>
@@ -98,7 +103,7 @@ public class WorldManager : MonoBehaviour
 
 
 
-            foreach(RepoDeveloperNet._Read_Node u in repo.developerNetwork.nodes)
+            foreach(Repo_Read_DevelopNet_Node u in repo.developerNetwork.nodes)
             {
                 Node userNode =new UserNode();
                 if (!userNodeDic.TryGetValue(u._name, out userNode))
@@ -160,7 +165,7 @@ public class WorldManager : MonoBehaviour
     {
         foreach(var rn in repoNodeList)
         {
-            GameObject rg = GameObject.Instantiate(nodePrefab, repoRoot);
+            GameObject rg = GameObject.Instantiate(repoPrefab, repoRoot);
             rg.name = rn.nodeName;
             //添加NodeComponet
             RepoNodeComponent repoNode=rg.AddComponent<RepoNodeComponent>();
@@ -178,7 +183,7 @@ public class WorldManager : MonoBehaviour
                 GameObject ug = null;
                 if(!userNodeInstanceDic.TryGetValue(un.nodeName,out ug))
                 {
-                    ug = GameObject.Instantiate(nodePrefab, rg.transform);
+                    ug = GameObject.Instantiate(userPrefab, rg.transform);
 
                     UserNodeComponent userNode = ug.AddComponent<UserNodeComponent>();
                     userNode.lineMaterial = lineMaterial;
