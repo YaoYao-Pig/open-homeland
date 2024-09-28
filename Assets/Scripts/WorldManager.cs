@@ -24,6 +24,7 @@ public class WorldManager : MonoBehaviour
     public List<GameObject> repoObjectList;
     [SerializeField] private Material lineMaterial; //存储子节点和父节点连线的材质
 
+
     private void Awake()
     {
         repoNodeList = new List<Node>();
@@ -93,6 +94,10 @@ public class WorldManager : MonoBehaviour
             repoNodeList.Add(repoNode);
 
             List<Node> nodes = new List<Node>();
+
+
+
+
             foreach(RepoDeveloperNet._Read_Node u in repo.developerNetwork.nodes)
             {
                 Node userNode =new UserNode();
