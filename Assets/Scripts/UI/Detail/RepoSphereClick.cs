@@ -94,14 +94,13 @@ public class RepoSphereClick : MonoBehaviour
 
 
     //测试用数据：
-    private string repoName = "CleverRaven/Cataclysm-DDA";
     private string m = "developer_network";
     //查看或者退出Repo节点的详细信息视图
     private void LookRepoDetails()
     {
         if (flag)
         {
-            StartCoroutine(WebController.GetRepoDetail(repoName, m, ParseJsonToChart));
+            StartCoroutine(WebController.GetRepoDetail(gameObject.name, m, ParseJsonToChart));
             CameraController.Instance.MoveCameraToSphere(transform.position);
             flag = false;
         }

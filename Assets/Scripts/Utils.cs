@@ -18,11 +18,10 @@ public class Utils
 
 
 
-    public static List<string> GetFles(string _path, out List<string> _fileNames)
+    public static List<string> GetFles(string _path)
     {
         string[] _files = Directory.GetFiles(_path, "*.json");
         List<string> files = new List<string>();
-        _fileNames = new List<string>();
 
         foreach (var f in _files)
         {
@@ -36,7 +35,6 @@ public class Utils
                 string lastPart = parts[^1]; // directory最后一部分
                 string seconPart = parts[^2];
                 files.Add(seconPart + Path.DirectorySeparatorChar + lastPart + Path.DirectorySeparatorChar + fileName);
-                _fileNames.Add(fileName);
             }
             else
             {

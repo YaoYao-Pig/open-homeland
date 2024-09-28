@@ -25,7 +25,6 @@ public class WorldManager : MonoBehaviour
     public Dictionary<string, Node> userNodeDic; //user节点的存储，存储一个统一的实例，所有其他位置都是对这个实例的引用
     public Dictionary<string, GameObject> userNodeInstanceDic;//存储user节点的实例，实例化之后就存入这里，防止同一个user被重复创建.
 
-    private List<string> repoNameList;//用于存储repo的name；
     public List<GameObject> repoObjectList;
     [SerializeField] private Material lineMaterial; //存储子节点和父节点连线的材质
 
@@ -36,7 +35,6 @@ public class WorldManager : MonoBehaviour
         repo2UserNodeDic = new Dictionary<Node, List<Node>>();
         userNodeDic = new Dictionary<string, Node>();
         userNodeInstanceDic = new Dictionary<string, GameObject>();
-        repoNameList = new List<string>();
         repositoryList = new List<Repository>();
         if (repoRoot == null) throw new System.Exception("WorldManager:Awake()=>repoRoot don't initialize");
 
@@ -62,7 +60,7 @@ public class WorldManager : MonoBehaviour
     public void LoadData(string _filepath)
     {
 
-        List<string> filePaths = Utils.GetFles(_filepath, out repoNameList);
+        List<string> filePaths = Utils.GetFles(_filepath);
         foreach(string path in filePaths)
         {
             Repository repository = new Repository();
@@ -95,7 +93,7 @@ public class WorldManager : MonoBehaviour
         foreach(Repository repo in repositoryList)
         {
 
-            Node repoNode = new RepoNode(repoNameList[i], i, NodeType.Repo); i++;
+            Node repoNode = new RepoNode(WorldInfo.initeRepoNameList[i], i, NodeType.Repo); i++;
             repoNodeList.Add(repoNode);
 
             List<Node> nodes = new List<Node>();
