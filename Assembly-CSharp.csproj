@@ -81,8 +81,11 @@
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Planet\ShapeGenerator.cs" />
     <Compile Include="Assets\Scripts\Planet\Noise.cs" />
-    <Compile Include="Assets\Scripts\Planet\NoiseFilter.cs" />
+    <Compile Include="Assets\Scripts\Planet\SimpleNoiseFilter.cs" />
     <Compile Include="Assets\Scripts\Planet\NoiseSettings.cs" />
+    <Compile Include="Assets\Scripts\Planet\RidgidNoiseFilfter.cs" />
+    <Compile Include="Assets\Scripts\Planet\INoiseFilter.cs" />
+    <Compile Include="Assets\Scripts\Planet\NoiseFilterFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

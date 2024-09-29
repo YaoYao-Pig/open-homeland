@@ -6,14 +6,36 @@ using UnityEngine;
 [System.Serializable]
 public class NoiseSettings
 {
-    public float strength = 1;
+    public enum FilterType
+    {
+        Simple,Ridgid
+    }
 
-    [Range(1, 8)] public int numLayers = 1; //噪声的叠加层数
-    public float persistence = 0.5f;
-    public float baseRoughness = 1;
-    public float roughness = 2;
-    public Vector3 centre;
+    public FilterType filterType;
 
-    public float minValue;
+    public SimpleNoiseSettings simpleNoiseSettings;
+    public RidgidNoiseSettings ridgidNoiseSettings;
 
+
+    [System.Serializable]
+    public class SimpleNoiseSettings
+    {
+        public float strength = 1;
+
+        [Range(1, 8)] public int numLayers = 1; //噪声的叠加层数
+
+        public float baseRoughness = 1;
+        public float roughness = 2;
+        public Vector3 centre;
+        public float persistence = 0.5f;
+        public float minValue = 1;
+    }
+
+    [System.Serializable]
+    public class RidgidNoiseSettings:SimpleNoiseSettings
+    {
+        public float weightMultiplier = 0.8f;
+    }
+
+    
 }
