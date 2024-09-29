@@ -1,4 +1,4 @@
-Shader "yyz/OldEdgeLight"
+Shader "yyz/EdgeLight"
 {
     Properties
     {
@@ -9,11 +9,9 @@ Shader "yyz/OldEdgeLight"
     }
     SubShader
     {
-        
+        Tags { "RenderType"="Opaque" }
+        LOD 200
         Pass{
-            Name "ForwardLit"
-            Tags {"LightMode" = "UniversalForward"}
-
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -58,13 +56,14 @@ Shader "yyz/OldEdgeLight"
 
         }
 
+
+        Tags { "RenderType"="Tranport" }
+        LOD 200
         Pass{
+            
+            
             Blend SrcAlpha One
             Cull Front
-            Tags { "LightMode" = "SRPDefaultUnlit"}
-
-            Name "OUTLINE"
-
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -80,6 +79,7 @@ Shader "yyz/OldEdgeLight"
                 float4 vertex:POSITION;
                 float3 normal:NORMAL;
                 float2 uv:TEXCOORD0;
+                
             };
 
             struct v2f{
@@ -97,7 +97,7 @@ Shader "yyz/OldEdgeLight"
 
             v2f vert(vertexIn v){
                 v2f o;
-                v.vertex.xyz+=v.normal*0.15f;
+                v.vertex.xyz+=v.normal*0.08f;
                 o.vertex=TransformObjectToHClip(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.normal = TransformObjectToWorldNormal(v.normal);

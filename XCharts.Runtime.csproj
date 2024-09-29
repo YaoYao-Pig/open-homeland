@@ -62,9 +62,9 @@
     <Compile Include="Assets\XCharts\Runtime\Component\Title\TitleHandler.cs" />
     <Compile Include="Assets\XCharts\Runtime\Chart\ParallelChart.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Child\LineStyle.cs" />
-    <Compile Include="Assets\XCharts\Runtime\Coord\Grid\GridCoordHandler.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\BaseChart.Draw.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Axis\RadiusAxis\RadiusAxis.cs" />
+    <Compile Include="Assets\XCharts\Runtime\Coord\Grid\GridCoordHandler.cs" />
     <Compile Include="Assets\XCharts\Runtime\Serie\Line\LineHelper.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\VisualMap\VisualMapHelper.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\Attributes\DefaultTooltipAttribute.cs" />
@@ -76,9 +76,9 @@
     <Compile Include="Assets\XCharts\Runtime\Serie\Parallel\Parallel.cs" />
     <Compile Include="Assets\XCharts\Runtime\Coord\Grid\GridLayoutHandler.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Axis\AngleAxis\AngleAxisHandler.cs" />
-    <Compile Include="Assets\XCharts\Runtime\Internal\Basic\MainComponentContext.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Axis\XAxis3D\XAxis3DHander.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Child\SymbolStyle.cs" />
+    <Compile Include="Assets\XCharts\Runtime\Internal\Basic\MainComponentContext.cs" />
     <Compile Include="Assets\XCharts\Runtime\Serie\Line\LineHandler.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\Painter.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Axis\AxisHandler.cs" />
@@ -102,9 +102,9 @@
     <Compile Include="Assets\XCharts\Runtime\Utilities\DefineSymbolsUtil.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\Utilities\ChartCached.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\UIComponentTheme.cs" />
-    <Compile Include="Assets\XCharts\Runtime\Component\VisualMap\VisualMap.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\Attributes\SerieDataComponentAttribute.cs" />
     <Compile Include="Assets\XCharts\Runtime\Theme\AxisTheme.cs" />
+    <Compile Include="Assets\XCharts\Runtime\Component\VisualMap\VisualMap.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Axis\Axis.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Mark\MarkAreaHandler.cs" />
     <Compile Include="Assets\XCharts\Runtime\Chart\PolarChart.cs" />
@@ -112,8 +112,8 @@
     <Compile Include="Assets\XCharts\Runtime\Theme\LegendTheme.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Axis\RadiusAxis\RadiusAxisHandler.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Radar\RadarCoord.cs" />
-    <Compile Include="Assets\XCharts\Runtime\Internal\Object\ChartText.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Axis\AxisLine.cs" />
+    <Compile Include="Assets\XCharts\Runtime\Internal\Object\ChartText.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\Utilities\ChartHelper.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\Attributes\RequireChartComponentAttribute.cs" />
     <Compile Include="Assets\XCharts\Runtime\Serie\Candlestick\Candlestick.cs" />
@@ -191,8 +191,8 @@
     <Compile Include="Assets\XCharts\Runtime\Component\Axis\SingleAxis\SingleAxis.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Animation\AnimationStyleHelper.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\Utilities\LayoutHelper.cs" />
-    <Compile Include="Assets\XCharts\Runtime\Internal\BaseChart.Custom.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\Attributes\CoordOptionsAttribute.cs" />
+    <Compile Include="Assets\XCharts\Runtime\Internal\BaseChart.Custom.cs" />
     <Compile Include="Assets\XCharts\Runtime\Theme\VisualMapTheme.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\Misc\ITooltipView.cs" />
     <Compile Include="Assets\XCharts\Runtime\Chart\SimplifiedBarChart.cs" />
@@ -235,8 +235,8 @@
     <Compile Include="Assets\XCharts\Runtime\Component\Child\TextStyle.cs" />
     <Compile Include="Assets\XCharts\Runtime\Utilities\DateTimeUtil.cs" />
     <Compile Include="Assets\XCharts\Runtime\I18n\Lang.cs" />
-    <Compile Include="Assets\XCharts\Runtime\Theme\Theme.cs" />
     <Compile Include="Assets\XCharts\Runtime\Serie\Heatmap\HeatmapHandler.PolarCoord.cs" />
+    <Compile Include="Assets\XCharts\Runtime\Theme\Theme.cs" />
     <Compile Include="Assets\XCharts\Runtime\Coord\Polar\PolarCoordHandler.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\VisualMap\VisualMapContext.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Title\TitleStyle.cs" />
@@ -308,8 +308,8 @@
     <Compile Include="Assets\XCharts\Runtime\Serie\Line\LineHandler.GridCoord.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Axis\AxisHelper.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\Attributes\SerieDataExtraFieldAttribute.cs" />
-    <Compile Include="Assets\XCharts\Runtime\Component\Child\AreaStyle.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\Basic\ChildComponent.cs" />
+    <Compile Include="Assets\XCharts\Runtime\Component\Child\AreaStyle.cs" />
     <Compile Include="Assets\XCharts\Runtime\Serie\SerieHandler.cs" />
     <Compile Include="Assets\XCharts\Runtime\Coord\Calendar\CalendarCoordHandler.cs" />
     <Compile Include="Assets\XCharts\Runtime\Serie\SerieData.cs" />
@@ -597,6 +597,9 @@
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
     </Reference>
@@ -606,8 +609,17 @@
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil">
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+    </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Rocks">
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
