@@ -6,6 +6,7 @@ using UnityEngine;
 //一个立方体的六个面
 public class TerrainFace
 {
+    ShapeGenerator shapeGenerator;
     Mesh mesh;
     int resoulutoin;
     Vector3 localUp;//面的法线所指的“点”
@@ -13,8 +14,9 @@ public class TerrainFace
     Vector3 axisB;
 
 
-    public TerrainFace(Mesh _mesh,int _resoulution,Vector3 _localUp)
+    public TerrainFace(ShapeGenerator _shapeGenerator,Mesh _mesh,int _resoulution,Vector3 _localUp)
     {
+        shapeGenerator = _shapeGenerator;
         mesh = _mesh;
         resoulutoin = _resoulution;
         localUp = _localUp;
@@ -39,7 +41,7 @@ public class TerrainFace
                 Vector3 pointOnUnitCube = localUp + (percent.x - 0.5f) * 2 * axisA + (percent.y - 0.5f) * 2 * axisB;
                 Vector3 pointOnUnitSphere = pointOnUnitCube.normalized;
 
-                vertics[i] = pointOnUnitSphere;
+                vertics[i] = shapeGenerator.CalculatePointOnPlanet(pointOnUnitSphere);
 
 
                 if (x != resoulutoin - 1 && y != resoulutoin - 1)
