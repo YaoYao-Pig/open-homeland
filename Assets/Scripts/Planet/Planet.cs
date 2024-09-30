@@ -18,10 +18,10 @@ public class Planet : MonoBehaviour
     private ShapeGenerator shapeGenerator=new ShapeGenerator();
     private ColourGenerator colourGenerator=new ColourGenerator();
 
-/*    private void OnValidate()
+    private void Awake()
     {
         GeneratePlanet();
-    }*/
+    }
 
     private void Initialize()
     {
@@ -90,6 +90,11 @@ public class Planet : MonoBehaviour
     private void GenerateColours()
     {
         colourGenerator.UpdateColours();
+
+        for(int i = 0; i < 6; ++i)
+        {
+             terrainFaces[i].UpdateUVs(colourGenerator);
+        }
     }
 
 }
