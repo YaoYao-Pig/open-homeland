@@ -19,10 +19,15 @@ public class ShapeGenerator
         elevationMinMax = new MinMax();
     }
 
-    public Vector3 CalculatePointOnPlanet(Vector3 pointOnUnitSphere)
+
+    /// <summary>
+    /// 计算某点的海拔，根据噪声以及各种缩放因子，返回结果是一个在单位球体上的elevation，如果要应用在半径不是单位的球体上，需要进行缩放
+    /// </summary>
+    public float CalculateUnscaledElevation(Vector3 pointOnUnitSphere)
     {
         float firstLayerValue = 0;
         float elevation = 0;
+        //第一层遮罩
         if (noiseFilters.Length > 0)
         {
             firstLayerValue = noiseFilters[0].Evaluate(pointOnUnitSphere);
@@ -44,8 +49,22 @@ public class ShapeGenerator
             }
             
         }
-        elevation = settings.planetRadius * (1 + elevation);
+        
+
+        //在MinMax里面更新高度值
         elevationMinMax.AddValue(elevation);
-        return pointOnUnitSphere * elevation;
+        return elevation;
+    }
+
+    /// <summary>
+    //  根据星球的半径对高度值进行缩放
+    /// </summary>
+    /// <param name="unscaleElevation"></param>
+    /// <returns></returns>
+    public float GetScaleElevation(float unscaleElevation)
+    {
+        float elevation = Mathf.Max(0, unscaleElevation);
+        elevation = settings.planetRadius * (1 + elevation);
+        return elevation;
     }
 }

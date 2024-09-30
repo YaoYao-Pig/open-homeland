@@ -30,7 +30,7 @@ public class TerrainFace
     {
         Vector3[] vertics = new Vector3[resoulutoin * resoulutoin];
         int[] triangles = new int[(resoulutoin - 1) * (resoulutoin - 1) * 6];//三角形顶点（index）坐标
-        Vector2[] uv = mesh.uv;
+        Vector2[] uv = (mesh.uv.Length==vertics.Length)?mesh.uv:new Vector2[vertics.Length];
 
         
         int triIndex = 0;
@@ -43,8 +43,9 @@ public class TerrainFace
                 Vector3 pointOnUnitCube = localUp + (percent.x - 0.5f) * 2 * axisA + (percent.y - 0.5f) * 2 * axisB;
                 Vector3 pointOnUnitSphere = pointOnUnitCube.normalized;
 
-                vertics[i] = shapeGenerator.CalculatePointOnPlanet(pointOnUnitSphere);
-
+                float unscaledElevation = shapeGenerator.CalculateUnscaledElevation(pointOnUnitSphere);
+                vertics[i] = pointOnUnitSphere * shapeGenerator.GetScaleElevation(unscaledElevation);
+                uv[i].y = unscaledElevation;
 
                 if (x != resoulutoin - 1 && y != resoulutoin - 1)
                 {
@@ -67,7 +68,7 @@ public class TerrainFace
     }
     public void UpdateUVs(ColourGenerator colourGenerator)
     {
-        Vector2[] uv = new Vector2[resoulutoin * resoulutoin];
+        Vector2[] uv = mesh.uv;
 
         for (int y = 0; y < resoulutoin; ++y)
         {
@@ -78,7 +79,9 @@ public class TerrainFace
                 Vector3 pointOnUnitCube = localUp + (percent.x - 0.5f) * 2 * axisA + (percent.y - 0.5f) * 2 * axisB;
                 Vector3 pointOnUnitSphere = pointOnUnitCube.normalized;
 
-                uv[i] = new Vector2(colourGenerator.BiomePercentFromPoint(pointOnUnitSphere), 0);
+
+                //uv的x部分存储着是什么Biome，在这里y被赋值为0，实际上这里的uv只是作为一个传递信息的存储
+                uv[i].x = colourGenerator.BiomePercentFromPoint(pointOnUnitSphere);
             }
         }
         mesh.uv = uv;

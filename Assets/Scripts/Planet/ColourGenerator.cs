@@ -15,7 +15,7 @@ public class ColourGenerator
         this.settings = settings;
         if (texture == null || texture.height!=settings.biomeColourSettings.biomes.Length)
         {
-            texture = new Texture2D(textureResolution, settings.biomeColourSettings.biomes.Length);
+            texture = new Texture2D(textureResolution*2, settings.biomeColourSettings.biomes.Length,TextureFormat.RGBA32,false);
         }
         biomeNoiseFilter = NoiseFilterFactory.CreateNoiseFilter(settings.biomeColourSettings.noise);
 
@@ -41,8 +41,6 @@ public class ColourGenerator
         {
             float dst = heightPercent - settings.biomeColourSettings.biomes[i].startHeight;
             float weight = Mathf.InverseLerp(-blendRange, blendRange, dst);
-            
-            
             biomeIndex *= (1 - weight);
             biomeIndex += i * weight;
 
@@ -51,19 +49,35 @@ public class ColourGenerator
 
     }
 
+
+    public void OceanColour()
+    {
+        
+    }
+
     public void UpdateColours()
     {
-        Color[] colours = new Color[texture.width* texture.height];
+        Color[] colours = new Color[texture.width * texture.height];
         int colourIndex = 0;
         foreach(var biome in settings.biomeColourSettings.biomes)
         {
-            for (int i = 0; i < textureResolution; ++i)
+            for (int i = 0; i < textureResolution * 2; ++i)
             {
-                Color gradintColor = biome.gradient.Evaluate(i / (textureResolution - 1f));
+                Color gradientColor;
+                //如果是海洋那一块的话
+                if (i < textureResolution)
+                {
+                    gradientColor = settings.oceanColour.Evaluate(i / (textureResolution-1f));
+                }
+                else
+                {
+                    //如果不是海洋
+                    gradientColor = biome.gradient.Evaluate((i-textureResolution) / (textureResolution - 1f));
+                    
+                }
                 Color tintColor = biome.tint;
-                colours[colourIndex] = gradintColor * (1 - biome.tintPercecnt) + tintColor * biome.tintPercecnt;
+                colours[colourIndex] = gradientColor * (1 - biome.tintPercecnt) + tintColor * biome.tintPercecnt;
                 colourIndex++;
-
             }
         }
 

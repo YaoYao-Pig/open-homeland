@@ -12,7 +12,7 @@ public class ColourSettings : ScriptableObject
 
     public BiomeColourSettings biomeColourSettings;
 
-
+    public Gradient oceanColour;
 
 
     /// <summary>
