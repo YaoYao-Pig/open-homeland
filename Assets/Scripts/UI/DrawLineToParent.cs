@@ -21,9 +21,9 @@ public class DrawLineToParent : MonoBehaviour
         lineStartColor = Color.red;
         lineEndColor = Color.blue;
     }
-    void Start()
+
+    public void Draw()
     {
-        
         lineRenderer.positionCount = 2; // 线条的点数量
         lineRenderer.material = nodeComponent.lineMaterial;
         lineRenderer.startColor = lineStartColor;
@@ -42,20 +42,21 @@ public class DrawLineToParent : MonoBehaviour
             // 设置线条的起始点和终点
             lineRenderer.SetPosition(0, transform.position); // 子节点位置
 
-            Vector3 dir = Vector3.Normalize(transform.position-parentTransform.position);
+            Vector3 dir = Vector3.Normalize(transform.position - parentTransform.position);
             Vector3 offset = dir * distance;
 
-            lineRenderer.SetPosition(1, parentTransform.position+offset); // 父节点位置
+            lineRenderer.SetPosition(1, parentTransform.position + offset); // 父节点位置
         }
     }
 
-    void Update()
+    public void ReFresh()
     {
-/*        // 在每帧更新线条的位置
-        if (lineRenderer.positionCount == 2)
-        {
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, transform.parent.position);
-        }*/
+        // 清除线条，重置为默认状态
+        lineRenderer.positionCount = 0; // 设置点数量为0，清除线条
+
+        // 你也可以在这里重置其他属性，如果需要的话
+        lineRenderer.startColor = Color.clear; // 设置起始颜色为透明
+        lineRenderer.endColor = Color.clear; // 设置结束颜色为透明
     }
+
 }

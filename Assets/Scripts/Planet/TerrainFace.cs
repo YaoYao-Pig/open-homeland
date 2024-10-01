@@ -13,13 +13,13 @@ public class TerrainFace
     Vector3 axisA;
     Vector3 axisB;
 
-
     public TerrainFace(ShapeGenerator _shapeGenerator,Mesh _mesh,int _resoulution,Vector3 _localUp)
     {
         shapeGenerator = _shapeGenerator;
         mesh = _mesh;
         resoulutoin = _resoulution;
         localUp = _localUp;
+
 
         axisA = new Vector3(localUp.y, localUp.z, localUp.x);
 

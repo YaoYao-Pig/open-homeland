@@ -127,8 +127,11 @@ public class WorldManager : MonoBehaviour
     public void GiveRandomPosition()
     {
         Vector3 areaCenter=Vector3.zero; // 区域中心
-        Vector3 areaSize=new Vector3(100,100,100); // 区域的大小
+        Vector3 areaSize=new Vector3(50,50,50); // 区域的大小
 
+
+        Vector3 subAreaCenter = Vector3.zero;
+        Vector3 subAreaSize = new Vector3(40, 40, 40);
         foreach(RepoNode repoNode in repoNodeList)
         {
             Vector3 randomPosition = new Vector3(
@@ -140,14 +143,15 @@ public class WorldManager : MonoBehaviour
             // 设置节点的位置
             repoNode.position = randomPosition;
 
+            subAreaCenter = repoNode.position;
             //对于每个RepoNode，对应的UserNodeList
             foreach (UserNode userNode in repo2UserNodeDic[repoNode])
             {
                 // 计算随机位置
                 Vector3 nodeRandomPosition = new Vector3(
-                    Random.Range(areaCenter.x - areaSize.x / 2, areaCenter.x + areaSize.x / 2),
-                    Random.Range(areaCenter.y - areaSize.y / 2, areaCenter.y + areaSize.y / 2),
-                    Random.Range(areaCenter.z - areaSize.z / 2, areaCenter.z + areaSize.z / 2)
+                    Random.Range(subAreaCenter.x - subAreaSize.x / 2, subAreaCenter.x + subAreaSize.x / 2),
+                    Random.Range(subAreaCenter.y - subAreaSize.y / 2, subAreaCenter.y + subAreaSize.y / 2),
+                    Random.Range(subAreaCenter.z - subAreaSize.z / 2, subAreaCenter.z + subAreaSize.z / 2)
                 );
 
                 // 设置节点的位置
@@ -186,7 +190,9 @@ public class WorldManager : MonoBehaviour
                     UserNodeComponent userNode = ug.AddComponent<UserNodeComponent>();
                     userNode.lineMaterial = lineMaterial;
 
-                    ug.AddComponent<DrawLineToParent>();
+                    var drawLine=ug.AddComponent<DrawLineToParent>();
+                    
+
 
                     userNode.node = un;
                     ug.name = un.nodeName;

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XCharts.Runtime;
@@ -84,14 +85,7 @@ public class RepoSphereClick : MonoBehaviour
         Repo_Read_RepoDeveloperNet r=Repo_Read_RepoDeveloperNet.ParseJson(jsonData);
         List<Repo_Read_DevelopNet_Node> topK = r.GetOpenRankTopK(kNum);
         IniteCharts(topK);
-
-
-
-
     }
-
-
-
 
     //测试用数据：
     private string m = "developer_network";
@@ -100,8 +94,8 @@ public class RepoSphereClick : MonoBehaviour
     {
         if (flag)
         {
-            StartCoroutine(WebController.GetRepoDetail(gameObject.name, m, ParseJsonToChart));
-            CameraController.Instance.MoveCameraToSphere(transform.position);
+            //StartCoroutine(WebController.GetRepoDetail(gameObject.name, m, ParseJsonToChart));
+            CameraController.Instance.MoveCameraToSphereAndLoadScence(transform.position);
             flag = false;
         }
         else if (!flag )
@@ -110,20 +104,16 @@ public class RepoSphereClick : MonoBehaviour
             StartCoroutine(CameraController.Instance.backDetail());
             flag = true;
             //销毁图表
-            DestoryCharts();
+            //DestoryCharts();
             
-        }
-
-
-        
+        }        
     }
-
-
+    
 
     private void OnMouseDown()
     {
         LookRepoDetails();
-
+        
     }
 }
 
