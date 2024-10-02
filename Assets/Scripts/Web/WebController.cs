@@ -111,6 +111,31 @@ public class WebController : MonoBehaviour
             }
 
         }
+    }
+
+
+    public static IEnumerator GetRepoOpenRank(string _repoName, string _m="openrank")
+    {
+        string url = new string(WorldInfo.requestHead +
+                    WorldInfo.platform + WorldInfo.httpSeparatorChar +
+                    _repoName + WorldInfo.httpSeparatorChar + _m + ".json");
+        using (UnityWebRequest request = UnityWebRequest.Get(url))
+        {
+            yield return request.SendWebRequest();
+            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError($"Error: {request.error}");
+            }
+            else
+            {
+                // 请求成功，处理 JSON 数据
+                string jsonResponse = request.downloadHandler.text;
+                //Debug.Log(jsonResponse);
+                Repo_Read_OpenRank.ParseJson(jsonResponse);
+
+            }
+
+        }
 
 
     }

@@ -28,9 +28,12 @@ public class WorldManager : MonoBehaviour
     public List<GameObject> repoObjectList;
     [SerializeField] private Material lineMaterial; //存储子节点和父节点连线的材质
 
+    
 
     private void Awake()
     {
+
+
         repoNodeList = new List<Node>();
         repo2UserNodeDic = new Dictionary<Node, List<Node>>();
         userNodeDic = new Dictionary<string, Node>();
@@ -51,6 +54,9 @@ public class WorldManager : MonoBehaviour
         //tmp
         GiveRandomPosition();
         InstanceNode();
+
+
+        
     }
     /// <summary>
     /// 
@@ -191,8 +197,6 @@ public class WorldManager : MonoBehaviour
                     userNode.lineMaterial = lineMaterial;
 
                     var drawLine=ug.AddComponent<DrawLineToParent>();
-                    
-
 
                     userNode.node = un;
                     ug.name = un.nodeName;

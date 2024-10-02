@@ -94,7 +94,8 @@ public class RepoSphereClick : MonoBehaviour
     {
         if (flag)
         {
-            //StartCoroutine(WebController.GetRepoDetail(gameObject.name, m, ParseJsonToChart));
+            StartCoroutine(WebController.GetRepoDetail(gameObject.name, m, ParseJsonToChart));
+            //StartCoroutine(WebController.GetRepoOpenRank(gameObject.name));
             CameraController.Instance.MoveCameraToSphereAndLoadScence(transform.position);
             flag = false;
         }

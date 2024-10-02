@@ -9,6 +9,9 @@ public class WorldInfo
     public static string repo_developerNetFilePath = "Assets/Resources/repo/develop";
     public static string repo_repoNetFilePath = "Assets/Resources/repo/repo";
 
+
+
+
     public static string detailScenceName = "RepoDetailScence";
 
     public static string requestHead = "https://oss.x-lab.info/";
@@ -34,5 +37,7 @@ public class WorldInfo
     };
 
     public static string repo_developNetRequest = "";
-    
+
+
+    public static string gameDataName = "GameData";
 }

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\UI\MouseAction.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\UserNode.cs" />
     <Compile Include="Assets\Scripts\Planet\SimpleNoiseFilter.cs" />
+    <Compile Include="Assets\Scripts\Planet\StarRotate\PlanetOrbit.cs" />
     <Compile Include="Assets\Scripts\Planet\INoiseFilter.cs" />
     <Compile Include="Assets\Scripts\ForceDirectedGraph.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\Node.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Scripts\Planet\NoiseSettings.cs" />
     <Compile Include="Assets\Scripts\UI\DrawLineToParent.cs" />
     <Compile Include="Assets\Scripts\Planet\ShapeSettings.cs" />
+    <Compile Include="Assets\Scripts\Camera\ScanEffect.cs" />
     <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\Scripts\WorldManager.cs" />
     <Compile Include="Assets\Scripts\Planet\NoiseFilterFactory.cs" />
@@ -88,8 +90,8 @@
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\RepoNode.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Camera\ScanEffect.cs" />
-    <Compile Include="Assets\Scripts\Planet\StarRotate\PlanetOrbit.cs" />
+    <Compile Include="Assets\Scripts\GameData.cs" />
+    <Compile Include="Assets\Scripts\JsonParse\Repo_OpenRank\Repo_Read_OpenRank.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
