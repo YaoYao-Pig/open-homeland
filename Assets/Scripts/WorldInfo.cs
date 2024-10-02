@@ -22,7 +22,6 @@ public class WorldInfo
     {
         "CleverRaven/Cataclysm-DDA",
         "Anuken/Mindustry",
-        "ppy/osu",
         "OpenRCT2/OpenRCT2",
         "Whisky-App/Whisky",
         "fogleman/Craft",
@@ -40,4 +39,6 @@ public class WorldInfo
 
 
     public static string gameDataName = "GameData";
+
+    public static string mainScenceName = "MainScence";
 }

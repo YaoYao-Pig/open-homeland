@@ -28,8 +28,6 @@ public class WorldManager : MonoBehaviour
     public List<GameObject> repoObjectList;
     [SerializeField] private Material lineMaterial; //存储子节点和父节点连线的材质
 
-    
-
     private void Awake()
     {
 
@@ -84,6 +82,8 @@ public class WorldManager : MonoBehaviour
     {
         string data = Utils.LoadJsonFromResources(_filepath);
         LitJson.JsonData jsonData = LitJson.JsonMapper.ToObject(data);
+
+
         Repo_Read_RepoDeveloperNet repoDNet = Repo_Read_RepoDeveloperNet.ParseJson(jsonData);
         return repoDNet;
     }
@@ -171,14 +171,15 @@ public class WorldManager : MonoBehaviour
 
     public bool InstanceNode()
     {
+
         foreach(var rn in repoNodeList)
         {
             GameObject rg = GameObject.Instantiate(repoPrefab, repoRoot);
             rg.name = rn.nodeName;
             //添加NodeComponet
-            RepoNodeComponent repoNode=rg.AddComponent<RepoNodeComponent>();
+            RepoNodeComponent repoNode = rg.AddComponent<RepoNodeComponent>();
             repoNode.lineMaterial = lineMaterial;
-
+            //repoNode.repository = repositoryList[i];
 
             repoNode.node = rn;
 

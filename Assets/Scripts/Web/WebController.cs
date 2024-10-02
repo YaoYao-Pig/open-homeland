@@ -131,14 +131,11 @@ public class WebController : MonoBehaviour
                 // 请求成功，处理 JSON 数据
                 string jsonResponse = request.downloadHandler.text;
                 //Debug.Log(jsonResponse);
-                Repo_Read_OpenRank.ParseJson(jsonResponse);
-
+                GameData.Instance.AddRepoOpenRankList(Repo_Read_OpenRank.ParseJson(jsonResponse));
             }
-
         }
-
-
     }
+
 
 
     // Update is called once per frame
