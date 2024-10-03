@@ -15,8 +15,7 @@ public class RepoSphereClick : MonoBehaviour
 
     private void Awake()
     {
-       // repository = GetComponent<RepoNodeComponent>().repository;
-
+        
 
     }
 
@@ -61,6 +60,7 @@ public class RepoSphereClick : MonoBehaviour
 
     private void OnMouseDown()
     {
+        repository = gameObject.GetComponent<RepoNodeComponent>().repository;
         LookRepoDetails();
         
     }

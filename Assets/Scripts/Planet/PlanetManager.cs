@@ -12,14 +12,18 @@ public class PlanetManager : MonoBehaviour
     private Repo_Read_OpenRank openRankList;
     private Planet planet;
     private Repository repository;
+    private ChartManager chartManager;
     private void Awake()
     {
         planet = GetComponentInChildren<Planet>();
+        chartManager = GetComponent<ChartManager>();
         StartCoroutine(Initialize());
 
 
     }
 
+
+    
 
     public IEnumerator Initialize(string _m = "openrank")
     {
@@ -27,6 +31,7 @@ public class PlanetManager : MonoBehaviour
         string repoName = GameData.Instance.GetRepoName();
         gameObject.name = repoName;
         yield return StartCoroutine(GetData(gameObject.name));
+        
         InitializePlanets();
     }
 
@@ -38,7 +43,74 @@ public class PlanetManager : MonoBehaviour
         //找到最新的openRank
         openRankList = GameData.Instance.GetRepoOpenRankList();
 
+        //获取项目（目前就是Repository-DeveloperNet）
+        repository =(Repository) GameData.Instance.gameParams["Repo_Develop_Net"];
         
+        chartManager.ParseJsonToChart(repository.developerNetwork);
+
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="layer"></param>
+    /// <param name="param">平均的OpenRank</param>
+    private void GenrateGradint(int layer,float param)
+    {
+        if (param <= 5f)
+        {
+            int index = 0;
+            Gradient gradient = new Gradient();
+
+            GradientColorKey[] colorKeys = new GradientColorKey[3];
+            colorKeys[0] = new GradientColorKey(Color.black, 0.0f);    // 0% 位置为红色
+            colorKeys[1] = new GradientColorKey(Color.gray, 0.5f);  // 50% 位置为绿色
+            colorKeys[2] = new GradientColorKey(Color.white, 1.0f);   // 100% 位置为蓝色
+            gradient.colorKeys = colorKeys;
+
+            colourSettings.biomeColourSettings.biomes[layer].gradient = gradient;
+
+
+            //设置OceanColour
+            colourSettings.oceanColour = colourSettings.oceanColours[index % colourSettings.oceanColours.Length];
+
+        }
+        else if (param <= 10f)
+        {
+            int index = 1;
+            Gradient gradient = new Gradient();
+
+            GradientColorKey[] colorKeys = new GradientColorKey[3];
+            colorKeys[0] = new GradientColorKey(new Color(0.545f, 0.271f, 0.149f), 0.0f);    // 0% 位置为棕色
+            colorKeys[1] = new GradientColorKey(new Color(0.65f, 0.16f, 0.16f), 0.5f);  // 50% 位置为深棕色
+            colorKeys[2] = new GradientColorKey(Color.blue, 1.0f);   // 100% 位置为蓝色
+            gradient.colorKeys = colorKeys;
+
+
+            colourSettings.biomeColourSettings.biomes[layer].gradient = gradient;
+
+            colourSettings.oceanColour = colourSettings.oceanColours[index % colourSettings.oceanColours.Length];
+        }
+        else if(param <= 20f)
+        {
+            int index = 2;
+            Gradient gradient = new Gradient();
+
+            GradientColorKey[] colorKeys = new GradientColorKey[3];
+            colorKeys[0] = new GradientColorKey(Color.red, 0.0f);    // 0% 位置为红色
+            colorKeys[1] = new GradientColorKey(new Color(0.65f, 0.16f, 0.16f), 0.5f);  // 50% 位置为绿色
+            colorKeys[2] = new GradientColorKey(Color.blue, 1.0f);   // 100% 位置为蓝色
+            gradient.colorKeys = colorKeys;
+
+            colourSettings.biomeColourSettings.biomes[layer].gradient = gradient;
+
+            colourSettings.oceanColour = colourSettings.oceanColours[index % colourSettings.oceanColours.Length];
+        }
+        else
+        {
+            int index = 3;
+            colourSettings.oceanColour = colourSettings.oceanColours[index % colourSettings.oceanColours.Length];
+        }
     }
     private void InitializePlanets()
     {
@@ -52,43 +124,15 @@ public class PlanetManager : MonoBehaviour
         {
             NoiseSettings.SimpleNoiseSettings simpleNoiseSettings = noiseLayer.noiseSettings.simpleNoiseSettings;
 
-
             //通过openRank值来控制baseRoughness
             simpleNoiseSettings.baseRoughness = openRankList.lastOpenRank/100.0f;
 
-            Debug.Log("DeveloperNumber: "+GameData.Instance.GetRepoDeveloperNumber());
 
-            if (GameData.Instance.GetRepoDeveloperNumber()<=20)
-            {
-                Gradient gradient = new Gradient();
+            Debug.Log(repository.GetRepoDevelopNetAverageOpenRank());
+            //通过Openrank均值来控制颜色
+            GenrateGradint(0, repository.GetRepoDevelopNetAverageOpenRank());
+            
 
-                GradientColorKey[] colorKeys = new GradientColorKey[3];
-                colorKeys[0] = new GradientColorKey(Color.black, 0.0f);    // 0% 位置为红色
-                colorKeys[1] = new GradientColorKey(Color.gray, 0.5f);  // 50% 位置为绿色
-                colorKeys[2] = new GradientColorKey(Color.white, 1.0f);   // 100% 位置为蓝色
-                gradient.colorKeys = colorKeys;
-
-
-                colourSettings.oceanColour = gradient;
-
-            }
-            else if(GameData.Instance.GetRepoDeveloperNumber() <= 30)
-            {
-                Gradient gradient = new Gradient();
-
-                GradientColorKey[] colorKeys = new GradientColorKey[3];
-                colorKeys[0] = new GradientColorKey(Color.red, 0.0f);    // 0% 位置为红色
-                colorKeys[1] = new GradientColorKey(Color.green, 0.5f);  // 50% 位置为绿色
-                colorKeys[2] = new GradientColorKey(Color.blue, 1.0f);   // 100% 位置为蓝色
-                gradient.colorKeys = colorKeys;
-
-
-                colourSettings.oceanColour = gradient;
-            }
-            else
-            {
-                ;
-            }
             planet.GeneratePlanet();
 
         }

@@ -12,6 +12,7 @@ public class Utils
     /// <returns>返回一个string类型，是读取进来的字符流</returns>
     public static string LoadJsonFromResources(string _path)
     {
+        //Debug.Log(_path);
         UnityEngine.TextAsset s = Resources.Load(_path) as TextAsset;
         return s.text;
     }

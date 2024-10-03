@@ -22,6 +22,7 @@ public class MouseAction : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        if(material==null) material = gameObject.GetComponent<Renderer>().material;
         material.SetFloat("_EdgeVisible", 1.0f);
         if (nodeComponent != null && nodeComponent is RepoNodeComponent)
         {

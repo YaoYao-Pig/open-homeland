@@ -22,7 +22,7 @@ public class ColourGenerator
     }
     public void UpdateElevation(MinMax elevationMinMax)
     {
-        Debug.Log(elevationMinMax.Min);
+        //Debug.Log(elevationMinMax.Min);
         settings.planetMaterial.SetVector("_MinMax", new Vector4(elevationMinMax.Min, elevationMinMax.Max));
     }
 

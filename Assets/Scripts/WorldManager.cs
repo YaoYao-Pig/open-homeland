@@ -133,8 +133,7 @@ public class WorldManager : MonoBehaviour
     public void GiveRandomPosition()
     {
         Vector3 areaCenter=Vector3.zero; // 区域中心
-        Vector3 areaSize=new Vector3(50,50,50); // 区域的大小
-
+        Vector3 areaSize=new Vector3(200,200,200); // 区域的大小
 
         Vector3 subAreaCenter = Vector3.zero;
         Vector3 subAreaSize = new Vector3(40, 40, 40);
@@ -164,14 +163,11 @@ public class WorldManager : MonoBehaviour
                 userNode.position = nodeRandomPosition;
             }
         }
-        
-
-
     }
 
     public bool InstanceNode()
     {
-
+        int i = 0;
         foreach(var rn in repoNodeList)
         {
             GameObject rg = GameObject.Instantiate(repoPrefab, repoRoot);
@@ -179,7 +175,7 @@ public class WorldManager : MonoBehaviour
             //添加NodeComponet
             RepoNodeComponent repoNode = rg.AddComponent<RepoNodeComponent>();
             repoNode.lineMaterial = lineMaterial;
-            //repoNode.repository = repositoryList[i];
+            repoNode.repository = repositoryList[i++];
 
             repoNode.node = rn;
 

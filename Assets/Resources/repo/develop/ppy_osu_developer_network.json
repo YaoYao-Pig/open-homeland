@@ -1,6 +1,50 @@
 {
     "nodes": [
         [
+            "peppy",
+            83
+        ],
+        [
+            "bdach",
+            72.75
+        ],
+        [
+            "cdwcgt",
+            24.29
+        ],
+        [
+            "Joehuu",
+            24.01
+        ],
+        [
+            "smoogipoo",
+            21.33
+        ],
+        [
+            "OliBomby",
+            18.99
+        ],
+        [
+            "timiimit",
+            14.4
+        ],
+        [
+            "ItsShamed",
+            13.3
+        ],
+        [
+            "Cootz",
+            13.23
+        ],
+        [
+            "frenzibyte",
+            12.93
+        ],
+        [
+            "tybug",
+            12.42
+        ],
+        [
             "Susko3",
             11.29
         ],
@@ -59,6 +103,22 @@
         [
             "Zyfarok",
             5.89
+        ],
+        [
+            "Gyoshi",
+            5.74
+        ],
+        [
+            "NiceAesth",
+            5.74
+        ],
+        [
+            "0xallie",
+            5.66
+        ],
+        [
+            "alixdotsh",
+            5.41
         ]
     ],
     "edges": [

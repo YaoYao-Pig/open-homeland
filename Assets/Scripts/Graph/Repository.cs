@@ -20,12 +20,24 @@ public class Repository
 
     public RepoRepoNet repoRepoNet;
 
-
+    public float developOpenRankAverage = 0.0f;
     public override string ToString()
     {
         return developerNetwork.ToString();
     }
 
+    public float GetRepoDevelopNetAverageOpenRank()
+    {
+        if (developOpenRankAverage > 0.0) return developOpenRankAverage;
+        
+        foreach(var node in developerNetwork.nodes)
+        {
+            developOpenRankAverage +=(float) node._openRank;
+        }
+        developOpenRankAverage /= developerNetwork.nodes.Count;
+        return developOpenRankAverage;
+
+    }
 
 }
 

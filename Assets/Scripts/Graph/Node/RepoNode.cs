@@ -14,7 +14,11 @@ public class RepoNode : Node
 }
 public class RepoNodeComponent : NodeComponent
 {
-    //public Repository repository;
+    public Repository repository;
 
+    private void Awake()
+    {
+        repository = new Repository();
+    }
 
 }

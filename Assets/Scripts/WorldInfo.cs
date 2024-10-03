@@ -20,13 +20,36 @@ public class WorldInfo
 
     public static List<string> initeRepoNameList = new List<string>()
     {
-        "CleverRaven/Cataclysm-DDA",
-        "Anuken/Mindustry",
-        "OpenRCT2/OpenRCT2",
-        "Whisky-App/Whisky",
-        "fogleman/Craft",
-        "diasurgical/devilution",
-        "yairm210/Unciv"
+    "CleverRaven/Cataclysm-DDA",
+    "Anuken/Mindustry",
+    "ppy/osu",
+    "OpenRCT2/OpenRCT2",
+    "Whisky-App/Whisky",
+    "fogleman/Craft",
+    "diasurgical/devilution",
+    "yairm210/Unciv",
+    "torvalds/linux",
+    "jaywcjlove/linux-command",
+    "apache/superset",
+    "apache/camel",
+    "apache/echarts",
+    "apache/spark",
+    "apache/kafka",
+    "apache/dubbo",
+    "apache/airflow",
+    "grpc/grpc",
+    "nothings/stb",
+    "facebook/infer",
+    "shadowsocks/shadowsocks-windows",
+    "Light-City/CPlusPlusThings",
+    "nlohmann/json",
+    "msgpack/msgpack-c",
+    "danmar/cppcheck",
+    "gabime/spdlog",
+    "civetweb/civetweb",
+    "spmallick/learnopencv",
+    "confluentinc/librdkafka",
+    "abseil/abseil-cpp"
     };
 
 

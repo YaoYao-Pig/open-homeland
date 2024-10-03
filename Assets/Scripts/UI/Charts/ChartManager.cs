@@ -76,6 +76,11 @@ public class ChartManager : MonoBehaviour
         IniteCharts(topK);
     }
 
+    public void ParseJsonToChart(Repo_Read_RepoDeveloperNet r)
+    {
+        List<Repo_Read_DevelopNet_Node> topK = r.GetOpenRankTopK(kNum);
+        IniteCharts(topK);
+    }
     public void DestoryCharts()
     {
         DestoryRepoDevelopNetChart();
