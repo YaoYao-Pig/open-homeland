@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -50,6 +51,11 @@ public class PlanetManager : MonoBehaviour
 
     }
 
+    private Color ColorTransfer(float r,float g,float b)
+    {
+        return new Color(r / 255.0f, g / 255.0f, b / 255.0f);
+    }
+
     /// <summary>
     /// 
     /// </summary>
@@ -57,7 +63,11 @@ public class PlanetManager : MonoBehaviour
     /// <param name="param">平均的OpenRank</param>
     private void GenrateGradint(int layer,float param)
     {
-        if (param <= 5f)
+
+
+
+
+        if (param <= 2f)
         {
             int index = 0;
             Gradient gradient = new Gradient();
@@ -75,7 +85,7 @@ public class PlanetManager : MonoBehaviour
             colourSettings.oceanColour = colourSettings.oceanColours[index % colourSettings.oceanColours.Length];
 
         }
-        else if (param <= 10f)
+        else if (param <= 3f)
         {
             int index = 1;
             Gradient gradient = new Gradient();
@@ -91,7 +101,7 @@ public class PlanetManager : MonoBehaviour
 
             colourSettings.oceanColour = colourSettings.oceanColours[index % colourSettings.oceanColours.Length];
         }
-        else if(param <= 20f)
+        else if(param <= 5f)
         {
             int index = 2;
             Gradient gradient = new Gradient();
@@ -109,8 +119,27 @@ public class PlanetManager : MonoBehaviour
         else
         {
             int index = 3;
-            colourSettings.oceanColour = colourSettings.oceanColours[index % colourSettings.oceanColours.Length];
+            Gradient gradient = new Gradient();
+            GradientColorKey[] colorKeys = new GradientColorKey[5];
+            colorKeys[0] = new GradientColorKey(ColorTransfer(218f, 226f, 50f), 0.0f);    // 0% 位置为白色
+            colorKeys[1] = new GradientColorKey(ColorTransfer(66.0f, 111f, 41f), 0.25f);  // 50% 位置为绿色
+            colorKeys[2] = new GradientColorKey(ColorTransfer(73,125,17), 0.5f);  // 50% 位置为绿色
+            colorKeys[3] = new GradientColorKey(ColorTransfer(94,28,5), 0.75f);   // 75%深棕色
+            colorKeys[4] = new GradientColorKey(ColorTransfer(34,17,17), 1.0f);   // 100% 
+
+            gradient.colorKeys = colorKeys;
+
+            colourSettings.biomeColourSettings.biomes[layer].gradient = gradient;
+
+            colourSettings.oceanColour = colourSettings.oceanColours[2];
         }
+    }
+
+    private float Sigmoid(float f)
+    {
+        float t = Mathf.Pow(1 + Mathf.Pow((float)Math.E, -f), -1);
+        Debug.Log("Sigmod:"+t);
+        return Mathf.Pow(1 + Mathf.Pow((float)Math.E, -f), -1);
     }
     private void InitializePlanets()
     {
@@ -125,12 +154,12 @@ public class PlanetManager : MonoBehaviour
             NoiseSettings.SimpleNoiseSettings simpleNoiseSettings = noiseLayer.noiseSettings.simpleNoiseSettings;
 
             //通过openRank值来控制baseRoughness
-            simpleNoiseSettings.baseRoughness = openRankList.lastOpenRank/100.0f;
-
+            simpleNoiseSettings.strength = Sigmoid(openRankList.lastOpenRank / 100.0f)/10f;
+            simpleNoiseSettings.baseRoughness = Sigmoid(openRankList.lastOpenRank/100.0f);
 
             Debug.Log(repository.GetRepoDevelopNetAverageOpenRank());
             //通过Openrank均值来控制颜色
-            GenrateGradint(0, repository.GetRepoDevelopNetAverageOpenRank());
+            GenrateGradint(1, repository.GetRepoDevelopNetAverageOpenRank());
             
 
             planet.GeneratePlanet();

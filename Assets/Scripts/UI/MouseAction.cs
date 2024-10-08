@@ -8,6 +8,7 @@ public class MouseAction : MonoBehaviour
     private Material material;
     private DrawLineToParent[] drawLineToParents;
     private NodeComponent nodeComponent;
+    private HUDController hUDController;
 
     private void Start()
     {
@@ -30,9 +31,14 @@ public class MouseAction : MonoBehaviour
             {
                 drawLine.Draw();
             }
-            
         }
-        
+        //œ‘ æHUD
+        if (hUDController == null)
+        {
+            hUDController = GetComponent<HUDController>();
+        }
+        hUDController.showHud = true;
+
 
     }
     private void OnMouseExit()
@@ -44,7 +50,8 @@ public class MouseAction : MonoBehaviour
             {
                 drawLine.ReFresh();
             }
-
         }
+
+        hUDController.showHud = false;
     }
 }

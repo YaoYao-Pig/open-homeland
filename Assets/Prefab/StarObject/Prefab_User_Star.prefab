@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7088859554410224169}
   - component: {fileID: 6098047061850111470}
   - component: {fileID: 5351086506414569266}
+  - component: {fileID: 6887888962462656533}
   m_Layer: 0
   m_Name: Prefab_User_Star
   m_TagString: Node
@@ -237,3 +238,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329e7b8b584fc0248b5898267871bdb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6887888962462656533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942307819440338551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c28f029b41ba346b39f2033aba2518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hubNamePrefab: {fileID: 4565581723313055853, guid: fa1076955d737ff42aab198c5876763d, type: 3}
+  showHud: 0
