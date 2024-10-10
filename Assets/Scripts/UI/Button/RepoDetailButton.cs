@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class RepoDetailButton : MonoBehaviour
 {
-    
+    public GameObject playerPrefab;
+    public GameObject centerPlanet;
+    private GameObject ship;
     public void BackToMain()
     {
         Debug.Log("Return");
@@ -13,6 +15,49 @@ public class RepoDetailButton : MonoBehaviour
         //º”‘ÿ≥°æ∞
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(WorldInfo.mainScenceName);
     }
-    
+    /*
+        private enum TravelStage
+        {
+            View,Travel
+        }
+        TravelStage stage = TravelStage.View;
+        public void SwitchToTravell()
+        {
+            if (stage == TravelStage.View)
+            {
+                if (mainCamera == null) mainCamera = GameObject.Find("MainCamera").GetComponent<Camera>();
+                if (travelCamera == null) travelCamera = GameObject.Find("TravelCamera").GetComponent<Camera>();
+
+                travelCamera.transform.position = mainCamera.transform.position;
+                travelCamera.transform.rotation = mainCamera.transform.rotation;
+                mainCamera.gameObject.SetActive(false);
+                travelCamera.gameObject.SetActive(true);
+
+
+                stage = TravelStage.Travel;
+            }
+            else if(stage== TravelStage.Travel)
+            {
+                mainCamera.transform.position = travelCamera.transform.position;
+                mainCamera.transform.rotation = travelCamera.transform.rotation;
+                travelCamera.gameObject.SetActive(false);
+                mainCamera.gameObject.SetActive(true);
+
+                stage = TravelStage.View;
+            }
+        }*/
+    private int numberPlayer = 0;
+    public void GeneratePlayer()
+    {
+        if (numberPlayer == 0)
+        {
+            ship = GameObject.Find("Ship");
+            Instantiate(playerPrefab, centerPlanet.transform).transform.position = ship.transform.position;
+            ship.SetActive(false);
+            numberPlayer++;
+        }
+
+    }
+
 
 }

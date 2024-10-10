@@ -7,15 +7,21 @@ using UnityEngine;
 public class TerrainFace
 {
     ShapeGenerator shapeGenerator;
+    GameObject faceObject;
     Mesh mesh;
     int resoulutoin;
     Vector3 localUp;//面的法线所指的“点”
     Vector3 axisA;
     Vector3 axisB;
 
-    public TerrainFace(ShapeGenerator _shapeGenerator,Mesh _mesh,int _resoulution,Vector3 _localUp)
+    public void SetFaceResolution(int _r)
+    {
+        resoulutoin = _r;
+    }
+    public TerrainFace(ShapeGenerator _shapeGenerator,GameObject _faceObject,Mesh _mesh,int _resoulution,Vector3 _localUp)
     {
         shapeGenerator = _shapeGenerator;
+        faceObject = _faceObject;
         mesh = _mesh;
         resoulutoin = _resoulution;
         localUp = _localUp;
@@ -25,14 +31,13 @@ public class TerrainFace
 
         axisB = Vector3.Cross(localUp, axisA);
     }
-
     public void ConstructMesh()
     {
         Vector3[] vertics = new Vector3[resoulutoin * resoulutoin];
         int[] triangles = new int[(resoulutoin - 1) * (resoulutoin - 1) * 6];//三角形顶点（index）坐标
         Vector2[] uv = (mesh.uv.Length==vertics.Length)?mesh.uv:new Vector2[vertics.Length];
 
-        
+        Debug.Log("Resolution:" + resoulutoin);
         int triIndex = 0;
         for(int y = 0; y < resoulutoin; ++y)
         {
@@ -85,5 +90,12 @@ public class TerrainFace
             }
         }
         mesh.uv = uv;
+    }
+
+
+    public void GenerateMeshCollider()
+    {
+        MeshCollider meshCollider = faceObject.AddComponent<MeshCollider>();
+        meshCollider.sharedMesh = mesh;
     }
 }
