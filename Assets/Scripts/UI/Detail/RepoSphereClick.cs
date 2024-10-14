@@ -11,7 +11,8 @@ public class RepoSphereClick : MonoBehaviour
 
 
     private Repository repository;
-    
+
+    private NodeComponent nodeSelf;
 
     private void Awake()
     {
@@ -38,8 +39,9 @@ public class RepoSphereClick : MonoBehaviour
             //StartCoroutine(WebController.GetRepoDetail(gameObject.name, m, ParseJsonToChart));
             //StartCoroutine(WebController.GetRepoOpenRank(gameObject.name));
 
-
-            CameraController.Instance.MoveCameraToSphereAndLoadScence(transform.position);
+            if (nodeSelf == null) nodeSelf = GetComponent<RepoNodeComponent>();
+            
+            CameraController.Instance.MoveCameraToSphereAndLoadScence(transform.position, nodeSelf.node.radius);
 
 
             TransferData();

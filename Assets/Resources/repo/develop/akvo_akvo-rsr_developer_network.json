@@ -1,0 +1,52 @@
+{
+    "nodes": [
+        [
+            "zuhdil",
+            13.38
+        ],
+        [
+            "coveralls",
+            7.32
+        ],
+        [
+            "anjarakvo",
+            2.24
+        ],
+        [
+            "ifirmawan",
+            1.41
+        ]
+    ],
+    "edges": [
+        [
+            "coveralls",
+            "zuhdil",
+            4.73
+        ],
+        [
+            "ifirmawan",
+            "coveralls",
+            4.34
+        ],
+        [
+            "anjarakvo",
+            "ifirmawan",
+            2.17
+        ],
+        [
+            "anjarakvo",
+            "zuhdil",
+            1.92
+        ],
+        [
+            "anjarakvo",
+            "coveralls",
+            1.71
+        ],
+        [
+            "ifirmawan",
+            "zuhdil",
+            1.28
+        ]
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "nodes": [
+        [
+            "rafalpietraszewicz",
+            11.07
+        ],
+        [
+            "interduo",
+            10.73
+        ],
+        [
+            "chilek",
+            7
+        ],
+        [
+            "tudor2k3",
+            1.41
+        ]
+    ],
+    "edges": [
+        [
+            "interduo",
+            "rafalpietraszewicz",
+            5.45
+        ],
+        [
+            "rafalpietraszewicz",
+            "chilek",
+            4.29
+        ],
+        [
+            "interduo",
+            "chilek",
+            4.24
+        ],
+        [
+            "tudor2k3",
+            "rafalpietraszewicz",
+            1.25
+        ],
+        [
+            "interduo",
+            "tudor2k3",
+            1.25
+        ],
+        [
+            "tudor2k3",
+            "chilek",
+            1.18
+        ]
+    ]
+}

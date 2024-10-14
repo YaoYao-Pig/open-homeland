@@ -1,0 +1,33 @@
+{
+    "nodes": [
+        [
+            "mikkonie",
+            41.11
+        ],
+        [
+            "gromdimon",
+            20.11
+        ],
+        [
+            "sellth",
+            11.53
+        ]
+    ],
+    "edges": [
+        [
+            "gromdimon",
+            "mikkonie",
+            17.53
+        ],
+        [
+            "sellth",
+            "mikkonie",
+            13.67
+        ],
+        [
+            "gromdimon",
+            "sellth",
+            7.33
+        ]
+    ]
+}

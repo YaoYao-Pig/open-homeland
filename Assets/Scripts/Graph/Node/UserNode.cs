@@ -14,6 +14,12 @@ public class UserNode : Node
         scale = 0.2f;
         radius *= scale;
     }
+
+    public UserNode(string _name, int _id, NodeType _type,float _scale) : base(_name, _id, _type)
+    {
+        scale = 10f* _scale;
+        radius *= scale;
+    }
 }
 
 public class UserNodeComponent : NodeComponent

@@ -1,0 +1,33 @@
+{
+    "nodes": [
+        [
+            "damien-urruty-sonarsource",
+            7.75
+        ],
+        [
+            "henryju",
+            7.62
+        ],
+        [
+            "jblievremont",
+            2.24
+        ]
+    ],
+    "edges": [
+        [
+            "damien-urruty-sonarsource",
+            "henryju",
+            27.1
+        ],
+        [
+            "jblievremont",
+            "henryju",
+            7.56
+        ],
+        [
+            "damien-urruty-sonarsource",
+            "jblievremont",
+            6.44
+        ]
+    ]
+}

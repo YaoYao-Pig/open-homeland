@@ -19,6 +19,13 @@ public class WorldManager : MonoBehaviour
 
     public Dictionary<Node,List<Node>> repo2UserNodeDic;//用于表示repoNode->userNodeList的映射关系
 
+
+
+
+
+
+
+
     public Transform repoRoot;
     
 
@@ -27,11 +34,20 @@ public class WorldManager : MonoBehaviour
 
     public List<GameObject> repoObjectList;
     [SerializeField] private Material lineMaterial; //存储子节点和父节点连线的材质
+    
+    
+    
+    
+    private CSVReader csvReader;
+    private List<Node_CSV> node_CSVList;
+
+
+
+
 
     private void Awake()
     {
-
-
+        csvReader = GetComponent<CSVReader>();
         repoNodeList = new List<Node>();
         repo2UserNodeDic = new Dictionary<Node, List<Node>>();
         userNodeDic = new Dictionary<string, Node>();
@@ -43,9 +59,54 @@ public class WorldManager : MonoBehaviour
 
     }
 
+
+    
+
+    public void IniteByCSV()
+    {
+        node_CSVList=csvReader.ReadPositionCSV();
+        //建映射
+        Dictionary<string, Node_CSV> nameToCSVNodeDic = new Dictionary<string, Node_CSV>();
+        foreach(var node_csv in node_CSVList)
+        {
+            nameToCSVNodeDic[node_csv.nodeName]= node_csv;
+        }
+
+        Dictionary<string, List<string>> repoToDeveloper = csvReader.ReadRepoCSV();
+
+        List<string> repoNameList = new List<string>();
+        //填充repositoryList
+        foreach(var developerNames in repoToDeveloper)
+        {
+            Repository repository = new Repository();
+            repository.repoOpenRank = nameToCSVNodeDic[developerNames.Key].openrank;
+            Repo_Read_RepoDeveloperNet read_RepoDeveloperNet = new Repo_Read_RepoDeveloperNet();
+            repoNameList.Add(developerNames.Key);
+
+            foreach (var dname in developerNames.Value)
+            {
+                Node_CSV nc =new Node_CSV();
+                if(nameToCSVNodeDic.TryGetValue(dname, out nc))
+                {
+                    read_RepoDeveloperNet.nodes.Add(new Repo_Read_DevelopNet_Node(dname, nc.openrank));
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            repository.developerNetwork = read_RepoDeveloperNet;
+            repositoryList.Add(repository);
+        }
+
+        IniteNodesByRepo(repoNameList,nameToCSVNodeDic);
+        InstanceNode();
+
+    }
+
     public void Inite()
     {
-        LoadData(WorldInfo.repo_developerNetFilePath);
+        LoadJsonData(WorldInfo.repo_developerNetFilePath);
         /*worldManager.repositoryList.ToString();*/
         IniteNodesByRepo();
 
@@ -53,17 +114,15 @@ public class WorldManager : MonoBehaviour
         GiveRandomPosition();
         InstanceNode();
 
-
-        
     }
+
     /// <summary>
     /// 
     /// </summary>
     /// <param name="_filepath">文件夹目录</param>
     /// <param name="repositories"></param>
-    public void LoadData(string _filepath)
+    private void LoadJsonData(string _filepath)
     {
-
         List<string> filePaths = Utils.GetFles(_filepath);
         foreach(string path in filePaths)
         {
@@ -73,6 +132,11 @@ public class WorldManager : MonoBehaviour
             repositoryList.Add(repository);
         }
     }
+
+
+
+
+
     /// <summary>
     /// 获得一个repo的DeveloperNetData
     /// </summary>
@@ -91,21 +155,17 @@ public class WorldManager : MonoBehaviour
     /// 通过RepoList初始化各种节点
     /// </summary>
     /// ToDO:缺少ID，name，这种初始化方法还是有问题
-    public void IniteNodesByRepo()
+    private void IniteNodesByRepo()
     {
-
         int i = 0;
-
         foreach(Repository repo in repositoryList)
         {
 
             Node repoNode = new RepoNode(WorldInfo.initeRepoNameList[i], i, NodeType.Repo); i++;
+            
             repoNodeList.Add(repoNode);
 
             List<Node> nodes = new List<Node>();
-
-
-
 
             foreach(Repo_Read_DevelopNet_Node u in repo.developerNetwork.nodes)
             {
@@ -121,22 +181,49 @@ public class WorldManager : MonoBehaviour
             repo2UserNodeDic.Add(repoNode, nodes);
         }
     }
+    private void IniteNodesByRepo(List<string> names, Dictionary<string, Node_CSV> nameToCSVNodeDic)
+    {
+        int i = 0;
+        foreach (Repository repo in repositoryList)
+        {
+
+            Node repoNode = new RepoNode(names[i], i, NodeType.Repo,repo.repoOpenRank);             
+            repoNodeList.Add(repoNode);
+            repoNode.position = nameToCSVNodeDic[names[i]].nodePosition; i++;
+
+            List<Node> nodes = new List<Node>();
+
+            foreach (Repo_Read_DevelopNet_Node u in repo.developerNetwork.nodes)
+            {
+                Node userNode = new UserNode();
+                if (!userNodeDic.TryGetValue(u._name, out userNode))
+                {
+                    userNode = new UserNode(u._name, 0, NodeType.Repo, 1/repoNode.scale); //平衡缩放
+                    userNode.position = nameToCSVNodeDic[u._name].nodePosition;
+                    userNodeDic[u._name] = userNode;
+                }
+                nodes.Add(userNode);
+
+            }
+            repo2UserNodeDic.Add(repoNode, nodes);
+        }
+    }
 
 
 
     private void Start()
     {
-        Inite();
-
+        //Inite();
+        IniteByCSV();
     }
 
     public void GiveRandomPosition()
     {
         Vector3 areaCenter=Vector3.zero; // 区域中心
-        Vector3 areaSize=new Vector3(200,200,200); // 区域的大小
+        Vector3 areaSize=new Vector3(1000, 1000, 1000); // 区域的大小
 
         Vector3 subAreaCenter = Vector3.zero;
-        Vector3 subAreaSize = new Vector3(40, 40, 40);
+        Vector3 subAreaSize = new Vector3(100, 100, 100);
         foreach(RepoNode repoNode in repoNodeList)
         {
             Vector3 randomPosition = new Vector3(
@@ -188,7 +275,7 @@ public class WorldManager : MonoBehaviour
                 GameObject ug = null;
                 if(!userNodeInstanceDic.TryGetValue(un.nodeName,out ug))
                 {
-                    ug = GameObject.Instantiate(userPrefab, rg.transform);
+                    ug = Instantiate(userPrefab, rg.transform);
 
                     UserNodeComponent userNode = ug.AddComponent<UserNodeComponent>();
                     userNode.lineMaterial = lineMaterial;

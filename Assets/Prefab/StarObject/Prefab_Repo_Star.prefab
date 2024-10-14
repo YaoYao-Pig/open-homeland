@@ -22,7 +22,7 @@ GameObject:
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1412048487719895918
 Transform:
@@ -164,4 +164,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hubNamePrefab: {fileID: 4565581723313055853, guid: fa1076955d737ff42aab198c5876763d, type: 3}
-  parentUI: {fileID: 0}
+  showHud: 0

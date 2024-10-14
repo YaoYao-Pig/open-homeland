@@ -91,21 +91,25 @@ public class CameraController : MonoBehaviour
 
 
     
-    public void MoveCameraToSphereAndLoadScence(Vector3 spherePosition)
+    public void MoveCameraToSphereAndLoadScence(Vector3 spherePosition,float radius)
     {
         if (canMove)
         {
-            StartCoroutine(MoveCameraAndLoadScence(spherePosition,WorldInfo.detailScenceName));
+            StartCoroutine(MoveCameraAndLoadScence(spherePosition,WorldInfo.detailScenceName, radius));
         }
     }
-    private IEnumerator MoveCameraAndLoadScence(Vector3 spherePosition,string scenceName)
+    private IEnumerator MoveCameraAndLoadScence(Vector3 spherePosition,string scenceName,float radius)
     {
+
+
+
+
         canMove = false; // 禁用输入
         startPosition = transform.position;
         targetPosition = spherePosition + new Vector3(0, 1, -3); // 根据需要调整摄像机位置
 
         Vector3 dir = Vector3.Normalize(startPosition - targetPosition);
-        targetPosition += dir * offset;
+        targetPosition += dir * (offset+radius);
         startRotation = transform.rotation;
         targetRotation = Quaternion.LookRotation(spherePosition - startPosition); // 目标旋转朝向球体
         elapsedTime = 0f;

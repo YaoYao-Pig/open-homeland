@@ -1,0 +1,33 @@
+{
+    "nodes": [
+        [
+            "luc-github",
+            3.45
+        ],
+        [
+            "scorninpc",
+            2
+        ],
+        [
+            "edrex",
+            1.41
+        ]
+    ],
+    "edges": [
+        [
+            "luc-github",
+            "scorninpc",
+            1.27
+        ],
+        [
+            "luc-github",
+            "edrex",
+            1
+        ],
+        [
+            "scorninpc",
+            "edrex",
+            0.83
+        ]
+    ]
+}

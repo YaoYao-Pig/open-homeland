@@ -1,0 +1,33 @@
+{
+    "nodes": [
+        [
+            "kerber0x",
+            17.75
+        ],
+        [
+            "0xFable",
+            12.02
+        ],
+        [
+            "Sen-Com",
+            3.65
+        ]
+    ],
+    "edges": [
+        [
+            "0xFable",
+            "Sen-Com",
+            11.18
+        ],
+        [
+            "kerber0x",
+            "0xFable",
+            9.08
+        ],
+        [
+            "kerber0x",
+            "Sen-Com",
+            3.03
+        ]
+    ]
+}

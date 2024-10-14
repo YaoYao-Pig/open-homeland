@@ -1,0 +1,52 @@
+{
+    "nodes": [
+        [
+            "yrodiere",
+            46.3
+        ],
+        [
+            "marko-bekhta",
+            43.7
+        ],
+        [
+            "gsmet",
+            2
+        ],
+        [
+            "aloubyansky",
+            2
+        ]
+    ],
+    "edges": [
+        [
+            "marko-bekhta",
+            "yrodiere",
+            53.94
+        ],
+        [
+            "gsmet",
+            "yrodiere",
+            35.13
+        ],
+        [
+            "gsmet",
+            "aloubyansky",
+            28.53
+        ],
+        [
+            "marko-bekhta",
+            "gsmet",
+            19.65
+        ],
+        [
+            "yrodiere",
+            "aloubyansky",
+            18.36
+        ],
+        [
+            "marko-bekhta",
+            "aloubyansky",
+            12.34
+        ]
+    ]
+}

@@ -20,6 +20,9 @@ public class Repository
 
     public RepoRepoNet repoRepoNet;
 
+    public float repoOpenRank = 0.0f;
+
+
     public float developOpenRankAverage = 0.0f;
     public override string ToString()
     {

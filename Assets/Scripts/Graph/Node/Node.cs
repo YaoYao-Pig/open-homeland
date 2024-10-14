@@ -15,6 +15,9 @@ public class Node
     public string nodeName;
     public int nodeId;
     public NodeType nodeType; //标记节点类型
+
+    public float openRank;
+
     public float scale;
 
     public float radius;

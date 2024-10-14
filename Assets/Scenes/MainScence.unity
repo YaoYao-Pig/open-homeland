@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105887809}
   - component: {fileID: 105887808}
-  - component: {fileID: 105887810}
+  - component: {fileID: 105887811}
   m_Layer: 0
   m_Name: gameRoot
   m_TagString: Untagged
@@ -156,7 +156,7 @@ MonoBehaviour:
   repoPrefab: {fileID: 1942307819440338551, guid: 141f4e9f90983ed468900a52957cfc70, type: 3}
   userPrefab: {fileID: 1942307819440338551, guid: 92f5367c3fb810b419581a6992cec729, type: 3}
   repoNodeList: []
-  repoRoot: {fileID: 779906828}
+  repoRoot: {fileID: 132688652}
   repoObjectList: []
   lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!4 &105887809
@@ -171,31 +171,53 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 779906828}
+  - {fileID: 132688652}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &105887810
+--- !u!114 &105887811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105887807}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c8e633d60c69cc478ca7b5aa98cde9a, type: 3}
+  m_Script: {fileID: 11500000, guid: fa998631dc909b247a8f51e352413ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentNodes: []
-  attractionForce: 1
-  repulsionForce: 1
-  minimumDistance: 2
-  maximumDistance: 5
-  childMinimumDistance: 0.1
-  childMaximumDistance: 1
-  childrenPerParent: 5
-  childRadius: 2
+--- !u!1 &132688651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 132688652}
+  m_Layer: 0
+  m_Name: repoRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &132688652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132688651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 105887809}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &159038635
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,37 +377,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
---- !u!1 &779906827
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 779906828}
-  m_Layer: 0
-  m_Name: repoRoot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &779906828
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779906827}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 105887809}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &786449099
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +529,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 2000
   field of view: 60
   orthographic: 0
   orthographic size: 5

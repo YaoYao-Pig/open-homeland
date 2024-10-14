@@ -1,0 +1,52 @@
+{
+    "nodes": [
+        [
+            "cashaffer",
+            3.45
+        ],
+        [
+            "justindevs",
+            2.83
+        ],
+        [
+            "awhicks",
+            2.24
+        ],
+        [
+            "dtowell",
+            1.41
+        ]
+    ],
+    "edges": [
+        [
+            "justindevs",
+            "cashaffer",
+            1.55
+        ],
+        [
+            "awhicks",
+            "cashaffer",
+            1.36
+        ],
+        [
+            "awhicks",
+            "justindevs",
+            1.25
+        ],
+        [
+            "dtowell",
+            "cashaffer",
+            1
+        ],
+        [
+            "justindevs",
+            "dtowell",
+            0.94
+        ],
+        [
+            "awhicks",
+            "dtowell",
+            0.87
+        ]
+    ]
+}

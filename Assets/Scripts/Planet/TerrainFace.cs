@@ -37,7 +37,7 @@ public class TerrainFace
         int[] triangles = new int[(resoulutoin - 1) * (resoulutoin - 1) * 6];//三角形顶点（index）坐标
         Vector2[] uv = (mesh.uv.Length==vertics.Length)?mesh.uv:new Vector2[vertics.Length];
 
-        Debug.Log("Resolution:" + resoulutoin);
+        //Debug.Log("Resolution:" + resoulutoin);
         int triIndex = 0;
         for(int y = 0; y < resoulutoin; ++y)
         {
