@@ -44,11 +44,12 @@ public class PlanetManager : MonoBehaviour
         //找到最新的openRank
         openRankList = GameData.Instance.GetRepoOpenRankList();
 
+        var repoOpenRankList = openRankList.repoOpenrankList;
         //获取项目（目前就是Repository-DeveloperNet）
         repository =(Repository) GameData.Instance.gameParams["Repo_Develop_Net"];
         
         chartManager.ParseJsonToChart(repository.developerNetwork);
-
+        chartManager.IniteRepoOpenRankChart(repoOpenRankList);
     }
 
     private Color ColorTransfer(float r,float g,float b)

@@ -6,14 +6,23 @@ public class RepoDetailButton : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject centerPlanet;
+    private SceneTransition sceneTransition;
+    
     private GameObject ship;
+
+    private void Awake()
+    {
+        sceneTransition = FindObjectOfType<SceneTransition>();
+    }
     public void BackToMain()
     {
         Debug.Log("Return");
         GameData.Instance.ClearParams();
 
+        sceneTransition.FadeToScene(WorldInfo.mainScenceName);
+
         //º”‘ÿ≥°æ∞
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(WorldInfo.mainScenceName);
+        //UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(WorldInfo.mainScenceName);
     }
     /*
         private enum TravelStage

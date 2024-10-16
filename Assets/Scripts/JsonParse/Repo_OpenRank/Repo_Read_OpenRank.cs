@@ -7,9 +7,9 @@ public class Repo_Read_OneOpenRank
 {
     public enum Repo_Read_TimeStamp
     {
-        Year,Mounth,Quarter
+        Year,Month,Quarter
     };
-    private Repo_Read_TimeStamp type;
+    public Repo_Read_TimeStamp type;
     public string dataTime;
     public float openRank;
     
@@ -77,7 +77,7 @@ public class Repo_Read_OpenRank
 
             if(_time.Split("-").Length == 2){
                 //Debug.Log(_time);
-                type = Repo_Read_OneOpenRank.Repo_Read_TimeStamp.Mounth;
+                type = Repo_Read_OneOpenRank.Repo_Read_TimeStamp.Month;
                 int nowTime = int.Parse(_time.Split("-")[0]);
                 if (lastYear <= nowTime)
                 {
