@@ -40,12 +40,10 @@ public class RepoSphereClick : MonoBehaviour
             //StartCoroutine(WebController.GetRepoOpenRank(gameObject.name));
 
             if (nodeSelf == null) nodeSelf = GetComponent<RepoNodeComponent>();
+
             
             CameraController.Instance.MoveCameraToSphereAndLoadScence(transform.position, nodeSelf.node.radius);
-
-
             TransferData();
-
             flag = false;
         }
         else if (!flag )
@@ -53,9 +51,6 @@ public class RepoSphereClick : MonoBehaviour
 
             StartCoroutine(CameraController.Instance.backDetail());
             flag = true;
-            //Ïú»ÙÍ¼±í
-            //DestoryCharts();
-            
         }        
     }
     

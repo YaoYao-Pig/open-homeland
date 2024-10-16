@@ -102,6 +102,7 @@
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\RepoNode.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\UI\SceneTransition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

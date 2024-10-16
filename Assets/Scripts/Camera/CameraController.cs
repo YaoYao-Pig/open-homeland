@@ -22,6 +22,7 @@ public class CameraController : MonoBehaviour
     private Vector3 targetPosition;
     private Quaternion startRotation;
     private Quaternion targetRotation;
+    public SceneTransition sceneTransition;
 
     private void Awake()
     {
@@ -130,8 +131,12 @@ public class CameraController : MonoBehaviour
         transform.rotation = targetRotation; // 确保最终旋转正确
 
 
+
+
         //加载场景
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(scenceName);
+        sceneTransition = FindObjectOfType<SceneTransition>();
+        sceneTransition.FadeToScene(scenceName);
+        //UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(scenceName);
 
     }
     public IEnumerator backDetail()
