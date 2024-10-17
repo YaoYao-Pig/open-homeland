@@ -62,7 +62,7 @@ public class WorldManager : MonoBehaviour
     public Dictionary<string, List<string>> repoEdgeNameDic;
 
 
-
+    public GameObject repoUIGameObject;
     private void Awake()
     {
         if (_instance == null)
@@ -330,6 +330,16 @@ public class WorldManager : MonoBehaviour
         
 
         return true;
+    }
+
+    public void SetPlanetUIActiveTrue()
+    {
+        ChartManager.Instance.DestoryCharts();
+        repoUIGameObject.SetActive(true);
+    }
+    public void SetPlanetUIActiveFalse()
+    {
+        repoUIGameObject.SetActive(false);
     }
 
 }

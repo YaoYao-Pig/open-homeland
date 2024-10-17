@@ -132,7 +132,7 @@ MonoBehaviour:
         weightMultiplier: 0.8
     noiseOffset: 0.55
     noiseStrength: 0.45
-    blendAmount: 0.44
+    blendAmount: 0.39
   oceanColour:
     serializedVersion: 2
     key0: {r: 0.027607676, g: 0.13420437, b: 0.31132078, a: 0}

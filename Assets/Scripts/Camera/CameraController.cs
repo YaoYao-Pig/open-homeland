@@ -13,10 +13,12 @@ public class CameraController : MonoBehaviour
 
 
 
+
     public float moveDuration = 2f; // 移动时间
     private bool canMove = true; // 控制输入的开关
     public float offset = 10f;
     public float elapsedTime=0;
+    public void SetCanMove(bool b) { canMove = b; }
 
     private Vector3 startPosition;
     private Vector3 targetPosition;
@@ -129,8 +131,6 @@ public class CameraController : MonoBehaviour
 
         transform.position = targetPosition; // 确保最终位置正确
         transform.rotation = targetRotation; // 确保最终旋转正确
-
-
 
 
         //加载场景

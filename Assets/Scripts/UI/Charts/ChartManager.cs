@@ -8,25 +8,51 @@ public class ChartManager : MonoBehaviour
 {
     private int kNum = 5;//展示前五个
 
-    private GameObject repoDevelopNetChart;
-    private GameObject repoOpenRankChart;
+    public GameObject repoDevelopNetChart;
+    public GameObject repoOpenRankChart;
     private string repoDevelopNetChartName = "Repo_TopKDeveloperChart";
     private string repoOpenrankChartName = "Repo_OpenRankChart";
 
     // 创建用于存储分类后的数据的字典
     Dictionary<string, List<Repo_Read_OneOpenRank>> categorizedData = new Dictionary<string, List<Repo_Read_OneOpenRank>>();
 
+    private static ChartManager _instance;
+    public static ChartManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<ChartManager>();
+            }
+            return _instance;
+        }
+        private set
+        {
+            ;
+        }
+    }
 
     private void Awake()
     {
-        repoDevelopNetChart = GameObject.Find(repoDevelopNetChartName);
-        repoOpenRankChart = GameObject.Find(repoOpenrankChartName);
-        if (repoDevelopNetChart == null) throw new System.Exception("RepoSphereClicker:Awake=> repoDevelopNetChart not found");
+        if (_instance == null && _instance!=this)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Destroy(_instance);
+        }
+        //repoDevelopNetChart = GameObject.Find(repoDevelopNetChartName);
+        //repoOpenRankChart = GameObject.Find(repoOpenrankChartName);
+        //if (repoDevelopNetChart == null) throw new System.Exception("RepoSphereClicker:Awake=> repoDevelopNetChart not found");
     }
 
     private void IniteRepoDevelopNetChart(List<Repo_Read_DevelopNet_Node> topK)
     {
-        var chart = repoDevelopNetChart.AddComponent<BarChart>();
+        BarChart chart = repoDevelopNetChart.GetComponent<BarChart>();
+        if(chart==null)
+            chart = repoDevelopNetChart.AddComponent<BarChart>();
         chart.Init();
         chart.SetSize(1200, 600);
 
@@ -97,8 +123,10 @@ public class ChartManager : MonoBehaviour
             return dateA.CompareTo(dateB);
         });
 
-        // 创建图表
-        var chart = repoOpenRankChart.AddComponent<LineChart>();
+
+        LineChart chart = repoOpenRankChart.GetComponent<LineChart>();
+        if (chart == null)
+            chart = repoOpenRankChart.AddComponent<LineChart>();
         chart.Init();
         chart.SetSize(1200, 600);
 
@@ -165,7 +193,14 @@ public class ChartManager : MonoBehaviour
         }
     }
 
-
+    private void DestoryRepoOpenRankChar()
+    {
+        LineChart LinearChartComponent = repoOpenRankChart.GetComponent<LineChart>();
+        if (LinearChartComponent != null)
+        {
+            Destroy(LinearChartComponent);
+        }
+    }
     /// <summary>
     /// 把json转换为图表,本函数用于转换developer数据
     /// </summary>
@@ -186,6 +221,7 @@ public class ChartManager : MonoBehaviour
     public void DestoryCharts()
     {
         DestoryRepoDevelopNetChart();
+        DestoryRepoOpenRankChar();
     }
 
 }

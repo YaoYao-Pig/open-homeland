@@ -34,29 +34,28 @@ public class RepoSphereClick : MonoBehaviour
     //查看或者退出Repo节点的详细信息视图
     private void LookRepoDetails()
     {
-        if (flag)
-        {
+        //if (flag)
+        //{
             //StartCoroutine(WebController.GetRepoDetail(gameObject.name, m, ParseJsonToChart));
             //StartCoroutine(WebController.GetRepoOpenRank(gameObject.name));
 
             if (nodeSelf == null) nodeSelf = GetComponent<RepoNodeComponent>();
-
-            
             CameraController.Instance.MoveCameraToSphereAndLoadScence(transform.position, nodeSelf.node.radius);
             TransferData();
             flag = false;
-        }
-        else if (!flag )
-        {
+        //}
+        //else if (!flag )
+        //{
 
-            StartCoroutine(CameraController.Instance.backDetail());
-            flag = true;
-        }        
+            //StartCoroutine(CameraController.Instance.backDetail());
+            //flag = true;
+        //}        
     }
     
 
     private void OnMouseDown()
     {
+        //WorldManager.Instance.SetPlanetUIActiveTrue();
         repository = gameObject.GetComponent<RepoNodeComponent>().repository;
         LookRepoDetails();
         

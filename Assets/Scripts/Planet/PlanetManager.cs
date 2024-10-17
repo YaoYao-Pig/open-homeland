@@ -13,17 +13,42 @@ public class PlanetManager : MonoBehaviour
     private Repo_Read_OpenRank openRankList;
     private Planet planet;
     private Repository repository;
-    private ChartManager chartManager;
+
+    private static PlanetManager _instance;
+    public static PlanetManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<PlanetManager>();
+                if (_instance==null)
+                {
+                    GameObject g = new GameObject(typeof(PlanetManager).ToString());
+                    g.AddComponent<PlanetManager>();
+                }
+            }
+            return _instance;
+        }
+        private set { }
+    }
     private void Awake()
     {
-        planet = GetComponentInChildren<Planet>();
-        chartManager = GetComponent<ChartManager>();
-        StartCoroutine(Initialize());
-
-
+        if (_instance == null && _instance != this)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Destroy(_instance);
+        }
     }
-
-
+    public void InitializePlanet()
+    {
+        if(planet==null)
+            planet = GetComponentInChildren<Planet>();
+        StartCoroutine(Initialize());
+    }
     
 
     public IEnumerator Initialize(string _m = "openrank")
@@ -48,8 +73,8 @@ public class PlanetManager : MonoBehaviour
         //获取项目（目前就是Repository-DeveloperNet）
         repository =(Repository) GameData.Instance.gameParams["Repo_Develop_Net"];
         
-        chartManager.ParseJsonToChart(repository.developerNetwork);
-        chartManager.IniteRepoOpenRankChart(repoOpenRankList);
+        ChartManager.Instance.ParseJsonToChart(repository.developerNetwork);
+        ChartManager.Instance.IniteRepoOpenRankChart(repoOpenRankList);
     }
 
     private Color ColorTransfer(float r,float g,float b)
