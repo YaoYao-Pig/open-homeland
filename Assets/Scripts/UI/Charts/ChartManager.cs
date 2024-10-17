@@ -28,7 +28,7 @@ public class ChartManager : MonoBehaviour
     {
         var chart = repoDevelopNetChart.AddComponent<BarChart>();
         chart.Init();
-        chart.SetSize(580, 300);
+        chart.SetSize(1200, 600);
 
         var title = chart.EnsureChartComponent<Title>();
         title.text = "TopK developer";
@@ -100,7 +100,18 @@ public class ChartManager : MonoBehaviour
         // 创建图表
         var chart = repoOpenRankChart.AddComponent<LineChart>();
         chart.Init();
-        chart.SetSize(580, 300);
+        chart.SetSize(1200, 600);
+
+        //设置缩放：
+        DataZoom dataZoom = chart.EnsureChartComponent<DataZoom>();
+        dataZoom.enable = true; // 启用 DataZoom
+        dataZoom.supportInside = true; // 支持内部缩放（鼠标滚轮缩放）
+        dataZoom.supportSlider = false; // 如果不需要显示外部缩放条，可以设置为 false
+        dataZoom.zoomLock = false; // 可根据需要启用或禁用缩放锁定
+        dataZoom.minShowNum = 10;  // 显示的最小数据点数
+        dataZoom.orient = Orient.Horizonal; // 设置缩放方向，可以是 Horizontal（水平）或 Vertical（垂直）
+        dataZoom.showDataShadow = true; // 控制是否显示缩放条
+
 
         // 设置图表标题
         var title = chart.EnsureChartComponent<Title>();

@@ -14,8 +14,8 @@ public class CSVReader : MonoBehaviour
 {
     private string fileName = "nodes_position"; // 不包含扩展名
     private string folderPath = "repo_csv"; // 文件夹路径
-    private string repofileName = "output";
-
+    private string repofileName = "output_nodes";
+    private string repoEdges = "output_edges";
 
     public List<Node_CSV> ReadPositionCSV()
     {
@@ -30,7 +30,7 @@ public class CSVReader : MonoBehaviour
             if (lines.Length < 2)
             {
                 Debug.LogError("CSV file does not contain enough data.");
-                return new List<Node_CSV>();
+                return null;
             }
 
             // 跳过表头
@@ -55,14 +55,14 @@ public class CSVReader : MonoBehaviour
                 {
 
                 }
-                    // 创建 Node_CSV 对象
-                    Node_CSV node = new Node_CSV
-                    {
-                        nodeName = values[0].Trim(),
-                        nodeType = values[1].Trim(),
-                        parent = values[3].Trim(),
-                        openrank = _openRank
-                    };
+                // 创建 Node_CSV 对象
+                Node_CSV node = new Node_CSV
+                {
+                    nodeName = values[0].Trim(),
+                    nodeType = values[1].Trim(),
+                    parent = values[3].Trim(),
+                    openrank = _openRank
+                };
 
 
                 // 处理位置字符串
@@ -97,64 +97,107 @@ public class CSVReader : MonoBehaviour
 
                 nodes.Add(node);
             }
-            
-/*            // 打印结果
-            foreach (Node_CSV node in nodes)
-            {
-                Debug.Log($"Node Name: {node.nodeName}, Type: {node.nodeType}, Position: {node.nodePosition}, Parent: {node.parent},OpenRank:{node.openrank}");
-            }*/
+
+            /*            // 打印结果
+                        foreach (Node_CSV node in nodes)
+                        {
+                            Debug.Log($"Node Name: {node.nodeName}, Type: {node.nodeType}, Position: {node.nodePosition}, Parent: {node.parent},OpenRank:{node.openrank}");
+                        }*/
 
             return nodes;
         }
         else
         {
             Debug.LogError("CSV file not found in Resources/repo_csv: " + fileName);
-            return new List<Node_CSV>();
+            return null;
         }
-        
+
     }
 
     public Dictionary<string, List<string>> ReadRepoCSV()
     {
         // 从 Resources/repo_csv 文件夹加载 output.csv 文件
         TextAsset outputCsvFile = Resources.Load<TextAsset>($"{folderPath}/{repofileName}");
-            string[] lines = outputCsvFile.text.Split(new char[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
+        string[] lines = outputCsvFile.text.Split(new char[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
 
-            // 用于存储每个 repo 及其开发者的字典
-            Dictionary<string, List<string>> repoDevelopers = new Dictionary<string, List<string>>();
+        // 用于存储每个 repo 及其开发者的字典
+        Dictionary<string, List<string>> repoDevelopers = new Dictionary<string, List<string>>();
 
-            // 跳过表头
-            for (int i = 1; i < lines.Length; i++)
+        // 跳过表头
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string line = lines[i];
+            string[] values = line.Split(',');
+
+            // 假设 repo_name 在第一列
+            string repoName = values[0];
+            List<string> developers = new List<string>();
+
+            // 从第二列开始读取开发者
+            for (int j = 1; j < values.Length; j++)
             {
-                string line = lines[i];
-                string[] values = line.Split(',');
-
-                // 假设 repo_name 在第一列
-                string repoName = values[0];
-                List<string> developers = new List<string>();
-
-                // 从第二列开始读取开发者
-                for (int j = 1; j < values.Length; j++)
+                if (!string.IsNullOrEmpty(values[j])) // 确保开发者名不为空
                 {
-                    if (!string.IsNullOrEmpty(values[j])) // 确保开发者名不为空
-                    {
-                        developers.Add(values[j]);
-                    }
+                    developers.Add(values[j]);
                 }
-
-                // 将 repo 和对应的开发者列表添加到字典中
-                repoDevelopers[repoName] = developers;
             }
 
-/*            // 在控制台打印 repo 名称及其开发者
-            foreach (var entry in repoDevelopers)
-            {
-                string repoName = entry.Key;
-                List<string> developers = entry.Value;
-                Debug.Log($"Repo Name: {repoName}, Developers: {string.Join(", ", developers)}");
-            }*/
+            // 将 repo 和对应的开发者列表添加到字典中
+            repoDevelopers[repoName] = developers;
+        }
+
+        /*            // 在控制台打印 repo 名称及其开发者
+                    foreach (var entry in repoDevelopers)
+                    {
+                        string repoName = entry.Key;
+                        List<string> developers = entry.Value;
+                        Debug.Log($"Repo Name: {repoName}, Developers: {string.Join(", ", developers)}");
+                    }*/
         return repoDevelopers;
 
     }
 
+    public Dictionary<string, List<string>> ReadEdgCSV(){
+        Dictionary<string, List<string>> edgeDic = new Dictionary<string, List<string>>();
+        TextAsset csvFile = Resources.Load<TextAsset>($"{folderPath}/{repoEdges}");
+
+        if (csvFile != null)
+        {
+            string[] lines = csvFile.text.Split(new char[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
+            // 检查是否有足够的行
+            if (lines.Length < 2)
+            {
+                Debug.LogError("CSV file does not contain enough data.");
+                return null;
+            }
+
+            // 跳过表头
+            for (int i = 1; i < lines.Length; i++)
+            {
+                string line = lines[i].Trim();
+                string[] values = line.Split(',');
+
+                string source = values[1].Trim();
+                string target = values[2].Trim();
+                List<string> targetNodes;
+                if(edgeDic.TryGetValue(source,out targetNodes))
+                {
+                    targetNodes.Add(target);
+                }
+                else
+                {
+                    targetNodes = new List<string>();
+                    targetNodes.Add(target);
+                    edgeDic.Add(source,targetNodes);
+                }
+            }
+            return edgeDic;
+        }
+        else
+        {
+            Debug.LogError("CSV file not found in Resources/repo_csv: " + fileName);
+            return null;
+        }
+    }
+        
 }

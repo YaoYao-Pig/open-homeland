@@ -15,19 +15,9 @@ public class RepoNode : Node
     {
         this.openRank = _openRank;
 
-        scale = 10.0f+_openRank;
+        scale = 10.0f;
 
         radius *= scale;
 
     }
-}
-public class RepoNodeComponent : NodeComponent
-{
-    public Repository repository;
-
-    private void Awake()
-    {
-        repository = new Repository();
-    }
-
 }

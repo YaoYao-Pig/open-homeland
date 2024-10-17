@@ -6,6 +6,24 @@ using System.IO;
 public class WorldManager : MonoBehaviour
 {
 
+    private static WorldManager _instance;
+    public static WorldManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<WorldManager>();
+                if (_instance == null)
+                {
+                    GameObject g = new GameObject(typeof(WorldManager).Name);
+                    g.AddComponent<WorldManager>();
+                }
+            }
+            return _instance;
+        }
+        private set { }
+    }
 
     public GameObject repoPrefab; //repo节点的prefab
     public GameObject userPrefab; //User节点的Prefab
@@ -19,7 +37,7 @@ public class WorldManager : MonoBehaviour
 
     public Dictionary<Node,List<Node>> repo2UserNodeDic;//用于表示repoNode->userNodeList的映射关系
 
-
+    
 
 
 
@@ -41,12 +59,22 @@ public class WorldManager : MonoBehaviour
     private CSVReader csvReader;
     private List<Node_CSV> node_CSVList;
 
-
+    public Dictionary<string, List<string>> repoEdgeNameDic;
 
 
 
     private void Awake()
     {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else if(_instance!=null&& _instance!=this)
+        {
+            Destroy(_instance);
+        }
+
+
         csvReader = GetComponent<CSVReader>();
         repoNodeList = new List<Node>();
         repo2UserNodeDic = new Dictionary<Node, List<Node>>();
@@ -65,6 +93,7 @@ public class WorldManager : MonoBehaviour
     public void IniteByCSV()
     {
         node_CSVList=csvReader.ReadPositionCSV();
+        repoEdgeNameDic=csvReader.ReadEdgCSV();
         //建映射
         Dictionary<string, Node_CSV> nameToCSVNodeDic = new Dictionary<string, Node_CSV>();
         foreach(var node_csv in node_CSVList)
@@ -102,6 +131,7 @@ public class WorldManager : MonoBehaviour
         IniteNodesByRepo(repoNameList,nameToCSVNodeDic);
         InstanceNode();
 
+        //NodeConnector.IniteEdgeLine();
     }
 
     public void Inite()
@@ -260,7 +290,7 @@ public class WorldManager : MonoBehaviour
             GameObject rg = GameObject.Instantiate(repoPrefab, repoRoot);
             rg.name = rn.nodeName;
             //添加NodeComponet
-            RepoNodeComponent repoNode = rg.AddComponent<RepoNodeComponent>();
+            RepoNodeComponent repoNode = rg.GetComponent<RepoNodeComponent>();
             repoNode.lineMaterial = lineMaterial;
             repoNode.repository = repositoryList[i++];
 
@@ -277,7 +307,7 @@ public class WorldManager : MonoBehaviour
                 {
                     ug = Instantiate(userPrefab, rg.transform);
 
-                    UserNodeComponent userNode = ug.AddComponent<UserNodeComponent>();
+                    UserNodeComponent userNode = ug.GetComponent<UserNodeComponent>();
                     userNode.lineMaterial = lineMaterial;
 
                     var drawLine=ug.AddComponent<DrawLineToParent>();

@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\JsonParse\Repo_OpenRank\Repo_Read_OpenRank.cs" />
     <Compile Include="Assets\Scripts\UI\Button\RepoDetailButton.cs" />
     <Compile Include="Assets\Scripts\WorldInfo.cs" />
+    <Compile Include="Assets\Scripts\UI\NodeConnector.cs" />
     <Compile Include="Assets\Scripts\Planet\TerrainFace.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_RepoDeveloperNet.cs" />
     <Compile Include="Assets\Scripts\Planet\ColourGenerator.cs" />
@@ -96,13 +97,16 @@
     <Compile Include="Assets\Scripts\WorldManager.cs" />
     <Compile Include="Assets\Scripts\GameData.cs" />
     <Compile Include="Assets\Scripts\UI\Charts\ChartManager.cs" />
+    <Compile Include="Assets\Scripts\UI\SceneTransition.cs" />
     <Compile Include="Assets\Scripts\Planet\NoiseFilterFactory.cs" />
     <Compile Include="Assets\Scripts\Planet\Ship\GravitySimulation.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_DevelopNet_Node.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\RepoNode.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-    <Compile Include="Assets\Scripts\UI\SceneTransition.cs" />
+    <Compile Include="Assets\Scripts\Graph\Node\NodeComponent.cs" />
+    <Compile Include="Assets\Scripts\Graph\Node\RepoNodeComponent.cs" />
+    <Compile Include="Assets\Scripts\Graph\Node\UserNodeComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

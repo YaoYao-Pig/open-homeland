@@ -4,7 +4,6 @@ using System.Collections.Generic;
 public class ForceDirectedGraph : MonoBehaviour
 {
     public List<Transform> parentNodes; // 父节点列表
-    private WorldManager worldManager;
     public float attractionForce = 1.0f; // 吸引力强度
     public float repulsionForce = 100.0f; // 排斥力强度
     public float minimumDistance = 2.0f; // 父节点之间的最小距离
@@ -20,13 +19,13 @@ public class ForceDirectedGraph : MonoBehaviour
     private void Awake()
     {
         parentNodes = new List<Transform>();
-        worldManager = GetComponent<WorldManager>();
+      
     }
 
     private void Start()
     {
         // 初始化父节点
-        foreach (GameObject p in worldManager.repoObjectList)
+        foreach (GameObject p in WorldManager.Instance.repoObjectList)
         {
             parentNodes.Add(p.transform);
             ArrangeChildrenAroundParent(p.transform); // 初始化子节点

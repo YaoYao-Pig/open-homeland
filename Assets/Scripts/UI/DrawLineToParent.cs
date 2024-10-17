@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(LineRenderer))]
 public class DrawLineToParent : MonoBehaviour
 {
     private LineRenderer lineRenderer;

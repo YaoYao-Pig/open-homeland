@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 6098047061850111470}
   - component: {fileID: 5351086506414569266}
   - component: {fileID: 6887888962462656533}
+  - component: {fileID: -195053710029478263}
+  - component: {fileID: 4843707460790130905}
   m_Layer: 0
   m_Name: Prefab_User_Star
   m_TagString: Node
@@ -147,7 +149,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -179,7 +181,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -252,3 +254,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hubNamePrefab: {fileID: 4565581723313055853, guid: fa1076955d737ff42aab198c5876763d, type: 3}
   showHud: 0
+--- !u!114 &-195053710029478263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942307819440338551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db72b21eaf25fb14baae4c8044b2609e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4843707460790130905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942307819440338551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a54452e175db354db15c6408fad57b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  node:
+    nodeName: 
+    nodeId: 0
+    nodeType: 0
+    openRank: 0
+    scale: 0
+    radius: 0
+  lineMaterial: {fileID: 0}

@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 5741253481256077943}
   - component: {fileID: 3825566515350691183}
   - component: {fileID: 1494732002266994532}
-  - component: {fileID: 7088859554410224169}
   - component: {fileID: 5351086506414569266}
   - component: {fileID: 7291524859824026104}
   - component: {fileID: 1249729759938586293}
+  - component: {fileID: 1509937723405158913}
   m_Layer: 0
   m_Name: Prefab_Repo_Star
   m_TagString: Node
@@ -114,19 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a507224e369354ab763f10e2b96598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &7088859554410224169
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1942307819440338551}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5351086506414569266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,3 +152,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hubNamePrefab: {fileID: 4565581723313055853, guid: fa1076955d737ff42aab198c5876763d, type: 3}
   showHud: 0
+--- !u!114 &1509937723405158913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942307819440338551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b196d0ca1b33394ea0aab0b325feb59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  node:
+    nodeName: 
+    nodeId: 0
+    nodeType: 1
+    openRank: 0
+    scale: 0
+    radius: 0
+  lineMaterial: {fileID: 0}

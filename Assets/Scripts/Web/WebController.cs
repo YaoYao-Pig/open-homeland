@@ -10,7 +10,6 @@ public class WebController : MonoBehaviour
 
 
     private List<string> urls;
-    private WorldManager worldManager;
 
     void SaveJsonToFile(string json, string relativePath)
     {
@@ -65,7 +64,7 @@ public class WebController : MonoBehaviour
         // yield return new WaitForSeconds(20);
 
         // 在所有协程完成后执行的代码
-        worldManager.Inite();
+        WorldManager.Instance.Inite();
     }
 
     // Start is called before the first frame update

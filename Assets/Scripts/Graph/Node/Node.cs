@@ -38,8 +38,3 @@ public class Node
 
 }
 
-[System.Serializable]
-public class NodeComponent:MonoBehaviour{
-    public Node node;
-    public Material lineMaterial;
-}
