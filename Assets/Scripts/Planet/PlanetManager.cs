@@ -73,8 +73,9 @@ public class PlanetManager : MonoBehaviour
         //获取项目（目前就是Repository-DeveloperNet）
         repository =(Repository) GameData.Instance.gameParams["Repo_Develop_Net"];
         
-        ChartManager.Instance.ParseJsonToChart(repository.developerNetwork);
+        ChartManager.Instance.IniteTopKDeveloperChart(repository.developerNetwork);
         ChartManager.Instance.IniteRepoOpenRankChart(repoOpenRankList);
+        ChartManager.Instance.IniteDeveloperPercentChart(repository.developerNetwork);
     }
 
     private Color ColorTransfer(float r,float g,float b)

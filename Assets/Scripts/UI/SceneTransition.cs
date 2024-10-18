@@ -64,9 +64,7 @@ public class SceneTransition : MonoBehaviour
         {
             StartCoroutine(FadeIn());
             repoObject.SetActive(true);
-            CameraController.Instance.transform.position = repoCameraPos.transform.position;  // = cameraPositonDic[_name];
-            CameraController.Instance.SetCameraToDetailPlanet(GameObject.Find("RepoDetailsPosition").transform.position-repoCameraPos.transform.position);
-            
+
             PlanetManager.Instance.InitializePlanet();
             WorldManager.Instance.SetPlanetUIActiveTrue();
         }
@@ -85,6 +83,11 @@ public class SceneTransition : MonoBehaviour
             CameraController.Instance.SetCanMove(true);
             StartCoroutine(FadeIn());
         }
+    }
+    public void UpdateCameraPosAndRotate()
+    {
+        CameraController.Instance.transform.position = repoCameraPos.transform.position;  // = cameraPositonDic[_name];
+        CameraController.Instance.SetCameraToDetailPlanet(GameObject.Find("RepoDetailsPosition").transform.position - repoCameraPos.transform.position);
     }
 
 }

@@ -107,6 +107,10 @@ public class CameraController : MonoBehaviour
 
 
 
+        //加载场景
+        sceneTransition = FindObjectOfType<SceneTransition>();
+        sceneTransition.FadeToScene(scenceName);
+
         canMove = false; // 禁用输入
         startPosition = transform.position;
         targetPosition = spherePosition + new Vector3(0, 1, -3); // 根据需要调整摄像机位置
@@ -116,6 +120,9 @@ public class CameraController : MonoBehaviour
         startRotation = transform.rotation;
         targetRotation = Quaternion.LookRotation(spherePosition - startPosition); // 目标旋转朝向球体
         elapsedTime = 0f;
+
+
+
 
         while (elapsedTime < moveDuration)
         {
@@ -133,9 +140,8 @@ public class CameraController : MonoBehaviour
         transform.rotation = targetRotation; // 确保最终旋转正确
 
 
-        //加载场景
-        sceneTransition = FindObjectOfType<SceneTransition>();
-        sceneTransition.FadeToScene(scenceName);
+        //相机位置设置
+        sceneTransition.UpdateCameraPosAndRotate();
         //UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(scenceName);
 
     }

@@ -10,6 +10,7 @@ public class ChartManager : MonoBehaviour
 
     public GameObject repoDevelopNetChart;
     public GameObject repoOpenRankChart;
+    public GameObject repoDeveloperPercentChart;
     private string repoDevelopNetChartName = "Repo_TopKDeveloperChart";
     private string repoOpenrankChartName = "Repo_OpenRankChart";
 
@@ -100,6 +101,63 @@ public class ChartManager : MonoBehaviour
         }
     }
 
+    
+
+
+    private void DestoryRepoDevelopNetChart()
+    {
+        BarChart barChartComponent = repoDevelopNetChart.GetComponent<BarChart>();
+        if (barChartComponent != null)
+        {
+            Destroy(barChartComponent);
+        }
+    }
+
+    private void DestoryRepoOpenRankChar()
+    {
+        LineChart LinearChartComponent = repoOpenRankChart.GetComponent<LineChart>();
+        if (LinearChartComponent != null)
+        {
+            Destroy(LinearChartComponent);
+        }
+    }
+    private void DestoryRepoDeveloperPercentageChar()
+    {
+        PieChart chart = repoDeveloperPercentChart.GetComponent<PieChart>();
+        if (chart != null)
+        {
+            Destroy(chart);
+        }
+    }
+
+    public void IniteDeveloperPercentChart(Repo_Read_RepoDeveloperNet r)
+    {
+        PieChart chart = repoDeveloperPercentChart.GetComponent<PieChart>();
+        if (chart == null)
+            chart = repoDeveloperPercentChart.AddComponent<PieChart>();
+        
+
+        chart.Init();
+        chart.SetSize(1200, 600);
+
+        var title = chart.EnsureChartComponent<Title>();
+        title.text = "Developer OpenRank Percentage";
+        chart.RemoveData();
+        var serie=chart.AddSerie<Pie>();
+        var tooltip = chart.EnsureChartComponent<Tooltip>();
+        tooltip.type = Tooltip.Type.Line;
+
+        var legend = chart.EnsureChartComponent<Legend>();
+        legend.show = true; // 只有一个系列，不需要显示图例
+
+        chart.ClearData();
+        var nodeList = r.nodes;
+        for (int i = 0; i < nodeList.Count; ++i)
+        {
+            var t=chart.AddData(serie.serieName, nodeList[i]._openRank);
+        }
+    }
+
     public void IniteRepoOpenRankChart(List<Repo_Read_OneOpenRank> repoOpenRankList)
     {
         // 假设 dataList 已经填充了您的数据
@@ -178,50 +236,16 @@ public class ChartManager : MonoBehaviour
             chart.AddData(serie.index, (double)data.openRank);
         }
     }
-
-    private void IniteCharts(List<Repo_Read_DevelopNet_Node> repo_Read_DevelopNet_Nodes)
-    {
-        IniteRepoDevelopNetChart(repo_Read_DevelopNet_Nodes);
-    }
-
-    private void DestoryRepoDevelopNetChart()
-    {
-        BarChart barChartComponent = repoDevelopNetChart.GetComponent<BarChart>();
-        if (barChartComponent != null)
-        {
-            Destroy(barChartComponent);
-        }
-    }
-
-    private void DestoryRepoOpenRankChar()
-    {
-        LineChart LinearChartComponent = repoOpenRankChart.GetComponent<LineChart>();
-        if (LinearChartComponent != null)
-        {
-            Destroy(LinearChartComponent);
-        }
-    }
-    /// <summary>
-    /// 把json转换为图表,本函数用于转换developer数据
-    /// </summary>
-    public void ParseJsonToChart(string _json)
-    {
-        Debug.Log(_json);
-        LitJson.JsonData jsonData = LitJson.JsonMapper.ToObject(_json);
-        Repo_Read_RepoDeveloperNet r = Repo_Read_RepoDeveloperNet.ParseJson(jsonData);
-        List<Repo_Read_DevelopNet_Node> topK = r.GetOpenRankTopK(kNum);
-        IniteCharts(topK);
-    }
-
-    public void ParseJsonToChart(Repo_Read_RepoDeveloperNet r)
+    public void IniteTopKDeveloperChart(Repo_Read_RepoDeveloperNet r)
     {
         List<Repo_Read_DevelopNet_Node> topK = r.GetOpenRankTopK(kNum);
-        IniteCharts(topK);
+        IniteRepoDevelopNetChart(topK);
     }
     public void DestoryCharts()
     {
         DestoryRepoDevelopNetChart();
         DestoryRepoOpenRankChar();
+        DestoryRepoDeveloperPercentageChar();
     }
 
 }
