@@ -155,4 +155,10 @@ public class CameraController : MonoBehaviour
         canMove = true; // ª÷∏¥ ‰»Î
         Cursor.lockState = CursorLockMode.None;
     }
+
+    public void SetCameraToDetailPlanet(Vector3 target)
+    {
+        Quaternion rotation = Quaternion.LookRotation(target);
+        transform.rotation = rotation;
+    }
 }
