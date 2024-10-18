@@ -144,17 +144,26 @@ public class ChartManager : MonoBehaviour
         title.text = "Developer OpenRank Percentage";
         chart.RemoveData();
         var serie=chart.AddSerie<Pie>();
+        serie.center = new float[] { 0.3f, 0.5f };
+
+
         var tooltip = chart.EnsureChartComponent<Tooltip>();
         tooltip.type = Tooltip.Type.Line;
 
         var legend = chart.EnsureChartComponent<Legend>();
-        legend.show = true; // 只有一个系列，不需要显示图例
-
+        legend.show = true;
+        legend.itemWidth = 60; // 每个图例项的宽度
+        legend.itemHeight = 30; // 每个图例项的高度
+        legend.orient = Orient.Vertical;
+        legend.location.align = Location.Align.TopRight;
         chart.ClearData();
         var nodeList = r.nodes;
+        
         for (int i = 0; i < nodeList.Count; ++i)
         {
-            var t=chart.AddData(serie.serieName, nodeList[i]._openRank);
+            chart.AddData(serie.serieName, nodeList[i]._openRank, nodeList[i]._name);
+            legend.AddData(nodeList[i]._name);
+
         }
     }
 
