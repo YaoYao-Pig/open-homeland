@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\UI\HUDController.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\ColourSettings.cs" />
     <Compile Include="Assets\Scripts\UI\Detail\RepoSphereClick.cs" />
+    <Compile Include="Assets\Scripts\Star\StarSphere.cs" />
     <Compile Include="Assets\Scripts\Graph\Edge\Edge.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\RepoNodeComponent.cs" />
     <Compile Include="Assets\Scripts\Graph\Repository.cs" />
@@ -66,6 +67,8 @@
     <Compile Include="Assets\Scripts\Planet\Noise.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_DevelopNet_Edge.cs" />
     <Compile Include="Assets\Scripts\UI\MaterialController.cs" />
+    <Compile Include="Assets\Scripts\Star\StarFace.cs" />
+    <Compile Include="Assets\Scripts\Star\Star.cs" />
     <Compile Include="Assets\Scripts\Planet\Ship\ShipController.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\NodeComponent.cs" />
     <Compile Include="Assets\Scripts\Planet\ShapeGenerator.cs" />

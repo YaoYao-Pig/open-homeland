@@ -21,7 +21,7 @@ public class DrawLineToParent : MonoBehaviour
         lineEndColor = Color.blue;
     }
 
-    public void Draw()
+    public void Draw() 
     {
         lineRenderer.positionCount = 2; // 线条的点数量
         lineRenderer.material = nodeComponent.lineMaterial;

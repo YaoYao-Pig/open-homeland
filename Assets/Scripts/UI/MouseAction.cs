@@ -18,7 +18,7 @@ public class MouseAction : MonoBehaviour
         {
             drawLineToParents=GetComponentsInChildren<DrawLineToParent>();
         }
-    
+
     }
 
     private void OnMouseEnter()
@@ -27,7 +27,7 @@ public class MouseAction : MonoBehaviour
         material.SetFloat("_EdgeVisible", 1.0f);
         if (nodeComponent != null && nodeComponent is RepoNodeComponent)
         {
-            foreach(var drawLine in drawLineToParents)
+            foreach (var drawLine in drawLineToParents)
             {
                 drawLine.Draw();
             }

@@ -55,11 +55,15 @@ Shader "yyz/OldEdgeLight"
             float4 frag(v2f i):SV_Target{    
 
                 float3 N=i.normal;
-                float L=normalize(_WorldSpaceCameraPos-i.vertexWorldSpace);
-                float NdotL=dot(N,L)*10;
+                //Light mainLight = GetMainLight();
+                //float3 lightDirection = normalize(mainLight.direction);
+
+                //float L=normalize(_WorldSpaceCameraPos-i.vertexWorldSpace);
+
+                //float NdotL=dot(N,lightDirection)*10;
                 
                 float4 texColor = tex2D(_MainTex, i.uv) * _Color;
-                float4 finalColor = texColor*NdotL;
+                float4 finalColor = texColor;//*NdotL;
 
                 return finalColor;
             }
@@ -126,9 +130,12 @@ Shader "yyz/OldEdgeLight"
 
                 float3 viewDir=normalize(i.worldPosition-_WorldSpaceCameraPos.xyz);
 
-                float dots=pow(dot(i.normal,viewDir),5);
-                finalColor.a=dots;
-                finalColor.a*=10;
+                float dots=dot(i.normal,viewDir);
+                    dots = saturate(dots);  // 将点积值限制在 [0, 1] 之间
+
+    // 减小pow的指数，避免过度放大，调整边缘光平滑度
+                finalColor.a = pow(dots, 3) * 5;  // 调整指数为3，减少透明度变化敏感度
+
 
                 return finalColor;
             }

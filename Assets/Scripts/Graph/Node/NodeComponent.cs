@@ -7,4 +7,8 @@ public class NodeComponent : MonoBehaviour
 {
     public Node node;
     public Material lineMaterial;
+    private void Awake()
+    {
+        
+    }
 }

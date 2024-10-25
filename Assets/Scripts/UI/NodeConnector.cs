@@ -9,6 +9,12 @@ public class NodeConnector : MonoBehaviour
     private void Start()
     {
         IniteEdgeLine();
+        //IniteParentLine();
+    }
+    private void IniteParentLine()
+    {
+        GameObject fromNode = GetComponentInParent<GameObject>();
+        DrawLine(transform.position, fromNode.transform.position);
     }
 
     private void IniteEdgeLine()
