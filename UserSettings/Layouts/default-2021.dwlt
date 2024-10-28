@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357.3334
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 69
+  controlID: 16
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 70
+  controlID: 17
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 71
+  controlID: 18
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -308,23 +308,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 96730000
       m_LastClickedID: 0
-      m_ExpandedIDs: 80f0ffff34fbffff807100008c710000
+      m_ExpandedIDs: da4be7fe2c910fffd4f31cff025b2aff965f52ffbc6752ff966f52ffccc15fffd0c15fffd4c15fffd6c15fff76727aff661795ff681795ff6e1795ff641995ff40c2afff42c2afff78c2afffaa19bdffae19bdff4c1cbdff8e81f2ff34fbffff207200004e7200008283000086830000a6830000b2910000749200002aac00004aac000072b30000a0b30000a8b30000b6b300001eb4000024b4000028b4000056b40000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Line renderer
+        m_OriginalName: Line renderer
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 46182
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -583,7 +583,7 @@ MonoBehaviour:
       index: 12
       layout: 4
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
-  m_Gizmos: 1
+  m_Gizmos: 0
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
@@ -592,9 +592,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 20003.11, y: 20746, z: 10446}
+    m_Target: {x: 19557.336, y: 19805.96, z: 21516.098}
     speed: 2
-    m_Value: {x: 20003.11, y: 20746, z: 10446}
+    m_Value: {x: 19557.336, y: 19805.96, z: 21516.098}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -641,20 +641,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: 0.0584656, y: -0.0059897033, z: 0.00035079717, w: 0.99827147}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: 0.0584656, y: -0.0059897033, z: 0.00035079717, w: 0.99827147}
   m_Size:
-    m_Target: 8.78331
+    m_Target: 2469.955
     speed: 2
-    m_Value: 8.78331
+    m_Value: 2469.955
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 0.5007509
-    m_SpeedNormalized: 0.25000045
+    m_Speed: 0.001
+    m_SpeedNormalized: 0
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -1717,7 +1717,7 @@ MonoBehaviour:
   m_SerializedViewValues:
   - D:\OpenHomeLand\open-homeland\Library\PlayModeViewStates\b19c6d7a5219f5340bdfb1ff54c75f23
   m_PlayModeViewName: GameView
-  m_ShowGizmos: 1
+  m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
   m_TargetSize: {x: 3840, y: 2160}
@@ -1727,7 +1727,7 @@ MonoBehaviour:
   m_EnterPlayModeBehavior: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
-  m_Gizmos: 1
+  m_Gizmos: 0
   m_Stats: 0
   m_SelectedSizes: 06000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
@@ -1819,22 +1819,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UI
+    - Assets/Scripts/Planet
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/UI
+  - Assets/Scripts/Planet
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\OpenHomeLand\open-homeland
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 326.3333}
-    m_SelectedIDs: 46730000
-    m_LastClickedID: 29510
-    m_ExpandedIDs: 00000000327300003473000036730000387300003a7300003c7300003e73000040730000427300004473000046730000487300004a7300004c7300004e7300005073000060730000
+    scrollPos: {x: 0, y: 591}
+    m_SelectedIDs: 42730000
+    m_LastClickedID: 29506
+    m_ExpandedIDs: 00000000327300003473000036730000387300003a7300003c7300003e73000040730000427300004473000046730000487300004a7300004c7300004e73000050730000667300009c730000b0730000fc7400006a7f0000727f00005c80000084800000b0800000f2c40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1939,9 +1939,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 23.2
-    y: -442.66663
-    width: 2020.3334
-    height: 361.6667
+    y: -478.66663
+    width: 1954.3334
+    height: 397.6667
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1977,7 +1977,7 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 159
+    m_CachedPref: 189
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1

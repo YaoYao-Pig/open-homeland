@@ -57,6 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Editor\PlanetEditor.cs" />
+    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Editor\OrbitDebugEditor.cs" />
+    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\Bloom\Editor\BloomEditor.cs" />
+    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Editor\GeneratorEditor.cs" />
+    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Editor\Test\ColourTestEditor.cs" />
+    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Editor\TextureCombinerEditor.cs" />
+    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Editor\GravityBodyEditor.cs" />
+    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Editor\SceneCamHelper.cs" />
+    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\Bloom\Editor\BloomGraphDrawer.cs" />
+    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\SceneCam\Editor\SceneCamEditor.cs" />
+    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Editor\TextureEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
