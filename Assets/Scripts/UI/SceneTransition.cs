@@ -67,6 +67,9 @@ public class SceneTransition : MonoBehaviour
 
             PlanetManager.Instance.InitializePlanet();
             WorldManager.Instance.SetPlanetUIActiveTrue();
+            WorldManager.Instance.moonController.GenerateMoon();
+            SolarSystemSpawner.Instance.Spawn(0);
+            
         }
         else if (_name == WorldInfo.mainScenceName)
         {
