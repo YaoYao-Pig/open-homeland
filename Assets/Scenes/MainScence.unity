@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81ae488917bd9a4c809f1ea717a8f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomScale: 2.5
+  zoomScale: 3
   offset: 1
 --- !u!1 &105887807
 GameObject:
@@ -311,6 +311,7 @@ MonoBehaviour:
   charTheme: {fileID: 11400000, guid: 289d2fc7f4ce24f73b9ed8ec52639f72, type: 2}
   repoDevelopNetChart: {fileID: 71981793}
   repoOpenRankChart: {fileID: 692883493}
+  developerOpenRankChart: {fileID: 2141814827}
   repoDeveloperPercentChart: {fileID: 484945822}
 --- !u!1 &132688651
 GameObject:
@@ -1061,6 +1062,7 @@ GameObject:
   m_Component:
   - component: {fileID: 484945823}
   - component: {fileID: 484945824}
+  - component: {fileID: 484945825}
   m_Layer: 5
   m_Name: Repo_DeveloperPercentChart
   m_TagString: Untagged
@@ -1100,8 +1102,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81ae488917bd9a4c809f1ea717a8f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomScale: 2.5
+  zoomScale: 3
   offset: 1
+--- !u!114 &484945825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484945822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0dd3ac0ebcf2974fb18eb886047fd54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &493275749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,7 +1262,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 742989564}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1468,7 +1482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81ae488917bd9a4c809f1ea717a8f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomScale: 2.5
+  zoomScale: 3
   offset: 1
 --- !u!1 &703325297
 GameObject:
@@ -1662,6 +1676,7 @@ RectTransform:
   - {fileID: 692883494}
   - {fileID: 71981794}
   - {fileID: 484945823}
+  - {fileID: 2141814828}
   - {fileID: 619519338}
   m_Father: {fileID: 493275750}
   m_RootOrder: 0
@@ -8129,3 +8144,39 @@ MonoBehaviour:
   starResolution: 27
   material: {fileID: 2100000, guid: fa14dec682172ab4683cdfa53cef40b7, type: 2}
   offset: 0
+--- !u!1 &2141814827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2141814828}
+  m_Layer: 5
+  m_Name: Developer_OpenRankChart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2141814828
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141814827}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 742989564}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1200, y: -600}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using XCharts.Runtime;
 
 public class ChartManager : MonoBehaviour
@@ -10,14 +11,22 @@ public class ChartManager : MonoBehaviour
 
     public Theme charTheme;
     public GameObject repoDevelopNetChart;
+    
     public GameObject repoOpenRankChart;
+        public GameObject developerOpenRankChart;
     public GameObject repoDeveloperPercentChart;
+
+
+
     private string repoDevelopNetChartName = "Repo_TopKDeveloperChart";
     private string repoOpenrankChartName = "Repo_OpenRankChart";
 
+    
     // 创建用于存储分类后的数据的字典
     Dictionary<string, List<Repo_Read_OneOpenRank>> categorizedData = new Dictionary<string, List<Repo_Read_OneOpenRank>>();
 
+
+    private PieChartClickHandler pieChartClickHandler;
     private static ChartManager _instance;
     public static ChartManager Instance
     {
@@ -45,9 +54,7 @@ public class ChartManager : MonoBehaviour
         {
             Destroy(_instance);
         }
-        //repoDevelopNetChart = GameObject.Find(repoDevelopNetChartName);
-        //repoOpenRankChart = GameObject.Find(repoOpenrankChartName);
-        //if (repoDevelopNetChart == null) throw new System.Exception("RepoSphereClicker:Awake=> repoDevelopNetChart not found");
+        
     }
 
     private void IniteRepoDevelopNetChart(List<Repo_Read_DevelopNet_Node> topK)
@@ -103,7 +110,7 @@ public class ChartManager : MonoBehaviour
         }
     }
 
-    
+
 
 
     private void DestoryRepoDevelopNetChart()
@@ -135,9 +142,12 @@ public class ChartManager : MonoBehaviour
     public void IniteDeveloperPercentChart(Repo_Read_RepoDeveloperNet r)
     {
         PieChart chart = repoDeveloperPercentChart.GetComponent<PieChart>();
+        
+
         if (chart == null)
             chart = repoDeveloperPercentChart.AddComponent<PieChart>();
-        
+        pieChartClickHandler = repoDeveloperPercentChart.GetComponent<PieChartClickHandler>();
+        pieChartClickHandler.Chart = chart;
 
         chart.Init();
         chart.SetSize(1200, 600);
@@ -166,7 +176,6 @@ public class ChartManager : MonoBehaviour
         {
             chart.AddData(serie.serieName, nodeList[i]._openRank, nodeList[i]._name);
             legend.AddData(nodeList[i]._name);
-
         }
     }
 
@@ -249,6 +258,90 @@ public class ChartManager : MonoBehaviour
             chart.AddData(serie.index, (double)data.openRank);
         }
     }
+
+
+
+    public void IniteDeveloperOpenRankChart(List<Developer_Read_OneOpenRank> developerOpenRankList)
+    {
+        // 假设 dataList 已经填充了您的数据
+        List<Developer_Read_OneOpenRank> dataList = developerOpenRankList;
+        // 过滤只保留月份的数据
+        List<Developer_Read_OneOpenRank> monthDataList = new List<Developer_Read_OneOpenRank>();
+
+        foreach (var data in dataList)
+        {
+            if (data.type == Developer_Read_OneOpenRank.Developer_Read_TimeStamp.Month)
+            {
+                monthDataList.Add(data);
+            }
+        }
+
+        // 按照月份排序
+        monthDataList.Sort((a, b) =>
+        {
+            DateTime dateA = DateTime.ParseExact(a.dataTime, "yyyy-MM", null);
+            DateTime dateB = DateTime.ParseExact(b.dataTime, "yyyy-MM", null);
+            return dateA.CompareTo(dateB);
+        });
+
+
+        LineChart chart = developerOpenRankChart.GetComponent<LineChart>();
+        if (chart == null)
+            chart = developerOpenRankChart.AddComponent<LineChart>();
+        chart.Init();
+        chart.SetSize(600, 300);
+
+        //设置缩放：
+        DataZoom dataZoom = chart.EnsureChartComponent<DataZoom>();
+        dataZoom.enable = true; // 启用 DataZoom
+        dataZoom.supportInside = true; // 支持内部缩放（鼠标滚轮缩放）
+        dataZoom.supportSlider = false; // 如果不需要显示外部缩放条，可以设置为 false
+        dataZoom.zoomLock = false; // 可根据需要启用或禁用缩放锁定
+        dataZoom.minShowNum = 10;  // 显示的最小数据点数
+        dataZoom.orient = Orient.Horizonal; // 设置缩放方向，可以是 Horizontal（水平）或 Vertical（垂直）
+        dataZoom.showDataShadow = true; // 控制是否显示缩放条
+
+
+        // 设置图表标题
+        var title = chart.EnsureChartComponent<Title>();
+        title.text = "Developer OpenRank 月度变化图";
+        title.labelStyle.textStyle.fontSize = 50;
+        developerOpenRankChart.transform.SetAsLastSibling();
+        developerOpenRankChart.transform.position = repoDeveloperPercentChart.transform.position;
+        // 设置 X 轴和 Y 轴
+        var xAxis = chart.EnsureChartComponent<XAxis>();
+        xAxis.type = Axis.AxisType.Category;
+        xAxis.boundaryGap = false;
+        xAxis.axisLabel.rotate = 45;
+        xAxis.axisLabel.interval = 0;
+
+        var yAxis = chart.EnsureChartComponent<YAxis>();
+        yAxis.type = Axis.AxisType.Value;
+
+        // 添加提示框和图例
+        var tooltip = chart.EnsureChartComponent<Tooltip>();
+        tooltip.type = Tooltip.Type.Line;
+
+        var legend = chart.EnsureChartComponent<Legend>();
+        legend.show = false; // 只有一个系列，不需要显示图例
+
+        // 清除旧数据
+        chart.RemoveData();
+
+        // 添加系列
+        var serie = chart.AddSerie<Line>("OpenRank");
+        chart.theme.sharedTheme = charTheme;
+        // 添加数据
+        foreach (var data in monthDataList)
+        {
+            // 添加 X 轴数据（月份）
+            chart.AddXAxisData(data.dataTime);
+
+            // 添加 Y 轴数据（OpenRank 值）
+            chart.AddData(serie.index, (double)data.openRank);
+        }
+    }
+
     public void IniteTopKDeveloperChart(Repo_Read_RepoDeveloperNet r)
     {
         List<Repo_Read_DevelopNet_Node> topK = r.GetOpenRankTopK(kNum);
@@ -262,3 +355,4 @@ public class ChartManager : MonoBehaviour
     }
 
 }
+

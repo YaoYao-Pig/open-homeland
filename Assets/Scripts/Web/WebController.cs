@@ -112,10 +112,32 @@ public class WebController : MonoBehaviour
                 GameData.Instance.AddRepoOpenRankList(Repo_Read_OpenRank.ParseJson(jsonResponse));
             }
         }
+    }
 
+    public static IEnumerator GetDeveloperOpenRank(string _userName,string _m = "openrank")
+    {
+        string url = new string(WorldInfo.requestHead +
+                   WorldInfo.platform + WorldInfo.httpSeparatorChar +
+                   _userName + WorldInfo.httpSeparatorChar + _m + ".json");
+        using (UnityWebRequest request = UnityWebRequest.Get(url))
+        {
+            yield return request.SendWebRequest();
+            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError($"Error: {request.error}");
+            }
+            else
+            {
+                // 请求成功，处理 JSON 数据
+                string jsonResponse = request.downloadHandler.text;
 
-
-
+                Developer_Read_OpenRank developer = Developer_Read_OpenRank.ParseJson(jsonResponse);
+                GameData.Instance.AddDeveloperOpenRankList(developer);
+                Debug.Log("GetDeveloperOpenRank:" + jsonResponse);
+                ChartManager.Instance.IniteDeveloperOpenRankChart(developer.developerOpenrankList);
+                //GameData.Instance.AddRepoOpenRankList(Repo_Read_OpenRank.ParseJson(jsonResponse));
+            }
+        }
     }
 
 }

@@ -139,4 +139,22 @@ public class GameData : MonoBehaviour
             return 0;
         }
     }
+
+    public void AddDeveloperOpenRankList(Developer_Read_OpenRank developer_Read_OpenRank)
+    {
+        AddgameParams("Developer_DeveloperNumber", (object)developer_Read_OpenRank);
+    }
+
+    public Developer_Read_OpenRank GetDeveloperOpenRankList()
+    {
+        object _repository;
+        if (gameParams.TryGetValue("Developer_DeveloperNumber", out _repository))
+        {
+            return (Developer_Read_OpenRank)_repository;
+        }
+        else
+        {
+            return null;
+        }
+    }
 }
