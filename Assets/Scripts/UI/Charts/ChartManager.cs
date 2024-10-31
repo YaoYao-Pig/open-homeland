@@ -8,6 +8,7 @@ public class ChartManager : MonoBehaviour
 {
     private int kNum = 5;//展示前五个
 
+    public Theme charTheme;
     public GameObject repoDevelopNetChart;
     public GameObject repoOpenRankChart;
     public GameObject repoDeveloperPercentChart;
@@ -58,8 +59,8 @@ public class ChartManager : MonoBehaviour
         chart.SetSize(1200, 600);
 
         var title = chart.EnsureChartComponent<Title>();
-        title.text = "TopK developer";
-
+        title.text = "Top 5 OpenRank开发者";
+        title.labelStyle.textStyle.fontSize = 50;
         var xAxis = chart.EnsureChartComponent<XAxis>();
         xAxis.splitNumber = 10;
         xAxis.boundaryGap = true;
@@ -73,6 +74,7 @@ public class ChartManager : MonoBehaviour
 
         var background = chart.EnsureChartComponent<Background>();
         background.imageColor = new Color(0, 0, 0, 0); // 完全透明
+        chart.theme.sharedTheme = charTheme;
 
 
         for (int i = 1; i <= topK.Count; ++i)
@@ -142,6 +144,7 @@ public class ChartManager : MonoBehaviour
 
         var title = chart.EnsureChartComponent<Title>();
         title.text = "Developer OpenRank Percentage";
+        title.labelStyle.textStyle.fontSize = 50;
         chart.RemoveData();
         var serie=chart.AddSerie<Pie>();
         serie.center = new float[] { 0.3f, 0.5f };
@@ -158,7 +161,7 @@ public class ChartManager : MonoBehaviour
         legend.location.align = Location.Align.TopRight;
         chart.ClearData();
         var nodeList = r.nodes;
-        
+        chart.theme.sharedTheme = charTheme;
         for (int i = 0; i < nodeList.Count; ++i)
         {
             chart.AddData(serie.serieName, nodeList[i]._openRank, nodeList[i]._name);
@@ -211,6 +214,7 @@ public class ChartManager : MonoBehaviour
         // 设置图表标题
         var title = chart.EnsureChartComponent<Title>();
         title.text = "OpenRank 月度变化图";
+        title.labelStyle.textStyle.fontSize = 50;
 
         // 设置 X 轴和 Y 轴
         var xAxis = chart.EnsureChartComponent<XAxis>();
@@ -234,7 +238,7 @@ public class ChartManager : MonoBehaviour
 
         // 添加系列
         var serie = chart.AddSerie<Line>("OpenRank");
-
+        chart.theme.sharedTheme = charTheme;
         // 添加数据
         foreach (var data in monthDataList)
         {

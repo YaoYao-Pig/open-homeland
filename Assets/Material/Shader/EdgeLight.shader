@@ -18,17 +18,12 @@ Shader "yyz/OldEdgeLight"
             #pragma vertex vert
             #pragma fragment frag
 
-            
-
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-
-
 
             struct vertexIn{
                 float4 vertex:POSITION;
                 float3 normal:NORMAL;
                 float2 uv:TEXCOORD0;
-
             };
 
             struct v2f{
@@ -81,10 +76,6 @@ Shader "yyz/OldEdgeLight"
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
-            
-            
-
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
 
@@ -105,7 +96,7 @@ Shader "yyz/OldEdgeLight"
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _EdgeColor;
-
+            float4 _Color;
             float _EdgeVisible;//用于管理是否渲染边缘光
 
             v2f vert(vertexIn v){
@@ -119,18 +110,25 @@ Shader "yyz/OldEdgeLight"
                 return o;
             }
 
+
+            float4 smoothColor(v2f i){
+                float4 shaderColor=_Color;
+                shaderColor.a=0.9f;
+                return  shaderColor;
+            }
             float4 frag(v2f i):SV_Target{    
                 // 如果不满足条件，直接丢弃当前片段
                 if (_EdgeVisible <= 0.5)
                 {
-                    discard; // 不渲染该片段
+                    return smoothColor(i);
+                    //discard; // 不渲染该片段
                 }
                 float4 texColor = tex2D(_MainTex, i.uv) * _EdgeColor;
                 float4 finalColor = texColor;
 
                 float3 viewDir=normalize(i.worldPosition-_WorldSpaceCameraPos.xyz);
 
-                float dots=dot(i.normal,viewDir);
+                float4 dots=dot(i.normal,viewDir);
                     dots = saturate(dots);  // 将点积值限制在 [0, 1] 之间
 
     // 减小pow的指数，避免过度放大，调整边缘光平滑度

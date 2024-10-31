@@ -67,26 +67,7 @@ public class WebController : MonoBehaviour
         WorldManager.Instance.Inite();
     }
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-/*        worldManager = GetComponent<WorldManager>();
-        urls = new List<string>();
 
-        foreach(string repoName in WorldInfo.initeRepoNameList)
-        {
-            foreach(string m in WorldInfo.metrics)
-            {
-                urls.Add(new string(WorldInfo.requestHead +
-                    WorldInfo.platform + WorldInfo.httpSeparatorChar +
-                    repoName + WorldInfo.httpSeparatorChar +m+".json"
-                ));
-            }
-        }
-
-        StartCoroutine(StartFetchingData());*/
-
-    }
 
     public static IEnumerator GetRepoDetail(string _repoName,string _m,Action<string> parseJson)
     {
@@ -105,8 +86,6 @@ public class WebController : MonoBehaviour
                 // 请求成功，处理 JSON 数据
                 string jsonResponse = request.downloadHandler.text;
                 parseJson(jsonResponse);
-                
-
             }
 
         }
@@ -133,13 +112,10 @@ public class WebController : MonoBehaviour
                 GameData.Instance.AddRepoOpenRankList(Repo_Read_OpenRank.ParseJson(jsonResponse));
             }
         }
+
+
+
+
     }
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

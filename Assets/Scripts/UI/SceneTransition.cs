@@ -16,7 +16,7 @@ public class SceneTransition : MonoBehaviour
     {
         cameraPositonDic = new Dictionary<string, Vector3>() { { WorldInfo.mainScenceName,Vector3.zero},
             { WorldInfo.detailScenceName,repoCameraPos.transform.position} };
-
+        
         StartCoroutine(FadeIn());
     }
 
@@ -67,6 +67,11 @@ public class SceneTransition : MonoBehaviour
 
             PlanetManager.Instance.InitializePlanet();
             WorldManager.Instance.SetPlanetUIActiveTrue();
+            //WorldManager.Instance.moonController.GenerateMoon();
+            SolarSystemSpawner.Instance.Spawn(0);
+
+
+
         }
         else if (_name == WorldInfo.mainScenceName)
         {

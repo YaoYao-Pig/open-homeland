@@ -36,12 +36,27 @@ public class CelestialBodyGenerator : MonoBehaviour {
 
 	static Dictionary<int, SphereMesh> sphereGenerators;
 
-	void Start () {
+    private void Awake()
+    {
+		Debug.Log("Awake");
+    }
+	int times = 0;
+    void Start () {
+		Debug.Log("Start");
 		if (InGameMode) {
 			cam = Camera.main;
 			HandleGameModeGeneration ();
 		}
 	}
+
+/*	void OnEnable()
+	{
+		if (InGameMode)
+		{
+			cam = Camera.main;
+			HandleGameModeGeneration();
+		}
+	}*/
 
 	void Update () {
 		if (InEditMode) {
@@ -64,7 +79,9 @@ public class CelestialBodyGenerator : MonoBehaviour {
 	// • creates its own instances of materials so multiple bodies can exist with their own shading
 	// • doesn't support updating of shape/shading values once generated
 	void HandleGameModeGeneration () {
+		if (times == 0) { times++; return; }
 		if (CanGenerateMesh ()) {
+			Debug.Log("HandleGameModeGeneration");
 			Dummy ();
 
 			// Generate LOD meshes
@@ -91,7 +108,8 @@ public class CelestialBodyGenerator : MonoBehaviour {
 			MeshCollider collider;
 			if (!terrainHolder.TryGetComponent<MeshCollider> (out collider)) {
 				collider = terrainHolder.AddComponent<MeshCollider> ();
-			}
+            }
+            
 
 			var collisionBakeTimer = System.Diagnostics.Stopwatch.StartNew ();
 			MeshBaker.BakeMeshImmediate (collisionMesh);
@@ -174,7 +192,33 @@ public class CelestialBodyGenerator : MonoBehaviour {
 		shadingNoiseSettingsUpdated = true;
 	}
 
-	void OnValidate () {
+
+	public void Generate()
+    {
+		Debug.Log("Generate Moon");
+
+		if (body)
+		{
+			if (body.shape)
+			{
+				body.shape.OnSettingChanged -= OnShapeSettingChanged;
+				body.shape.OnSettingChanged += OnShapeSettingChanged;
+			}
+			if (body.shading)
+			{
+				body.shading.OnSettingChanged -= OnShadingNoiseSettingChanged;
+				body.shading.OnSettingChanged += OnShadingNoiseSettingChanged;
+			}
+		}
+
+		if (resolutionSettings != null)
+		{
+			resolutionSettings.ClampResolutions();
+		}
+		HandleGameModeGeneration();
+		OnShapeSettingChanged();
+	}
+/*	void OnValidate () {
 		if (body) {
 			if (body.shape) {
 				body.shape.OnSettingChanged -= OnShapeSettingChanged;
@@ -190,7 +234,7 @@ public class CelestialBodyGenerator : MonoBehaviour {
 			resolutionSettings.ClampResolutions ();
 		}
 		OnShapeSettingChanged ();
-	}
+	}*/
 
 	void Dummy () {
 		// Crude fix for a problem I was having where the values in the vertex buffer were *occasionally* all zero at start of game

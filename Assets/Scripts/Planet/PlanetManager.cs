@@ -15,6 +15,7 @@ public class PlanetManager : MonoBehaviour
     private Repository repository;
 
     private static PlanetManager _instance;
+    private TopUITextController topUITextController;
     public static PlanetManager Instance
     {
         get
@@ -76,6 +77,11 @@ public class PlanetManager : MonoBehaviour
         ChartManager.Instance.IniteTopKDeveloperChart(repository.developerNetwork);
         ChartManager.Instance.IniteRepoOpenRankChart(repoOpenRankList);
         ChartManager.Instance.IniteDeveloperPercentChart(repository.developerNetwork);
+
+        topUITextController = GameObject.FindObjectOfType<TopUITextController>();
+        if (topUITextController == null) throw new System.Exception("SceneTransition:topUITextController is null");
+        topUITextController.SetTopUITextController(repository.GetRepoDevelopNetAverageOpenRank());
+
     }
 
     private Color ColorTransfer(float r,float g,float b)
@@ -94,7 +100,7 @@ public class PlanetManager : MonoBehaviour
 
 
 
-        if (param <= 2f)
+        if (param <= 20f)
         {
             int index = 0;
             Gradient gradient = new Gradient();
@@ -112,7 +118,7 @@ public class PlanetManager : MonoBehaviour
             colourSettings.oceanColour = colourSettings.oceanColours[index % colourSettings.oceanColours.Length];
 
         }
-        else if (param <= 3f)
+        else if (param <= 60f)
         {
             int index = 1;
             Gradient gradient = new Gradient();
@@ -128,7 +134,7 @@ public class PlanetManager : MonoBehaviour
 
             colourSettings.oceanColour = colourSettings.oceanColours[index % colourSettings.oceanColours.Length];
         }
-        else if(param <= 5f)
+        else if(param <= 100f)
         {
             int index = 2;
             Gradient gradient = new Gradient();
