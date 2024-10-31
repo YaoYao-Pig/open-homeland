@@ -37,7 +37,7 @@ public class WorldManager : MonoBehaviour
 
     public Dictionary<Node,List<Node>> repo2UserNodeDic;//用于表示repoNode->userNodeList的映射关系
 
-    public MoonController moonController;
+    
 
 
 
@@ -285,7 +285,6 @@ public class WorldManager : MonoBehaviour
     public bool InstanceNode()
     {
         int i = 0;
-
         foreach(var rn in repoNodeList)
         {
             GameObject rg = GameObject.Instantiate(repoPrefab, repoRoot);

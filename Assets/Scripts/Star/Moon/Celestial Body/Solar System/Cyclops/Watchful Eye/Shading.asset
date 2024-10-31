@@ -26,7 +26,7 @@ MonoBehaviour:
   primaryColB: {r: 0.18867922, g: 0.036489844, b: 0.061920755, a: 1}
   secondaryColB: {r: 0.6981132, g: 0.55138284, b: 0.5433428, a: 0}
   steepCol: {r: 0, g: 0, b: 0, a: 1}
-  numBiomePoints: 43
+  numBiomePoints: 29
   radiusMinMax: {x: 0.001, y: 0.03}
   biomeWarpNoise:
     numLayers: 4

@@ -28,9 +28,7 @@ public class RepoSphereClick : MonoBehaviour
         GameData.Instance.AddRepoName(gameObject.name);
         GameData.Instance.AddRepoDeveloperNumber(transform.childCount);
 
-        GameData.Instance.AddCurrentRepository(repository);
-
-        
+        GameData.Instance.AddgameParams("Repo_Develop_Net",(object)repository);
     }
 
     //查看或者退出Repo节点的详细信息视图

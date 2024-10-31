@@ -6,38 +6,21 @@ using UnityEngine;
 public class GameData : MonoBehaviour
 {
     private static GameData _instance;
-    public static GameData Instance {
-        get {
+    public static GameData Instance { 
+        get{
             if (_instance == null)
             {
                 _instance = FindObjectOfType<GameData>();
                 if (_instance == null)
                 {
                     GameObject obj = new GameObject(typeof(GameData).Name);
-                    _instance = obj.AddComponent<GameData>();
+                    _instance=obj.AddComponent<GameData>();
                 }
             }
             return _instance;
         }
         private set { } }
 
-    public void AddCurrentRepository(Repository repository)
-    {
-        AddgameParams("Repo_Develop_Net", (object)repository);
-
-    }
-    public Repository GetCurrentRepository()
-    {
-        object _repository;
-        if (gameParams.TryGetValue("Repo_Develop_Net", out _repository))
-        {
-            return (Repository)_repository;
-        }
-        else
-        {
-            return null;
-        }
-    }
     public Dictionary<string,object> gameParams;
 
 
