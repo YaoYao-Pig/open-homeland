@@ -70,7 +70,6 @@
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Test\NormalRotTest.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shading\TestShading.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shape\EarthShape.cs" />
-    <Compile Include="Assets\Scripts\Star\MoonController.cs" />
     <Compile Include="Assets\Scripts\UI\Detail\RepoSphereClick.cs" />
     <Compile Include="Assets\Scripts\Star\StarSphere.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Effects\AtmosphereSettings.cs" />
@@ -126,7 +125,6 @@
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Tools\CuthillMcKee.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\Data\BadTriQueue.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Tools\Statistic.cs" />
-    <Compile Include="Assets\Scripts\UI\CircleText.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Controllers\InputSettings.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\ISegment.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\CelestialBodyGenerator.cs" />
@@ -215,9 +213,7 @@
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Test\RayStepTest.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Voronoi\Legacy\BoundedVoronoiLegacy.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\IPredicates.cs" />
-    <Compile Include="Assets\Scripts\Star\MoonUIRotate.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Texture Gen\NoiseGenerator.cs" />
-    <Compile Include="Assets\Scripts\UI\Charts\MouseUIAction.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Voronoi\DefaultVoronoiFactory.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\IO\FileProcessor.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\Vertex.cs" />
@@ -248,7 +244,6 @@
     <Compile Include="Assets\Scripts\ForceDirectedGraph.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\Node.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\ITriangulator.cs" />
-    <Compile Include="Assets\Scripts\UI\Charts\PieChartClickHandler.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_OpenRank\Repo_Read_OpenRank.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Topology\Osub.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\BodyPlaceholder.cs" />
@@ -262,7 +257,6 @@
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Texture Gen\TextureCombiner.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Effects\AtmosphereEffect.cs" />
     <Compile Include="Assets\Scripts\Planet\PlanetManager.cs" />
-    <Compile Include="Assets\Scripts\UI\Detail\TopUITextController.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Interactions\Interactable.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\RobustPredicates.cs" />
     <Compile Include="Assets\Scripts\Web\WebController.cs" />
@@ -292,13 +286,19 @@
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Tools\QualityMeasure.cs" />
     <Compile Include="Assets\Scripts\Planet\Ship\GravitySimulation.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Tools\IntersectionHelper.cs" />
-    <Compile Include="Assets\Scripts\JsonParse\Developer_OpenRank\Developer_Read_OneOpenRank.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Mesh Generators\CylinderMesh.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Behavior.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\UI\LockOnUI.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Mesh Generators\CircleMesh.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\UI\CircleText.cs" />
+    <Compile Include="Assets\Scripts\Star\MoonUIRotate.cs" />
+    <Compile Include="Assets\Scripts\Star\MoonController.cs" />
+    <Compile Include="Assets\Scripts\UI\Charts\MouseUIAction.cs" />
+    <Compile Include="Assets\Scripts\UI\Detail\TopUITextController.cs" />
+    <Compile Include="Assets\Scripts\UI\Charts\PieChartClickHandler.cs" />
+    <Compile Include="Assets\Scripts\JsonParse\Developer_OpenRank\Developer_Read_OneOpenRank.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
