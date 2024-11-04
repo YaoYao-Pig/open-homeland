@@ -929,6 +929,7 @@ GameObject:
   - component: {fileID: 444365984}
   - component: {fileID: 444365986}
   - component: {fileID: 444365985}
+  - component: {fileID: 444365987}
   m_Layer: 10
   m_Name: Watchful Eye
   m_TagString: Untagged
@@ -986,6 +987,21 @@ MonoBehaviour:
   surfaceGravity: 4.5
   initialVelocity: {x: 0, y: 17.8, z: 0}
   bodyName: Watchful Eye
+--- !u!114 &444365987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444365983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a94b47e4973ac40b9b6bc8db7f69a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerPlanet: {fileID: 797699403}
+  orbitDistance: 2000
+  orbitSpeed: 30
 --- !u!1 &460154075
 GameObject:
   m_ObjectHideFlags: 0
