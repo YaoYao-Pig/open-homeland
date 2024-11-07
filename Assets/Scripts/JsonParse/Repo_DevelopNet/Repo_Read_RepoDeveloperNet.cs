@@ -9,6 +9,14 @@ public class Repo_Read_RepoDeveloperNet
     public List<Repo_Read_DevelopNet_Node> nodes;
     public List<Repo_Read_DevelopNet_Edge> edges;
 
+    public List<Repo_Read_DevelopNet_Node> GetNodes()
+    {
+        return nodes;
+    }
+    public List<Repo_Read_DevelopNet_Edge> GetEdges()
+    {
+        return edges;
+    }
     public Repo_Read_RepoDeveloperNet()
     {
         nodes = new List<Repo_Read_DevelopNet_Node>();

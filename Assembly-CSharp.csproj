@@ -299,6 +299,8 @@
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\UI\LockOnUI.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Mesh Generators\CircleMesh.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\StarController.cs" />
+    <Compile Include="Assets\Scripts\UI\StarConnector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

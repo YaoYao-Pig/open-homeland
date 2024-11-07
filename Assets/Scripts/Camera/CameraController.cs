@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
 
 
     public float moveDuration = 2f; // 移动时间
-    private bool canMove = true; // 控制输入的开关
+    [SerializeField]private bool canMove = true; // 控制输入的开关
     public float offset = 10f;
     public float elapsedTime=0;
     public void SetCanMove(bool b) { canMove = b; }

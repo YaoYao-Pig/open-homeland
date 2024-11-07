@@ -10,6 +10,7 @@ public class MouseAction : MonoBehaviour
     private NodeComponent nodeComponent;
     private HUDController hUDController;
 
+
     private void Start()
     {
         material = gameObject.GetComponent<Renderer>().material;
@@ -53,5 +54,7 @@ public class MouseAction : MonoBehaviour
         }
 
         hUDController.showHud = false;
+
+
     }
 }

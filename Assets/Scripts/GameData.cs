@@ -122,6 +122,26 @@ public class GameData : MonoBehaviour
         }
     }
 
+    public void AddRepoDetail(Repo_Read_RepoDeveloperNet repo_Read_RepoDeveloperNet)
+    {
+        AddgameParams("Repo_Detail", (object)repo_Read_RepoDeveloperNet);
+    }
+
+    public Repository GetRepoDetail()
+    {
+        object Repo_Detail;
+        if (gameParams.TryGetValue("Repo_Detail", out Repo_Detail))
+        {
+            Repository repository = new Repository();
+            repository.developerNetwork =(Repo_Read_RepoDeveloperNet) Repo_Detail;
+            return repository;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public void AddRepoDeveloperNumber(int childCount)
     {
         AddgameParams("Repo_DeveloperNumber", (object)childCount);

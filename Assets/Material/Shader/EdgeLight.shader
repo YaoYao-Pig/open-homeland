@@ -120,8 +120,8 @@ Shader "yyz/OldEdgeLight"
                 // 如果不满足条件，直接丢弃当前片段
                 if (_EdgeVisible <= 0.5)
                 {
-                    return smoothColor(i);
-                    //discard; // 不渲染该片段
+                    //return smoothColor(i);
+                    discard; // 不渲染该片段
                 }
                 float4 texColor = tex2D(_MainTex, i.uv) * _EdgeColor;
                 float4 finalColor = texColor;

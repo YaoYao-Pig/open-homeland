@@ -16,6 +16,7 @@ public class PlanetManager : MonoBehaviour
 
     private static PlanetManager _instance;
     private TopUITextController topUITextController;
+    public Action OnPlanetEnd;
     public static PlanetManager Instance
     {
         get
@@ -60,13 +61,16 @@ public class PlanetManager : MonoBehaviour
         yield return StartCoroutine(GetData(gameObject.name));
         
         InitializePlanets();
+        OnPlanetEnd?.Invoke();
+        
     }
+
 
     public IEnumerator GetData(string _repoName, string _m = "openrank")
     {
 
         yield return StartCoroutine(WebController.GetRepoOpenRank(_repoName, _m));
-
+        yield return StartCoroutine(WebController.GetRepoDetail(_repoName, "developer_network"));
         //找到最新的openRank
         openRankList = GameData.Instance.GetRepoOpenRankList();
 
@@ -100,7 +104,7 @@ public class PlanetManager : MonoBehaviour
 
 
 
-        if (param <= 20f)
+        if (param <= 5f)
         {
             int index = 0;
             Gradient gradient = new Gradient();
@@ -118,7 +122,7 @@ public class PlanetManager : MonoBehaviour
             colourSettings.oceanColour = colourSettings.oceanColours[index % colourSettings.oceanColours.Length];
 
         }
-        else if (param <= 60f)
+        else if (param <= 10f)
         {
             int index = 1;
             Gradient gradient = new Gradient();
@@ -134,7 +138,7 @@ public class PlanetManager : MonoBehaviour
 
             colourSettings.oceanColour = colourSettings.oceanColours[index % colourSettings.oceanColours.Length];
         }
-        else if(param <= 100f)
+        else if(param <= 20f)
         {
             int index = 2;
             Gradient gradient = new Gradient();

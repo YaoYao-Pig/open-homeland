@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class RepoDetailButton : MonoBehaviour
     private SceneTransition sceneTransition;
     
     private GameObject ship;
+    public Action OnLeaveDetail;
 
     private void Awake()
     {
@@ -21,7 +23,7 @@ public class RepoDetailButton : MonoBehaviour
         GameData.Instance.ClearParams();
 
 
-
+        OnLeaveDetail?.Invoke();
         sceneTransition.FadeToScene(WorldInfo.mainScenceName);
 
 

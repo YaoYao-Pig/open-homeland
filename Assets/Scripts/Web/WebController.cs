@@ -69,7 +69,7 @@ public class WebController : MonoBehaviour
 
 
 
-    public static IEnumerator GetRepoDetail(string _repoName,string _m,Action<string> parseJson)
+    public static IEnumerator GetRepoDetail(string _repoName,string _m)
     {
         string url = new string(WorldInfo.requestHead +
                     WorldInfo.platform + WorldInfo.httpSeparatorChar +
@@ -85,12 +85,17 @@ public class WebController : MonoBehaviour
             {
                 // 请求成功，处理 JSON 数据
                 string jsonResponse = request.downloadHandler.text;
-                parseJson(jsonResponse);
+                //Debug.Log(jsonResponse);
+                LitJson.JsonData jsonData = LitJson.JsonMapper.ToObject(jsonResponse);
+                GameData.Instance.AddRepoDetail(Repo_Read_RepoDeveloperNet.ParseJson(jsonData));
             }
 
         }
     }
 
+
+
+  
 
     public static IEnumerator GetRepoOpenRank(string _repoName, string _m="openrank")
     {
@@ -109,6 +114,7 @@ public class WebController : MonoBehaviour
                 // 请求成功，处理 JSON 数据
                 string jsonResponse = request.downloadHandler.text;
                 //Debug.Log(jsonResponse);
+
                 GameData.Instance.AddRepoOpenRankList(Repo_Read_OpenRank.ParseJson(jsonResponse));
             }
         }
