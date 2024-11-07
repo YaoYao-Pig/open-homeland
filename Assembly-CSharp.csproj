@@ -111,6 +111,7 @@
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Voronoi\Legacy\VoronoiRegion.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Core\Manager.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\SphereMesh.cs" />
+    <Compile Include="Assets\StarController.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\GameSetUp.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\GravityDebugUI.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\OceanMaskRenderer.cs" />
@@ -148,6 +149,7 @@
     <Compile Include="Assets\Scripts\UI\HUDShow.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\RegionPointer.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Topology\DCEL\Vertex.cs" />
+    <Compile Include="Assets\Scripts\UI\StarConnector.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Lighting\SunShadowCaster.cs" />
     <Compile Include="Assets\Scripts\CSVReader.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\IPolygon.cs" />
@@ -299,8 +301,6 @@
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\UI\LockOnUI.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Mesh Generators\CircleMesh.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-    <Compile Include="Assets\StarController.cs" />
-    <Compile Include="Assets\Scripts\UI\StarConnector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
