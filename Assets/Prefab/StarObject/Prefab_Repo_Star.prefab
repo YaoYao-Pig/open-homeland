@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7291524859824026104}
   - component: {fileID: 1249729759938586293}
   - component: {fileID: 1509937723405158913}
+  - component: {fileID: 7449349904779675246}
   m_Layer: 0
   m_Name: Prefab_Repo_Star
   m_TagString: Node
@@ -172,3 +173,16 @@ MonoBehaviour:
     scale: 0
     radius: 0
   lineMaterial: {fileID: 0}
+--- !u!114 &7449349904779675246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942307819440338551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7fecb35a5a4c94e8697990990af705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchSelectedMaterial: {fileID: 2100000, guid: b9babf463b3a9004fa58af58fb72f072, type: 2}

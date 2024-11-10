@@ -301,6 +301,10 @@
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\UI\LockOnUI.cs" />
     <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Mesh Generators\CircleMesh.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\UI\Search\SearchBar.cs" />
+    <Compile Include="Assets\Scripts\UI\Search\SearchItem.cs" />
+    <Compile Include="Assets\Scripts\UI\StarSelected.cs" />
+    <Compile Include="Assets\Scripts\UI\MainUIController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -63,6 +63,7 @@ public class WorldManager : MonoBehaviour
 
 
     public GameObject repoUIGameObject;
+    public List<string> repoNameList;
     private void Awake()
     {
         if (_instance == null)
@@ -81,6 +82,7 @@ public class WorldManager : MonoBehaviour
         userNodeDic = new Dictionary<string, Node>();
         userNodeInstanceDic = new Dictionary<string, GameObject>();
         repositoryList = new List<Repository>();
+        repoNameList = new List<string>();
         if (repoRoot == null) throw new System.Exception("WorldManager:Awake()=>repoRoot don't initialize");
 
 
@@ -103,7 +105,7 @@ public class WorldManager : MonoBehaviour
 
         Dictionary<string, List<string>> repoToDeveloper = csvReader.ReadRepoCSV();
 
-        List<string> repoNameList = new List<string>();
+        
         //Ìî³ärepositoryList
         foreach(var developerNames in repoToDeveloper)
         {

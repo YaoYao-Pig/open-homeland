@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class SceneTransition : MonoBehaviour
 {
@@ -12,6 +13,15 @@ public class SceneTransition : MonoBehaviour
     public GameObject repoCameraPos;
     public GameObject repoObject;
     public Dictionary<string,Vector3> cameraPositonDic;
+
+
+    public static SceneTransition Instance;
+    public Action OnMainScenceUnLoad;
+    public Action OnMainScenceLoad;
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         cameraPositonDic = new Dictionary<string, Vector3>() { { WorldInfo.mainScenceName,Vector3.zero},
@@ -62,6 +72,7 @@ public class SceneTransition : MonoBehaviour
     {
         if (_name == WorldInfo.detailScenceName)
         {
+            OnMainScenceUnLoad?.Invoke();
             StartCoroutine(FadeIn());
             repoObject.SetActive(true);
 
@@ -75,7 +86,7 @@ public class SceneTransition : MonoBehaviour
         }
         else if (_name == WorldInfo.mainScenceName)
         {
-
+            OnMainScenceLoad?.Invoke();
             CameraController.Instance.transform.position = Vector3.zero;
             
             repoObject = GameObject.Find("RepoDetailsPosition");

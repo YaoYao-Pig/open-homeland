@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -25,6 +26,8 @@ public class CameraController : MonoBehaviour
     private Quaternion startRotation;
     private Quaternion targetRotation;
     public SceneTransition sceneTransition;
+
+    
 
     private void Awake()
     {
@@ -106,7 +109,7 @@ public class CameraController : MonoBehaviour
 
 
 
-
+        
         //º”‘ÿ≥°æ∞
         sceneTransition = FindObjectOfType<SceneTransition>();
         sceneTransition.FadeToScene(scenceName);
