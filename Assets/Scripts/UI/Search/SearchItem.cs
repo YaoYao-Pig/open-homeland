@@ -6,7 +6,7 @@ public class SearchItem : MonoBehaviour
 {
     private string itemName;
     private Vector3 offset = new Vector3(20, 20, 20);
-    private Vector3 verticalOffset = new Vector3(0, -20, 0);
+    private Vector3 verticalOffset = new Vector3(0, -0, 0);
     public void SetItemName(string str)
     {
         itemName = str;
