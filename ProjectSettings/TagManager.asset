@@ -43,3 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: UIBackLayer
+    uniqueID: 2530008205
+    locked: 0
+  - name: UITopLayer
+    uniqueID: 2668973733
+    locked: 0

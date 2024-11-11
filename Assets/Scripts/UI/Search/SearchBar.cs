@@ -9,7 +9,7 @@ public class SearchBar : MonoBehaviour
     [SerializeField] TMP_InputField searchField;
     [SerializeField] RectTransform searchBackGround;
     [SerializeField] RectTransform item;
-
+    [SerializeField] List<GameObject> uiComponets;
     public static SearchBar Instance;
     private string searchText;
 
@@ -20,7 +20,7 @@ public class SearchBar : MonoBehaviour
     }
     private void Start()
     {
-        searchBackGround.gameObject.SetActive(false);
+        HideAllUIComponent();
         searchButton.onClick.AddListener(() =>
         {
             OnClickSearchButton();
@@ -39,19 +39,32 @@ public class SearchBar : MonoBehaviour
         {
             Destroy(searchBackGround.GetChild(i).gameObject);
         }
-        searchBackGround.gameObject.SetActive(false);
+        HideAllUIComponent();
         UnSetSelectedStarActive();
     }
 
     private void OnClickSearchButton()
     {
-        searchBackGround.gameObject.SetActive(true);
-        Debug.Log(searchText);
+        ShowAllUIComponent();
         List<string> result=SearchByStr(searchText);
-        Debug.Log(result);
         GenerateSearchResult(result);
     }
 
+    private void HideAllUIComponent()
+    {
+        foreach(var obj in uiComponets)
+        {
+            obj.SetActive(false);
+        }
+    }
+
+    private void ShowAllUIComponent()
+    {
+        foreach (var obj in uiComponets)
+        {
+            obj.SetActive(true);
+        }
+    }
     private List<string> SearchByStr(string str)
     {
         List<string> result = new List<string>();

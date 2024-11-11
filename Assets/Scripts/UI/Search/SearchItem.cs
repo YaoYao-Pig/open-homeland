@@ -6,6 +6,7 @@ public class SearchItem : MonoBehaviour
 {
     private string itemName;
     private Vector3 offset = new Vector3(20, 20, 20);
+    private Vector3 verticalOffset = new Vector3(0, -20, 0);
     public void SetItemName(string str)
     {
         itemName = str;
@@ -16,7 +17,7 @@ public class SearchItem : MonoBehaviour
         GameObject obj= GameObject.Find(itemName);
         SearchBar.Instance.SetSelectedStar(obj);
 
-        Camera.main.transform.position = obj.transform.position+ offset;
+        Camera.main.transform.position = obj.transform.position+ offset+ verticalOffset;
 
         Vector3 towardsTo = (obj.transform.position- Camera.main.transform.position).normalized;
         
