@@ -86,6 +86,8 @@ public class PlanetManager : MonoBehaviour
         if (topUITextController == null) throw new System.Exception("SceneTransition:topUITextController is null");
         topUITextController.SetTopUITextController(repository.GetRepoDevelopNetAverageOpenRank());
 
+        StarController.Instance.GenerateStars();
+
     }
 
     private Color ColorTransfer(float r,float g,float b)

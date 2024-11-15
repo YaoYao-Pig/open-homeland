@@ -1,0 +1,18 @@
+#pragma kernel CSMain
+#include "./include/Craters.cginc"
+
+StructuredBuffer<float3> vertices;
+RWStructuredBuffer<float> heights;
+
+[numthreads(512, 1, 1)]
+void CSMain (uint id : SV_DispatchThreadID)
+{
+	static const float elevationMultiplier = 0.01;
+
+	float3 pos = vertices[id];
+
+	// Craters
+	float craterDepth = calculateCraterDepth(pos);
+	//float finalHeight = 1 + craterDepth 
+	heights[id] =1+craterDepth;
+}

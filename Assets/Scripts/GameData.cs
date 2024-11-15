@@ -162,13 +162,13 @@ public class GameData : MonoBehaviour
 
     public void AddDeveloperOpenRankList(Developer_Read_OpenRank developer_Read_OpenRank)
     {
-        AddgameParams("Developer_DeveloperNumber", (object)developer_Read_OpenRank);
+        AddgameParams("Developer_OpenRankList", (object)developer_Read_OpenRank);
     }
 
     public Developer_Read_OpenRank GetDeveloperOpenRankList()
     {
         object _repository;
-        if (gameParams.TryGetValue("Developer_DeveloperNumber", out _repository))
+        if (gameParams.TryGetValue("Developer_OpenRankList", out _repository))
         {
             return (Developer_Read_OpenRank)_repository;
         }

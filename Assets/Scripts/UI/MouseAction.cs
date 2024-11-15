@@ -39,6 +39,7 @@ public class MouseAction : MonoBehaviour
             hUDController = GetComponent<HUDController>();
         }
         hUDController.showHud = true;
+        hUDController.SetHudScall(Vector3.Distance(Camera.main.transform.position, transform.position)/100);
 
 
     }

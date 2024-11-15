@@ -10,6 +10,9 @@ public class HUDController : MonoBehaviour
     private GameObject hubNameObj;
     private HUDShow hubShow;
     public bool showHud = false;
+    private float hudScall = 1f;
+
+
 
     private void Awake()
     {
@@ -33,11 +36,17 @@ public class HUDController : MonoBehaviour
                 InitializedHud();
             }
             hubNameObj.SetActive(true);
-            hubShow.UpdateHud(transform,gameObject.name);
+            hubShow.UpdateHud(transform,gameObject.name, hudScall);
         }
         else
         {
             if (hubNameObj != null) hubNameObj.SetActive(false);
         }
     }
+
+    public void SetHudScall(float _s)
+    {
+        hudScall = _s;
+    }
+
 }

@@ -56,17 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Editor\TextureCombinerEditor.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\SceneCam\Editor\SceneCamEditor.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Editor\GravityBodyEditor.cs" />
     <Compile Include="Assets\Scripts\Editor\PlanetEditor.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Editor\GeneratorEditor.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\Bloom\Editor\BloomGraphDrawer.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Editor\Test\ColourTestEditor.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Editor\TextureEditor.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Editor\SceneCamHelper.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Editor\OrbitDebugEditor.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\Bloom\Editor\BloomEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -336,6 +326,21 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>D:\Software\GameDevelopment\2021.3.16f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportGeneratorMerged">
+      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -351,20 +356,11 @@
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-    </Reference>
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Cecil.Pdb">
-      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Cecil">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
@@ -374,12 +370,6 @@
     </Reference>
     <Reference Include="LitJSON">
       <HintPath>Assets\Plugins\LitJSON.dll</HintPath>
-    </Reference>
-    <Reference Include="ReportGeneratorMerged">
-      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -894,13 +884,21 @@
       <Project>{26C4FC66-B315-E994-EA80-C3BC2F50D5B1}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="XCharts.Runtime.csproj">
-      <Project>{0643DB31-E1FF-3443-692D-895B65F556AA}</Project>
-      <Name>XCharts.Runtime</Name>
+    <ProjectReference Include="ZFBrowser.csproj">
+      <Project>{04E7FC0C-CD33-BDF6-91D5-9E563F1F85DD}</Project>
+      <Name>ZFBrowser</Name>
     </ProjectReference>
     <ProjectReference Include="XCharts.Examples.csproj">
       <Project>{1541FD12-69C0-B861-B087-B9DDF2A7FDC7}</Project>
       <Name>XCharts.Examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="XCharts.Runtime.csproj">
+      <Project>{0643DB31-E1FF-3443-692D-895B65F556AA}</Project>
+      <Name>XCharts.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="ZFBrowser-Editor.csproj">
+      <Project>{0CC64751-9872-502D-2289-B0266AFABFB3}</Project>
+      <Name>ZFBrowser-Editor</Name>
     </ProjectReference>
     <ProjectReference Include="XCharts.Editor.csproj">
       <Project>{FE175CD1-341D-4506-6733-307BD26DCF45}</Project>

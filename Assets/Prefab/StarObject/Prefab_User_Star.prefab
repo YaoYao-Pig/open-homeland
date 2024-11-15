@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6887888962462656533}
   - component: {fileID: -195053710029478263}
   - component: {fileID: 4843707460790130905}
+  - component: {fileID: 8384398160433485930}
   m_Layer: 0
   m_Name: Prefab_User_Star
   m_TagString: Node
@@ -286,3 +287,15 @@ MonoBehaviour:
     scale: 0
     radius: 0
   lineMaterial: {fileID: 0}
+--- !u!114 &8384398160433485930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942307819440338551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f520e742fc28b05468629504c31811cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -57,373 +57,155 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\HUDController.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\TrianglePool.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Core\Palette.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Lighting\AmbientLightCaster.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\CustomImageEffect.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\IO\TriangleWriter.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\Converter.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Script Utilities\ShaderHelper.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Mesh.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shading\AlienShading.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\NoiseSettings\SimpleNoiseSettings.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Test\NormalRotTest.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shading\TestShading.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shape\EarthShape.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\VRBrowserPanel.cs" />
     <Compile Include="Assets\Scripts\Star\MoonController.cs" />
     <Compile Include="Assets\Scripts\UI\Detail\RepoSphereClick.cs" />
     <Compile Include="Assets\Scripts\Star\StarSphere.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Effects\AtmosphereSettings.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\IO\TriangleFormat.cs" />
     <Compile Include="Assets\Scripts\Graph\Edge\Edge.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\IEdge.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\RepoNodeComponent.cs" />
     <Compile Include="Assets\Scripts\Planet\PlanetTravel.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Mesh Generators\SphereMesh.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Script Utilities\MathUtility.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_DevelopNet_Edge.cs" />
     <Compile Include="Assets\Scripts\UI\MaterialController.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\Polygon.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Logging\ILog.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Logging\ILogItem.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\TestDownloadServer.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\SimpleScripting.cs" />
     <Compile Include="Assets\Scripts\Star\StarFace.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\Data\BadTriangle.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Topology\Triangle.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\ConvexHull.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Effects\PostProcessingEffect.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shading\MoonShading.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\ActionTimer.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\NodeComponent.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\IO\IMeshFormat.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\ShipHUD.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shape\ShatteredShape.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Texture Gen\SpotsTexture.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\Algorithm\SweepLine.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\IO\IPolygonFormat.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shape\MoonShape.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\IO\DebugWriter.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Smoothing\SimpleSmoother.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\LODHandler.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\Point.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\Segment.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\ITriangle.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\ForcedCooperation.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\Planet\Planet.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Tools\PolygonValidator.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Voronoi\Legacy\VoronoiRegion.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Core\Manager.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\SphereMesh.cs" />
-    <Compile Include="Assets\StarController.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\GameSetUp.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\GravityDebugUI.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\OceanMaskRenderer.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Topology\SubSegment.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Mesh Generators\RingMesh.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\VRMainControlPanel.cs" />
     <Compile Include="Assets\Scripts\UI\Search\SearchItem.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\CustomPostProcessing.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Topology\Otri.cs" />
     <Compile Include="Assets\Scripts\Planet\SimpleNoiseFilter.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\Iterators\RegionIterator.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\NoiseSettings\RidgeNoiseSettings.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Test\ShaderMatrix.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Configuration.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Tools\CuthillMcKee.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\Data\BadTriQueue.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Tools\Statistic.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\CoinPickup.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\SimpleFPSController.cs" />
+    <Compile Include="Assets\Scripts\UI\Main\UserDetailController.cs" />
     <Compile Include="Assets\Scripts\UI\CircleText.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Controllers\InputSettings.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\ISegment.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\CelestialBodyGenerator.cs" />
     <Compile Include="Assets\Scripts\Planet\INoiseFilter.cs" />
     <Compile Include="Assets\Scripts\Planet\PlanetRotate.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Enums.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\UI\SettingsMenu.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\OceanSettings.cs" />
     <Compile Include="Assets\Scripts\UI\Button\RepoDetailButton.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\EndlessManager.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\QualityOptions.cs" />
     <Compile Include="Assets\Scripts\UI\StarSelected.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\GenericMesher.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Voronoi\Legacy\IVoronoi.cs" />
     <Compile Include="Assets\Scripts\WorldInfo.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Mesh Generators\MeshUtility.cs" />
     <Compile Include="Assets\Scripts\Planet\TerrainFace.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_RepoDeveloperNet.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Utility\Timer.cs" />
     <Compile Include="Assets\Scripts\UI\HUDShow.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\RegionPointer.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Topology\DCEL\Vertex.cs" />
     <Compile Include="Assets\Scripts\UI\StarConnector.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Lighting\SunShadowCaster.cs" />
     <Compile Include="Assets\Scripts\CSVReader.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\IPolygon.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Mesh Generators\ArrowMesh3D.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shape\CelestialBodyShape.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\Iterators\VertexCirculator.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\TriangleLocator.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\NoiseSettings.cs" />
     <Compile Include="Assets\Scripts\UI\DrawLineToParent.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Voronoi\VoronoiBase.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\DemoList.cs" />
     <Compile Include="Assets\Scripts\UI\Search\SearchBar.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\StarTest.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Controllers\Ship.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\CameraUtility.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\OrbitDebugDisplay.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\IMesh.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\BallBrowserSpawner.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\ExplainUnzip.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\ShapeSettings.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Topology\DCEL\HalfEdge.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\RandomTest.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shape\MoatShape.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Voronoi\IVoronoiFactory.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shading\ColourHelper.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\Data\BadSubseg.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Tools\TriangleQuadTree.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Lines\DebugLineDrawer.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Voronoi\BoundedVoronoi.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Topology\DCEL\Face.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\IO\InputTriangle.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\FXAA\FXAAEffect.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shading\CelestialBodyShading.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\SceneCam\SceneCamManager.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Core\VisualElement.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\ExtensionMethods.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Topology\DCEL\DcelMesh.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Smoothing\VoronoiFactory.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\ConstraintMesher.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\Edge.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\NewLocation.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Test\SunTest.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\Rectangle.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Logging\LogItem.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Tools\VertexSorter.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\UserNodeComponent.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Properties\AssemblyInfo.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\CelestialBodySettings.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_DevelopNet_Node.cs" />
-    <Compile Include="Assets\Scripts\UI\MainUIController.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Script Utilities\PRNG.cs" />
+    <Compile Include="Assets\Scripts\UI\Main\MainUIController.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\RepoNode.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Tools\Interpolation.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Test\RaySphereTest.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\ColourSettings.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Texture Gen\TextureViewer.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\GravityObject.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Voronoi\Legacy\SimpleVoronoi.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\IO\IFileFormat.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Effects\OceanEffect.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\TriangleSampler.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\ConstraintOptions.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\Algorithm\Dwyer.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\SayWordsOnTouch.cs" />
     <Compile Include="Assets\Scripts\Graph\Repository.cs" />
     <Compile Include="Assets\Scripts\Planet\Noise.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\Iterators\EdgeIterator.cs" />
+    <Compile Include="Assets\Scripts\UI\Detail\UserSphereClick.cs" />
     <Compile Include="Assets\Scripts\Star\Star.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\QualityMesher.cs" />
     <Compile Include="Assets\Scripts\Planet\Ship\ShipController.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Test\RayStepTest.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Voronoi\Legacy\BoundedVoronoiLegacy.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\IPredicates.cs" />
     <Compile Include="Assets\Scripts\Star\MoonUIRotate.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Texture Gen\NoiseGenerator.cs" />
     <Compile Include="Assets\Scripts\UI\Charts\MouseUIAction.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Voronoi\DefaultVoronoiFactory.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\IO\FileProcessor.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\Vertex.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Smoothing\ISmoother.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\SimpleController.cs" />
     <Compile Include="Assets\Scripts\Planet\ShapeGenerator.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Tools\AdjacencyMatrix.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\NBodySimulation.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Test\CustomDebug.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Test\CamTest.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\StarDome.cs" />
     <Compile Include="Assets\Scripts\Planet\RidgidNoiseFilfter.cs" />
     <Compile Include="Assets\Scripts\UI\MouseAction.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\CelestialBody.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\UserNode.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\IO\TriangleReader.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\UI\GameUI.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\PlanetTest.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\IQualityMesher.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Geometry\Contour.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shape\AlienShape.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Log.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Normalizer.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\IConstraintMesher.cs" />
     <Compile Include="Assets\Scripts\Planet\StarRotate\PlanetOrbit.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Test\ColourTest.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Script Utilities\ComputeHelper.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Utility\ChanceTest.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\VRMode.cs" />
     <Compile Include="Assets\Scripts\ForceDirectedGraph.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\Node.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\ITriangulator.cs" />
     <Compile Include="Assets\Scripts\UI\Charts\PieChartClickHandler.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_OpenRank\Repo_Read_OpenRank.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Topology\Osub.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\BodyPlaceholder.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shading\EarthShading.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\CheatCodes.cs" />
     <Compile Include="Assets\Scripts\UI\NodeConnector.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\MeshBaker.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\Bloom\BloomEffect.cs" />
     <Compile Include="Assets\Scripts\Planet\ColourGenerator.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\FXAATest.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Texture Gen\TextureCombiner.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Effects\AtmosphereEffect.cs" />
+    <Compile Include="Assets\ZFBrowser\Demo\Scripts\HUDManager.cs" />
     <Compile Include="Assets\Scripts\Planet\PlanetManager.cs" />
     <Compile Include="Assets\Scripts\UI\Detail\TopUITextController.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Interactions\Interactable.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\RobustPredicates.cs" />
     <Compile Include="Assets\Scripts\Web\WebController.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Atmosphere.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Texture Gen\TextureGenerator.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Celestial\NoiseSettings\CraterSettings.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Universe.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangulator.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Core\Visualizer.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Controllers\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Script Utilities\TextureHelper.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Meshing\Algorithm\Incremental.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Test\FPSTest.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\MeshValidator.cs" />
     <Compile Include="Assets\Scripts\Camera\ScanEffect.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Voronoi\StandardVoronoi.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\Planet Effects\PlanetEffects.cs" />
     <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\Scripts\WorldManager.cs" />
     <Compile Include="Assets\Scripts\GameData.cs" />
     <Compile Include="Assets\Scripts\UI\Charts\ChartManager.cs" />
     <Compile Include="Assets\Scripts\UI\SceneTransition.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\SolarSystemSpawner.cs" />
     <Compile Include="Assets\Scripts\Planet\NoiseFilterFactory.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Test\LODTest.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Interactions\HatchButton.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Tools\QualityMeasure.cs" />
     <Compile Include="Assets\Scripts\Planet\Ship\GravitySimulation.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Tools\IntersectionHelper.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Developer_OpenRank\Developer_Read_OneOpenRank.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Mesh Generators\CylinderMesh.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Libaries\Triangle\Behavior.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\UI\LockOnUI.cs" />
-    <Compile Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Mesh Generators\CircleMesh.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\RepoDevelopStar\SphereDivide.cs" />
+    <Compile Include="Assets\RepoDevelopStar\StarController.cs" />
+    <Compile Include="Assets\RepoDevelopStar\StarCompute.cs" />
+    <Compile Include="Assets\RepoDevelopStar\PRNG.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\UnlitColored.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\Shaders\Compute\Textures\Spots.compute" />
-    <None Include="Assets\Shaders\PostProcessing\OceanEffect.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Celestial Body\Textures\_Sources.txt" />
-    <None Include="Assets\Shaders\Includes\Triplanar.cginc" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\PostProcessing\Test.shader" />
-    <None Include="Assets\Shaders\Includes\SimplexNoise2.cginc" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Height\EarthHeight.compute" />
-    <None Include="Assets\Scripts\Star\Moon\Graphics\Materials\Colours\Sun.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Shading\MoonShading.compute" />
+    <None Include="Assets\RepoDevelopStar\Shader\Include\FractalNoise.cginc" />
+    <None Include="Assets\ZFBrowser\Plugins\w64\widevinecdmadapter.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Height\MoatHeight.compute" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Game\Shaders\HUD.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Surface\Alien.shader" />
-    <None Include="Assets\Shaders\Surface\Alien.shader" />
-    <None Include="Assets\Shaders\Compute\Height\ShatteredHeight.compute" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Includes\FractalNoise.cginc" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\FXAA\FXAA.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Textures\Blur.compute" />
-    <None Include="Assets\Shaders\Compute\Height\AlienHeight.compute" />
+    <None Include="Assets\ZFBrowser\Plugins\w32\ZFProxyWeb.dll" />
+    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\UnlitOpaque.shader" />
+    <None Include="Assets\ZFBrowser\Plugins\w64\chrome_elf.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Lines\Lines2.shader" />
-    <None Include="Assets\Shaders\Compute\Height\MoatHeight.compute" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\Shaders\Compute\Shading\EarthShading.compute" />
+    <None Include="Assets\ZFBrowser\Plugins\w32\chrome_elf.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Textures\Spots.compute" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Other\PerturbPoints.compute" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Surface\MoonA.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Shading\EarthShading.compute" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Height\AlienHeight.compute" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Test\Phase.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Game\Shaders\Stipple.shader" />
+    <None Include="Assets\RepoDevelopStar\Shader\Include\SimplexNoise.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\PostProcessing\Atmosphere.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Surface\Earth.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Graphics\Materials\Copy.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Atmosphere\AtmosphereTexture.compute" />
+    <None Include="Assets\ZFBrowser\Plugins\w32\libGLESv2.dll" />
     <None Include="Assets\DeepSpaceSkyboxPack\GalaxyFire\Galaxy Fire Skybox Readme.txt" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Height\MoonHeight.compute" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-    <None Include="Assets\Shaders\Compute\Other\SteepnessCompute.compute" />
-    <None Include="Assets\Shaders\Compute\Height\EarthHeight.compute" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Height\ShatteredHeight.compute" />
-    <None Include="Assets\Shaders\Surface\MoonB.shader" />
+    <None Include="Assets\ZFBrowser\Plugins\w64\libGLESv2.dll" />
+    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\Transparent.shader" />
+    <None Include="Assets\RepoDevelopStar\Shader\Include\Math.cginc" />
+    <None Include="Assets\ZFBrowser\Plugins\w32\d3dcompiler_43.dll" />
+    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\Unlit.shader" />
+    <None Include="Assets\RepoDevelopStar\Shader\CaterCompute.compute" />
+    <None Include="Assets\ZFBrowser\Plugins\w64\d3dcompiler_43.dll" />
+    <None Include="Assets\ZFBrowser\Plugins\w64\ZFProxyWeb.dll" />
+    <None Include="Assets\ZFBrowser\Plugins\w32\d3dcompiler_47.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\DeepSpaceSkyboxPack\DiverseSpace\Diverse Space Skybox Readme.txt" />
-    <None Include="Assets\Shaders\Compute\Textures\TextureGenerator.compute" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Other\PerturbPointsPlatelike.compute" />
+    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\Standard.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\Material\Shader\EdgeLight.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Other\SteepnessCompute.compute" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\Material\Shader\LineShader.shader" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Game\Shaders\ArrowHead.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Includes\Craters.cginc" />
+    <None Include="Assets\ZFBrowser\Plugins\w64\libEGL.dll" />
+    <None Include="Assets\ZFBrowser\Plugins\w32\zf_cef.dll" />
+    <None Include="Assets\ZFBrowser\Plugins\versions.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Resources\UnlitAlpha.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Resources\Unlit.shader" />
-    <None Include="Assets\Shaders\Compute\Other\PerturbPoints.compute" />
+    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\Readme.txt" />
+    <None Include="Assets\ZFBrowser\Plugins\w32\widevinecdmadapter.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\Bloom\Shader\Bloom.shader" />
-    <None Include="Assets\Shaders\Includes\SimplexNoise.cginc" />
-    <None Include="Assets\Shaders\Includes\FractalNoise.cginc" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Material\Shader\ScanEffect.shader" />
     <None Include="Assets\Material\Shader\newEdgeLight.shader" />
-    <None Include="Assets\Shaders\Surface\Earth.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Game\Shaders\DottedLine.shader" />
+    <None Include="Assets\ZFBrowser\Plugins\w64\d3dcompiler_47.dll" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\Bloom\Shader\Bloom.cginc" />
-    <None Include="Assets\Shaders\Compute\Textures\Blur.compute" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\MipSample.cginc" />
     <None Include="Assets\DeepSpaceSkyboxPack\GalacticGreen\Galactic Green Skybox Readme.txt" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Includes\SimplexNoise3.cginc" />
-    <None Include="Assets\Shaders\Surface\MoonA.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Includes\SimplexNoise2.cginc" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Post Processing\FXAA\Credit.txt" />
-    <None Include="Assets\Shaders\Compute\Other\PerturbPointsPlatelike.compute" />
-    <None Include="Assets\Shaders\Compute\Height\MoonHeight.compute" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Includes\SimplexNoise.cginc" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Other\OceanMask.shader" />
+    <None Include="Assets\ZFBrowser\ThirdPartyNotices.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\PostProcessing\OceanEffect.shader" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\Shaders\Includes\Math.cginc" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\Shaders\Includes\SimplexNoise3.cginc" />
-    <None Include="Assets\Scripts\Star\Moon\Graphics\Materials\Star.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Includes\Math.cginc" />
+    <None Include="Assets\ZFBrowser\Changelog.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\RepoDevelopStar\Shader\Include\Craters.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Game\Debug\Debug Viewer\Resources\Diffuse.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Compute\Textures\TextureGenerator.compute" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Includes\Triplanar.cginc" />
-    <None Include="Assets\Shaders\Includes\Craters.cginc" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\ZFBrowser\Materials\UnlitCursor.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\Scripts\Star\Moon\Scripts\Celestial\Shaders\Surface\MoonB.shader" />
-    <None Include="Assets\Shaders\Compute\Shading\MoonShading.compute" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\Scripts\Star\Moon\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\ZFBrowser\Plugins\w32\libEGL.dll" />
+    <None Include="Assets\ZFBrowser\Plugins\w64\zf_cef.dll" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -666,11 +448,17 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>D:\Software\GameDevelopment\2021.3.16f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Cecil.Mdb">
-      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Cecil.Pdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportGeneratorMerged">
+      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
@@ -683,12 +471,6 @@
     </Reference>
     <Reference Include="LitJSON">
       <HintPath>Assets\Plugins\LitJSON.dll</HintPath>
-    </Reference>
-    <Reference Include="ReportGeneratorMerged">
-      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:\Software\GameDevelopment\2021.3.16f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -1181,13 +963,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="XCharts.Runtime.csproj">
-      <Project>{0643DB31-E1FF-3443-692D-895B65F556AA}</Project>
-      <Name>XCharts.Runtime</Name>
+    <ProjectReference Include="ZFBrowser.csproj">
+      <Project>{04E7FC0C-CD33-BDF6-91D5-9E563F1F85DD}</Project>
+      <Name>ZFBrowser</Name>
     </ProjectReference>
     <ProjectReference Include="XCharts.Examples.csproj">
       <Project>{1541FD12-69C0-B861-B087-B9DDF2A7FDC7}</Project>
       <Name>XCharts.Examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="XCharts.Runtime.csproj">
+      <Project>{0643DB31-E1FF-3443-692D-895B65F556AA}</Project>
+      <Name>XCharts.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="ZFBrowser-Editor.csproj">
+      <Project>{0CC64751-9872-502D-2289-B0266AFABFB3}</Project>
+      <Name>ZFBrowser-Editor</Name>
     </ProjectReference>
     <ProjectReference Include="XCharts.Editor.csproj">
       <Project>{FE175CD1-341D-4506-6733-307BD26DCF45}</Project>

@@ -95,8 +95,45 @@ public class CameraController : MonoBehaviour
     }
 
 
+    public void MoveCameraToSphere(Vector3 spherePosition, float radius)
+    {
+        if (canMove)
+        {
+            StartCoroutine(MoveCamera(spherePosition, radius));
+        }
+    }
 
-    
+
+    private IEnumerator MoveCamera(Vector3 spherePosition, float radius)
+    {
+        canMove = false; // 禁用输入
+        startPosition = transform.position;
+        targetPosition = spherePosition + new Vector3(0, 1, -3); // 根据需要调整摄像机位置
+        Vector3 dir = Vector3.Normalize(startPosition - targetPosition);
+        targetPosition += dir * (offset + radius);
+        startRotation = transform.rotation;
+        targetRotation = Quaternion.LookRotation(spherePosition - startPosition); // 目标旋转朝向球体
+        elapsedTime = 0f;
+        while (elapsedTime < moveDuration)
+        {
+            // 平滑移动
+            transform.position = Vector3.Lerp(startPosition, targetPosition, (elapsedTime / moveDuration));
+
+            // 平滑旋转
+            transform.rotation = Quaternion.Lerp(startRotation, targetRotation, (elapsedTime / moveDuration));
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPosition; // 确保最终位置正确
+        transform.rotation = targetRotation; // 确保最终旋转正确
+        canMove = true;
+
+    }
+
+
+
     public void MoveCameraToSphereAndLoadScence(Vector3 spherePosition,float radius)
     {
         if (canMove)
@@ -107,9 +144,6 @@ public class CameraController : MonoBehaviour
     private IEnumerator MoveCameraAndLoadScence(Vector3 spherePosition,string scenceName,float radius)
     {
 
-
-
-        
         //加载场景
         sceneTransition = FindObjectOfType<SceneTransition>();
         sceneTransition.FadeToScene(scenceName);

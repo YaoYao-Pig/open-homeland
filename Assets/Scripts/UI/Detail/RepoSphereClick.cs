@@ -1,17 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using XCharts.Runtime;
 
 public class RepoSphereClick : MonoBehaviour
 {
-
-
-    private bool flag = true;//flag代表下次点击是打开Repo的Detail页面还是关闭Detal页面
-
-
     private Repository repository;
-
     private NodeComponent nodeSelf;
 
     private void Awake()
@@ -36,28 +31,20 @@ public class RepoSphereClick : MonoBehaviour
     //查看或者退出Repo节点的详细信息视图
     private void LookRepoDetails()
     {
-        //if (flag)
-        //{
-            //StartCoroutine(WebController.GetRepoDetail(gameObject.name, m, ParseJsonToChart));
-            //StartCoroutine(WebController.GetRepoOpenRank(gameObject.name));
 
-            if (nodeSelf == null) nodeSelf = GetComponent<RepoNodeComponent>();
-            CameraController.Instance.MoveCameraToSphereAndLoadScence(transform.position, nodeSelf.node.radius);
-            TransferData();
-            flag = false;
-        //}
-        //else if (!flag )
-        //{
-
-            //StartCoroutine(CameraController.Instance.backDetail());
-            //flag = true;
-        //}        
+        if (nodeSelf == null) nodeSelf = GetComponent<RepoNodeComponent>();
+        CameraController.Instance.MoveCameraToSphereAndLoadScence(transform.position, nodeSelf.node.radius);
+        TransferData();
     }
     
 
     private void OnMouseDown()
     {
         //WorldManager.Instance.SetPlanetUIActiveTrue();
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         repository = gameObject.GetComponent<RepoNodeComponent>().repository;
         LookRepoDetails();
         
