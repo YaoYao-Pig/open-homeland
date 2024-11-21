@@ -171,8 +171,8 @@
     <Compile Include="Assets\XCharts\Runtime\Component\Tooltip\TooltipHelper.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Legend\LegendHelper.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\Attributes\DefaultAnimationAttribute.cs" />
-    <Compile Include="Assets\XCharts\Runtime\Serie\Candlestick\SimplifiedCandlestick.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\DataZoom\DataZoomHelper.cs" />
+    <Compile Include="Assets\XCharts\Runtime\Serie\Candlestick\SimplifiedCandlestick.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Axis\AxisHelper.cs" />
     <Compile Include="Assets\XCharts\Runtime\Internal\Attributes\SerieDataExtraFieldAttribute.cs" />
     <Compile Include="Assets\XCharts\Runtime\Component\Child\AreaStyle.cs" />

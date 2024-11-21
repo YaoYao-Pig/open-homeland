@@ -111,19 +111,23 @@
     <Compile Include="Assets\Scripts\Star\Star.cs" />
     <Compile Include="Assets\Scripts\Planet\Ship\ShipController.cs" />
     <Compile Include="Assets\Scripts\Star\MoonUIRotate.cs" />
+    <Compile Include="Assets\RepoDevelopStar\StarController.cs" />
     <Compile Include="Assets\Scripts\UI\Charts\MouseUIAction.cs" />
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\SimpleController.cs" />
     <Compile Include="Assets\Scripts\Planet\ShapeGenerator.cs" />
     <Compile Include="Assets\Scripts\Planet\RidgidNoiseFilfter.cs" />
     <Compile Include="Assets\Scripts\UI\MouseAction.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\UserNode.cs" />
+    <Compile Include="Assets\RepoDevelopStar\PRNG.cs" />
     <Compile Include="Assets\Scripts\Planet\StarRotate\PlanetOrbit.cs" />
+    <Compile Include="Assets\RepoDevelopStar\SphereDivide.cs" />
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\VRMode.cs" />
     <Compile Include="Assets\Scripts\ForceDirectedGraph.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\Node.cs" />
     <Compile Include="Assets\Scripts\UI\Charts\PieChartClickHandler.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_OpenRank\Repo_Read_OpenRank.cs" />
     <Compile Include="Assets\Scripts\UI\NodeConnector.cs" />
+    <Compile Include="Assets\RepoDevelopStar\StarCompute.cs" />
     <Compile Include="Assets\Scripts\Planet\ColourGenerator.cs" />
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\HUDManager.cs" />
     <Compile Include="Assets\Scripts\Planet\PlanetManager.cs" />
@@ -140,10 +144,6 @@
     <Compile Include="Assets\Scripts\JsonParse\Developer_OpenRank\Developer_Read_OneOpenRank.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-    <Compile Include="Assets\RepoDevelopStar\SphereDivide.cs" />
-    <Compile Include="Assets\RepoDevelopStar\StarController.cs" />
-    <Compile Include="Assets\RepoDevelopStar\StarCompute.cs" />
-    <Compile Include="Assets\RepoDevelopStar\PRNG.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\UnlitColored.shader" />
