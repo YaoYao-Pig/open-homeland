@@ -132,6 +132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 33465702}
+  - component: {fileID: 33465703}
+  - component: {fileID: 33465704}
   m_Layer: 5
   m_Name: ItemBox
   m_TagString: Untagged
@@ -160,6 +162,35 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &33465703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33465701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebb0b485153fe4408b640a42c6aa8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &33465704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33465701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b420ec5b7c4491449a9331de4f2d8dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 652803071}
+  slideSpeed: 500
+  edgeThreshold: 10
+  heightOffset: 10
+  iconPrefab: {fileID: 948947416160575164, guid: 2de0cfad5c4f9b743b28d28b0638cb3b, type: 3}
 --- !u!1 &54086500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,7 +1664,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 167.2122, y: -291}
+  m_AnchoredPosition: {x: 0, y: -277.2}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &652803072
@@ -3984,6 +4015,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 652803071}
     m_Modifications:
+    - target: {fileID: 416625035434963683, guid: 2de0cfad5c4f9b743b28d28b0638cb3b, type: 3}
+      propertyPath: iconSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 98ef5d9f4ef8db64686b87b336eeb327, type: 3}
+    - target: {fileID: 416625035434963683, guid: 2de0cfad5c4f9b743b28d28b0638cb3b, type: 3}
+      propertyPath: skyBoxMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 42eaf2c5dbb13dc498f15df5a5b05fda, type: 2}
     - target: {fileID: 948947416160575164, guid: 2de0cfad5c4f9b743b28d28b0638cb3b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5892,6 +5931,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 652803071}
     m_Modifications:
+    - target: {fileID: 416625035434963683, guid: 2de0cfad5c4f9b743b28d28b0638cb3b, type: 3}
+      propertyPath: iconSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 95cc8111a5a2e904e8293fc4f0e07890, type: 3}
+    - target: {fileID: 416625035434963683, guid: 2de0cfad5c4f9b743b28d28b0638cb3b, type: 3}
+      propertyPath: skyBoxMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 69e10e886d52d20478f9ed5424126be8, type: 2}
     - target: {fileID: 948947416160575164, guid: 2de0cfad5c4f9b743b28d28b0638cb3b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6902,8 +6949,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemBoxItem
       objectReference: {fileID: 0}
+    - target: {fileID: 948947416810440136, guid: 2de0cfad5c4f9b743b28d28b0638cb3b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897228486117239175, guid: 2de0cfad5c4f9b743b28d28b0638cb3b, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 948947415452213888}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2de0cfad5c4f9b743b28d28b0638cb3b, type: 3}
+--- !u!114 &948947415452213888 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 948947416810440136, guid: 2de0cfad5c4f9b743b28d28b0638cb3b, type: 3}
+  m_PrefabInstance: {fileID: 948947415452213887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3801982730533791463
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -144,6 +144,10 @@
     <Compile Include="Assets\Scripts\JsonParse\Developer_OpenRank\Developer_Read_OneOpenRank.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\ItemBoxIconClick.cs" />
+    <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\SkyBoxController.cs" />
+    <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\SlidingInventory.cs" />
+    <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\ItemBoxIconTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\UnlitColored.shader" />
