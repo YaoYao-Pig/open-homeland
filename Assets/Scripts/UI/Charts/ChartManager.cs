@@ -18,10 +18,6 @@ public class ChartManager : MonoBehaviour
     public MouseUIAction PieChartMouseAction;
 
 
-
-    private string repoDevelopNetChartName = "Repo_TopKDeveloperChart";
-    private string repoOpenrankChartName = "Repo_OpenRankChart";
-
     
 
 

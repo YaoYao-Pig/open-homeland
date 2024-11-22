@@ -1,0 +1,3 @@
+id,name,description,icon,isUnlocked,currentProgress,targetProgress
+a_clickStar,StarCatcher,"""That's one small step for a man""",,0,0,0
+a_skyController,SkyController,"""Winter is comming""",,0,0,0

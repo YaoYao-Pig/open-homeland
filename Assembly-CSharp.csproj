@@ -69,10 +69,12 @@
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\TestDownloadServer.cs" />
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\SimpleScripting.cs" />
     <Compile Include="Assets\Scripts\Star\StarFace.cs" />
+    <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\SkyBoxController.cs" />
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\ActionTimer.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\NodeComponent.cs" />
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\ForcedCooperation.cs" />
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\Door.cs" />
+    <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\SlidingInventory.cs" />
     <Compile Include="Assets\Scripts\Planet\Planet.cs" />
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\VRMainControlPanel.cs" />
     <Compile Include="Assets\Scripts\UI\Search\SearchItem.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="Assets\Scripts\UI\HUDShow.cs" />
     <Compile Include="Assets\Scripts\UI\StarConnector.cs" />
     <Compile Include="Assets\Scripts\CSVReader.cs" />
+    <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\ItemBoxIconClick.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\NoiseSettings.cs" />
     <Compile Include="Assets\Scripts\UI\DrawLineToParent.cs" />
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\DemoList.cs" />
@@ -124,6 +127,7 @@
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\VRMode.cs" />
     <Compile Include="Assets\Scripts\ForceDirectedGraph.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\Node.cs" />
+    <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\ItemBoxIconTime.cs" />
     <Compile Include="Assets\Scripts\UI\Charts\PieChartClickHandler.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_OpenRank\Repo_Read_OpenRank.cs" />
     <Compile Include="Assets\Scripts\UI\NodeConnector.cs" />
@@ -144,10 +148,10 @@
     <Compile Include="Assets\Scripts\JsonParse\Developer_OpenRank\Developer_Read_OneOpenRank.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-    <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\ItemBoxIconClick.cs" />
-    <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\SkyBoxController.cs" />
-    <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\SlidingInventory.cs" />
-    <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\ItemBoxIconTime.cs" />
+    <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementSystemController.cs" />
+    <Compile Include="Assets\Scripts\UI\AchievementSystem\Achievement.cs" />
+    <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementUI.cs" />
+    <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementUIList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\UnlitColored.shader" />

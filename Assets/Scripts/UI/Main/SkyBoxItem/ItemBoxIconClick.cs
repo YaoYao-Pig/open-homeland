@@ -19,6 +19,10 @@ public class ItemBoxIconClick : MonoBehaviour
 
     public void SelectNewSkyBox()
     {
+        if (!AchievementSystemController.Instance.CheckAchieveStatus("a_skyController"))
+        {
+            AchievementSystemController.Instance.UpdateProgress("a_skyController", 0);
+        }
         SkyBoxController.Instance.SetSkyBox(skyBoxMaterial);
     }
 
