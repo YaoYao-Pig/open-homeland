@@ -22,6 +22,18 @@ public class AchievementUIList : MonoBehaviour
                 {
                     i.sprite = a.icon;
                 }
+
+                if (i.name == "Mask")
+                {
+                    if (a.isUnlocked)
+                    {
+                        i.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        i.gameObject.SetActive(true);
+                    }
+                }
             }
             
             TextMeshProUGUI[] ts = g.GetComponentsInChildren<TextMeshProUGUI>();

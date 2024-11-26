@@ -60,6 +60,7 @@
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\VRBrowserPanel.cs" />
     <Compile Include="Assets\Scripts\Star\MoonController.cs" />
     <Compile Include="Assets\Scripts\UI\Detail\RepoSphereClick.cs" />
+    <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementUIList.cs" />
     <Compile Include="Assets\Scripts\Star\StarSphere.cs" />
     <Compile Include="Assets\Scripts\Graph\Edge\Edge.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\RepoNodeComponent.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\SlidingInventory.cs" />
     <Compile Include="Assets\Scripts\Planet\Planet.cs" />
+    <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementSystemController.cs" />
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\VRMainControlPanel.cs" />
     <Compile Include="Assets\Scripts\UI\Search\SearchItem.cs" />
     <Compile Include="Assets\Scripts\Planet\SimpleNoiseFilter.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\SimpleFPSController.cs" />
     <Compile Include="Assets\Scripts\UI\Main\UserDetailController.cs" />
     <Compile Include="Assets\Scripts\UI\CircleText.cs" />
+    <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementUI.cs" />
     <Compile Include="Assets\Scripts\Planet\INoiseFilter.cs" />
     <Compile Include="Assets\Scripts\Planet\PlanetRotate.cs" />
     <Compile Include="Assets\Scripts\UI\Button\RepoDetailButton.cs" />
@@ -102,6 +105,7 @@
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\ExplainUnzip.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\ShapeSettings.cs" />
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\PlayerInventory.cs" />
+    <Compile Include="Assets\Scripts\UI\AchievementSystem\Achievement.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\UserNodeComponent.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_DevelopNet_Node.cs" />
     <Compile Include="Assets\Scripts\UI\Main\MainUIController.cs" />
@@ -148,10 +152,6 @@
     <Compile Include="Assets\Scripts\JsonParse\Developer_OpenRank\Developer_Read_OneOpenRank.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-    <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementSystemController.cs" />
-    <Compile Include="Assets\Scripts\UI\AchievementSystem\Achievement.cs" />
-    <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementUI.cs" />
-    <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementUIList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\UnlitColored.shader" />

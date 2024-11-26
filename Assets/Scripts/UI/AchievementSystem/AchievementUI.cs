@@ -24,6 +24,7 @@ public class AchievementUI : MonoBehaviour
         foreach (var i in images)
         {
             if (i.name == "Icon") icon = i;
+
         }
          
         icon.sprite = achievement.icon;
