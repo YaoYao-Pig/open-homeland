@@ -152,6 +152,8 @@
     <Compile Include="Assets\Scripts\JsonParse\Developer_OpenRank\Developer_Read_OneOpenRank.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Picture\PictureController.cs" />
+    <Compile Include="Assets\Scripts\Picture\DraggableSticker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\UnlitColored.shader" />
