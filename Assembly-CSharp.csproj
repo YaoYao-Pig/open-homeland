@@ -76,6 +76,7 @@
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\ForcedCooperation.cs" />
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\SlidingInventory.cs" />
+    <Compile Include="Assets\Scripts\Picture\DraggableSticker.cs" />
     <Compile Include="Assets\Scripts\Planet\Planet.cs" />
     <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementSystemController.cs" />
     <Compile Include="Assets\ZFBrowser\Demo\Scripts\VRMainControlPanel.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Assets\Scripts\UI\Detail\TopUITextController.cs" />
     <Compile Include="Assets\Scripts\Web\WebController.cs" />
     <Compile Include="Assets\Scripts\Camera\ScanEffect.cs" />
+    <Compile Include="Assets\Scripts\Picture\PictureController.cs" />
     <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\Scripts\WorldManager.cs" />
     <Compile Include="Assets\Scripts\GameData.cs" />
@@ -152,8 +154,11 @@
     <Compile Include="Assets\Scripts\JsonParse\Developer_OpenRank\Developer_Read_OneOpenRank.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Picture\PictureController.cs" />
-    <Compile Include="Assets\Scripts\Picture\DraggableSticker.cs" />
+    <Compile Include="Assets\Scripts\Camera\Post\CustomPostProcessing.cs" />
+    <Compile Include="Assets\Scripts\Camera\Post\PostProcessingEffect.cs" />
+    <Compile Include="Assets\Scripts\Camera\Post\OceanMaskRenderer.cs" />
+    <Compile Include="Assets\Scripts\Camera\Post\BloomEffect.cs" />
+    <Compile Include="Assets\Scripts\Camera\Post\FXAAEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\UnlitColored.shader" />
@@ -163,6 +168,8 @@
     <None Include="Assets\ZFBrowser\Plugins\w64\widevinecdmadapter.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\ZFBrowser\Plugins\w32\ZFProxyWeb.dll" />
+    <None Include="Assets\Scripts\Camera\Post\Bloom.shader" />
+    <None Include="Assets\Scripts\Camera\Post\Bloom.cginc" />
     <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\UnlitOpaque.shader" />
     <None Include="Assets\ZFBrowser\Plugins\w64\chrome_elf.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
@@ -171,6 +178,7 @@
     <None Include="Assets\RepoDevelopStar\Shader\Include\SimplexNoise.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\ZFBrowser\Plugins\w32\libGLESv2.dll" />
+    <None Include="Assets\Scripts\Camera\Post\FXAA.shader" />
     <None Include="Assets\DeepSpaceSkyboxPack\GalaxyFire\Galaxy Fire Skybox Readme.txt" />
     <None Include="Assets\ZFBrowser\Plugins\w64\libGLESv2.dll" />
     <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\Transparent.shader" />
@@ -206,6 +214,7 @@
     <None Include="Assets\DeepSpaceSkyboxPack\GalacticGreen\Galactic Green Skybox Readme.txt" />
     <None Include="Assets\ZFBrowser\ThirdPartyNotices.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Scripts\Camera\Post\Credit.txt" />
     <None Include="Assets\ZFBrowser\Changelog.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\RepoDevelopStar\Shader\Include\Craters.cginc" />
