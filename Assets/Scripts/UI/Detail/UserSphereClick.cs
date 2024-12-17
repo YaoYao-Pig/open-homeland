@@ -28,6 +28,11 @@ public class UserSphereClick : MonoBehaviour
         {
             return;
         }
+
+        if (!AchievementSystemController.Instance.CheckAchieveStatus("a_clickStar"))
+        {
+            AchievementSystemController.Instance.UpdateProgress("a_clickStar", 0);
+        }
         LookRepoDetails();
 
     }

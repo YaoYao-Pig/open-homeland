@@ -8,7 +8,6 @@ public class StarConnector : MonoBehaviour
     private LineRenderer lineRenderer;
     [SerializeField] StarController starController;
     private int segmentCount = 4;
-    private float alpha = 1f;
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();

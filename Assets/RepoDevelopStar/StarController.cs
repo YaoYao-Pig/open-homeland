@@ -19,7 +19,7 @@ public class StarController : MonoBehaviour
         float lastOpenRank = GetData();
         sphereDivide.GenerateSphere();
         Debug.Log("crater number:"+(int)lastOpenRank);
-        float[] heights = starCompute.Initialize(gameObject.GetComponent<MeshFilter>().sharedMesh,(int)lastOpenRank==0?100: (int)lastOpenRank*100);
+        float[] heights = starCompute.Initialize(gameObject.GetComponent<MeshFilter>().sharedMesh,(1000-(int)lastOpenRank*100)<0?10: (1000 - (int)lastOpenRank * 100));
         UpdateSphereHeight(gameObject.GetComponent<MeshFilter>().sharedMesh, heights);
     }
 
