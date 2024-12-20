@@ -155,7 +155,7 @@ public class PlanetManager : MonoBehaviour
         }
         else
         {
-            int index = 3;
+            //int index = 3;
             Gradient gradient = new Gradient();
             GradientColorKey[] colorKeys = new GradientColorKey[5];
             colorKeys[0] = new GradientColorKey(ColorTransfer(218f, 226f, 50f), 0.0f);    // 0% 位置为白色
@@ -175,7 +175,7 @@ public class PlanetManager : MonoBehaviour
     private float Sigmoid(float f)
     {
         float t = Mathf.Pow(1 + Mathf.Pow((float)Math.E, -f), -1);
-        Debug.Log("Sigmod:"+t);
+        //Debug.Log("Sigmod:"+t);
         return Mathf.Pow(1 + Mathf.Pow((float)Math.E, -f), -1);
     }
     private void InitializePlanets()
@@ -194,7 +194,7 @@ public class PlanetManager : MonoBehaviour
             simpleNoiseSettings.strength = Sigmoid(openRankList.lastOpenRank / 100.0f)/10f;
             simpleNoiseSettings.baseRoughness = Sigmoid(openRankList.lastOpenRank/100.0f);
 
-            Debug.Log(repository.GetRepoDevelopNetAverageOpenRank());
+            //Debug.Log(repository.GetRepoDevelopNetAverageOpenRank());
             //通过Openrank均值来控制颜色
             GenrateGradint(1, repository.GetRepoDevelopNetAverageOpenRank());
             

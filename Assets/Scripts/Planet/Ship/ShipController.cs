@@ -21,7 +21,7 @@ public class ShipController : MonoBehaviour
     private Camera mainCamera;
 
     public float moveDuration = 2f; // 移动时间
-    private bool canMove = true; // 控制输入的开关
+    //private bool canMove = true; // 控制输入的开关
     public float offset = 10f;
     public float elapsedTime = 0;
     private float distance = 0.0f;

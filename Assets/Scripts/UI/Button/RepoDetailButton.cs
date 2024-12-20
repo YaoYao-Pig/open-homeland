@@ -19,7 +19,7 @@ public class RepoDetailButton : MonoBehaviour
 
     public void BackToMain()
     {
-        Debug.Log("Return");
+        //Debug.Log("Return");
         GameData.Instance.ClearParams();
 
 

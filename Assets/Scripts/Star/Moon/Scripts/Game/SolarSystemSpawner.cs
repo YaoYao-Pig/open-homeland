@@ -43,7 +43,7 @@ public class SolarSystemSpawner : MonoBehaviour {
 
 
     public void Spawn (int seed) {
-		Debug.Log("SolarSpawner");
+		//Debug.Log("SolarSpawner");
 		var sw = System.Diagnostics.Stopwatch.StartNew ();
 
 		PRNG prng = new PRNG (seed);
@@ -92,7 +92,7 @@ public class SolarSystemSpawner : MonoBehaviour {
 
 		}
 
-		Debug.Log ("Generation time: " + sw.ElapsedMilliseconds + " ms.");
+		//Debug.Log ("Generation time: " + sw.ElapsedMilliseconds + " ms.");
 	}
 
 }

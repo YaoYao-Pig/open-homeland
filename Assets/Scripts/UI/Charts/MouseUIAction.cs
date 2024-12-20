@@ -27,7 +27,7 @@ public class MouseUIAction : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         if (centerPoint == null) throw new System.Exception("MouseUIAction:centerPoint can't get");
         position2Center = centerPoint.transform.localPosition - originalLocalPosition;
         position2Center /= 2.0f;
-        Debug.Log("position2Center:" + position2Center.ToString());
+        //Debug.Log("position2Center:" + position2Center.ToString());
     }
 
 

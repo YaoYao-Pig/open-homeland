@@ -38,7 +38,7 @@ public class StarController : MonoBehaviour
     public void GenerateDeveloperStars()
     {
         isDetail = false;
-        Debug.Log("GenerateDeveloperStars");
+        //Debug.Log("GenerateDeveloperStars");
         Repository repository = GameData.Instance.GetRepoDetail();
         if (repository == null) throw new System.Exception("Repository Is Null");
         Repo_Read_RepoDeveloperNet repo_Read_DevelopNet_Node = repository.developerNetwork;

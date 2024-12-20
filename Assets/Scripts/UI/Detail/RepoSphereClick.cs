@@ -7,7 +7,7 @@ public class RepoSphereClick : MonoBehaviour
 {
 
 
-    private bool flag = true;//flag代表下次点击是打开Repo的Detail页面还是关闭Detal页面
+    //private bool flag = true;//flag代表下次点击是打开Repo的Detail页面还是关闭Detal页面
 
 
     private Repository repository;
@@ -44,7 +44,7 @@ public class RepoSphereClick : MonoBehaviour
             if (nodeSelf == null) nodeSelf = GetComponent<RepoNodeComponent>();
             CameraController.Instance.MoveCameraToSphereAndLoadScence(transform.position, nodeSelf.node.radius);
             TransferData();
-            flag = false;
+            //flag = false;
         //}
         //else if (!flag )
         //{

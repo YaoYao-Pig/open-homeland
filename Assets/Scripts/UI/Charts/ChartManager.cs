@@ -19,8 +19,8 @@ public class ChartManager : MonoBehaviour
 
 
 
-    private string repoDevelopNetChartName = "Repo_TopKDeveloperChart";
-    private string repoOpenrankChartName = "Repo_OpenRankChart";
+    //private string repoDevelopNetChartName = "Repo_TopKDeveloperChart";
+    //private string repoOpenrankChartName = "Repo_OpenRankChart";
 
     
 
