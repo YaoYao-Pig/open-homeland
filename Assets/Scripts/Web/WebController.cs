@@ -9,7 +9,7 @@ public class WebController : MonoBehaviour
 {
 
 
-    private List<string> urls;
+    private List<string> urls=new List<string>();
 
     void SaveJsonToFile(string json, string relativePath)
     {

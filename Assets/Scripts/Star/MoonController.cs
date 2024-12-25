@@ -7,7 +7,7 @@ public class MoonController : MonoBehaviour
     public GameObject moonPrefab;
 
 
-    private GameObject moonObject;
+    //private GameObject moonObject;
     public void GenerateMoon()
     {
         //moonObject = Instantiate(moonPrefab, transform);
@@ -16,6 +16,6 @@ public class MoonController : MonoBehaviour
 
     public void DestroyMoon()
     {
-        Destroy(moonObject);
+        //Destroy(moonObject);
     }
 }

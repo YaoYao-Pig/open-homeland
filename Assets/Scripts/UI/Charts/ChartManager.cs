@@ -74,7 +74,7 @@ public class ChartManager : MonoBehaviour
         chart.SetSize(1200, 600);
 
         var title = chart.EnsureChartComponent<Title>();
-        title.text = "Top 5 OpenRank开发者";
+        title.text = "Top 5 访问时间段";
         title.labelStyle.textStyle.fontSize = 50;
         var xAxis = chart.EnsureChartComponent<XAxis>();
         xAxis.splitNumber = 10;
@@ -162,7 +162,7 @@ public class ChartManager : MonoBehaviour
         chart.SetSize(1200, 600);
 
         var title = chart.EnsureChartComponent<Title>();
-        title.text = "Developer OpenRank Percentage";
+        title.text = "访问人数时间段饼图";
         title.labelStyle.textStyle.fontSize = 50;
         chart.RemoveData();
         var serie=chart.AddSerie<Pie>();
@@ -232,7 +232,7 @@ public class ChartManager : MonoBehaviour
 
         // 设置图表标题
         var title = chart.EnsureChartComponent<Title>();
-        title.text = "OpenRank 月度变化图";
+        title.text = "访问人数月度变化图";
         title.labelStyle.textStyle.fontSize = 50;
 
         // 设置 X 轴和 Y 轴
@@ -317,7 +317,7 @@ public class ChartManager : MonoBehaviour
 
         // 设置图表标题
         var title = chart.EnsureChartComponent<Title>();
-        title.text = "Developer OpenRank 月度变化图";
+        title.text = "访问人数月度变化图";
         title.labelStyle.textStyle.fontSize = 50;
         developerOpenRankChart.transform.SetAsLastSibling();
         //developerOpenRankChart.transform.position = repoDeveloperPercentChart.transform.position;

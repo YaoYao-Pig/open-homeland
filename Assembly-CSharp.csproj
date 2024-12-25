@@ -662,17 +662,11 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>D:\Software\GameDevelopment\2021.3.16f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Cecil.Pdb">
-      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
-    </Reference>
-    <Reference Include="ReportGeneratorMerged">
-      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Cecil.Mdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
@@ -685,6 +679,12 @@
     </Reference>
     <Reference Include="LitJSON">
       <HintPath>Assets\Plugins\LitJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportGeneratorMerged">
+      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:\Software\GameDevelopment\2021.3.16f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -1177,13 +1177,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="XCharts.Examples.csproj">
-      <Project>{1541FD12-69C0-B861-B087-B9DDF2A7FDC7}</Project>
-      <Name>XCharts.Examples</Name>
-    </ProjectReference>
     <ProjectReference Include="XCharts.Runtime.csproj">
       <Project>{0643DB31-E1FF-3443-692D-895B65F556AA}</Project>
       <Name>XCharts.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="XCharts.Examples.csproj">
+      <Project>{1541FD12-69C0-B861-B087-B9DDF2A7FDC7}</Project>
+      <Name>XCharts.Examples</Name>
     </ProjectReference>
     <ProjectReference Include="XCharts.Editor.csproj">
       <Project>{FE175CD1-341D-4506-6733-307BD26DCF45}</Project>
