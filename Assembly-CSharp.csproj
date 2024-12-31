@@ -57,7 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\HUDController.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\VRBrowserPanel.cs" />
     <Compile Include="Assets\Scripts\Star\MoonController.cs" />
     <Compile Include="Assets\Scripts\UI\Detail\RepoSphereClick.cs" />
     <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementUIList.cs" />
@@ -67,23 +66,16 @@
     <Compile Include="Assets\Scripts\Planet\PlanetTravel.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_DevelopNet_Edge.cs" />
     <Compile Include="Assets\Scripts\UI\MaterialController.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\TestDownloadServer.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\SimpleScripting.cs" />
     <Compile Include="Assets\Scripts\Star\StarFace.cs" />
     <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\SkyBoxController.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\ActionTimer.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\NodeComponent.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\ForcedCooperation.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\SlidingInventory.cs" />
     <Compile Include="Assets\Scripts\Picture\DraggableSticker.cs" />
     <Compile Include="Assets\Scripts\Planet\Planet.cs" />
     <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementSystemController.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\VRMainControlPanel.cs" />
+    <Compile Include="Assets\Scripts\Camera\Post\OceanMaskRenderer.cs" />
     <Compile Include="Assets\Scripts\UI\Search\SearchItem.cs" />
     <Compile Include="Assets\Scripts\Planet\SimpleNoiseFilter.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\CoinPickup.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\SimpleFPSController.cs" />
     <Compile Include="Assets\Scripts\UI\Main\UserDetailController.cs" />
     <Compile Include="Assets\Scripts\UI\CircleText.cs" />
     <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementUI.cs" />
@@ -100,19 +92,15 @@
     <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\ItemBoxIconClick.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\NoiseSettings.cs" />
     <Compile Include="Assets\Scripts\UI\DrawLineToParent.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\DemoList.cs" />
     <Compile Include="Assets\Scripts\UI\Search\SearchBar.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\BallBrowserSpawner.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\ExplainUnzip.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\ShapeSettings.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\PlayerInventory.cs" />
+    <Compile Include="Assets\Scripts\Camera\Post\PostProcessingEffect.cs" />
     <Compile Include="Assets\Scripts\UI\AchievementSystem\Achievement.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\UserNodeComponent.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_DevelopNet_Node.cs" />
     <Compile Include="Assets\Scripts\UI\Main\MainUIController.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\RepoNode.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\ColourSettings.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\SayWordsOnTouch.cs" />
     <Compile Include="Assets\Scripts\Graph\Repository.cs" />
     <Compile Include="Assets\Scripts\Planet\Noise.cs" />
     <Compile Include="Assets\Scripts\UI\Detail\UserSphereClick.cs" />
@@ -121,7 +109,6 @@
     <Compile Include="Assets\Scripts\Star\MoonUIRotate.cs" />
     <Compile Include="Assets\RepoDevelopStar\StarController.cs" />
     <Compile Include="Assets\Scripts\UI\Charts\MouseUIAction.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\SimpleController.cs" />
     <Compile Include="Assets\Scripts\Planet\ShapeGenerator.cs" />
     <Compile Include="Assets\Scripts\Planet\RidgidNoiseFilfter.cs" />
     <Compile Include="Assets\Scripts\UI\MouseAction.cs" />
@@ -129,7 +116,6 @@
     <Compile Include="Assets\RepoDevelopStar\PRNG.cs" />
     <Compile Include="Assets\Scripts\Planet\StarRotate\PlanetOrbit.cs" />
     <Compile Include="Assets\RepoDevelopStar\SphereDivide.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\VRMode.cs" />
     <Compile Include="Assets\Scripts\ForceDirectedGraph.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\Node.cs" />
     <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\ItemBoxIconTime.cs" />
@@ -138,10 +124,11 @@
     <Compile Include="Assets\Scripts\UI\NodeConnector.cs" />
     <Compile Include="Assets\RepoDevelopStar\StarCompute.cs" />
     <Compile Include="Assets\Scripts\Planet\ColourGenerator.cs" />
-    <Compile Include="Assets\ZFBrowser\Demo\Scripts\HUDManager.cs" />
+    <Compile Include="Assets\Scripts\Camera\Post\CustomPostProcessing.cs" />
     <Compile Include="Assets\Scripts\Planet\PlanetManager.cs" />
     <Compile Include="Assets\Scripts\UI\Detail\TopUITextController.cs" />
     <Compile Include="Assets\Scripts\Web\WebController.cs" />
+    <Compile Include="Assets\Scripts\Camera\Post\FXAAEffect.cs" />
     <Compile Include="Assets\Scripts\Camera\ScanEffect.cs" />
     <Compile Include="Assets\Scripts\Picture\PictureController.cs" />
     <Compile Include="Assets\Scripts\Utils.cs" />
@@ -152,46 +139,27 @@
     <Compile Include="Assets\Scripts\Planet\NoiseFilterFactory.cs" />
     <Compile Include="Assets\Scripts\Planet\Ship\GravitySimulation.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Developer_OpenRank\Developer_Read_OneOpenRank.cs" />
+    <Compile Include="Assets\Scripts\Camera\Post\BloomEffect.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Camera\Post\CustomPostProcessing.cs" />
-    <Compile Include="Assets\Scripts\Camera\Post\PostProcessingEffect.cs" />
-    <Compile Include="Assets\Scripts\Camera\Post\OceanMaskRenderer.cs" />
-    <Compile Include="Assets\Scripts\Camera\Post\BloomEffect.cs" />
-    <Compile Include="Assets\Scripts\Camera\Post\FXAAEffect.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\UnlitColored.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\RepoDevelopStar\Shader\Include\FractalNoise.cginc" />
-    <None Include="Assets\ZFBrowser\Plugins\w64\widevinecdmadapter.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\ZFBrowser\Plugins\w32\ZFProxyWeb.dll" />
     <None Include="Assets\Scripts\Camera\Post\Bloom.shader" />
     <None Include="Assets\Scripts\Camera\Post\Bloom.cginc" />
-    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\UnlitOpaque.shader" />
-    <None Include="Assets\ZFBrowser\Plugins\w64\chrome_elf.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\ZFBrowser\Plugins\w32\chrome_elf.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\RepoDevelopStar\Shader\Include\SimplexNoise.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\ZFBrowser\Plugins\w32\libGLESv2.dll" />
     <None Include="Assets\Scripts\Camera\Post\FXAA.shader" />
     <None Include="Assets\DeepSpaceSkyboxPack\GalaxyFire\Galaxy Fire Skybox Readme.txt" />
-    <None Include="Assets\ZFBrowser\Plugins\w64\libGLESv2.dll" />
-    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\Transparent.shader" />
     <None Include="Assets\RepoDevelopStar\Shader\Include\Math.cginc" />
-    <None Include="Assets\ZFBrowser\Plugins\w32\d3dcompiler_43.dll" />
-    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\Unlit.shader" />
     <None Include="Assets\RepoDevelopStar\Shader\CaterCompute.compute" />
-    <None Include="Assets\ZFBrowser\Plugins\w64\d3dcompiler_43.dll" />
-    <None Include="Assets\ZFBrowser\Plugins\w64\ZFProxyWeb.dll" />
-    <None Include="Assets\ZFBrowser\Plugins\w32\d3dcompiler_47.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\DeepSpaceSkyboxPack\DiverseSpace\Diverse Space Skybox Readme.txt" />
-    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\Standard.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\Material\Shader\EdgeLight.shader" />
@@ -199,32 +167,20 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\Material\Shader\LineShader.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\ZFBrowser\Plugins\w64\libEGL.dll" />
-    <None Include="Assets\ZFBrowser\Plugins\w32\zf_cef.dll" />
-    <None Include="Assets\ZFBrowser\Plugins\versions.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\Readme.txt" />
-    <None Include="Assets\ZFBrowser\Plugins\w32\widevinecdmadapter.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Material\Shader\ScanEffect.shader" />
     <None Include="Assets\Material\Shader\newEdgeLight.shader" />
-    <None Include="Assets\ZFBrowser\Plugins\w64\d3dcompiler_47.dll" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\ZFBrowser\Materials\EmulatedMipmap\MipSample.cginc" />
     <None Include="Assets\DeepSpaceSkyboxPack\GalacticGreen\Galactic Green Skybox Readme.txt" />
-    <None Include="Assets\ZFBrowser\ThirdPartyNotices.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Scripts\Camera\Post\Credit.txt" />
-    <None Include="Assets\ZFBrowser\Changelog.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\RepoDevelopStar\Shader\Include\Craters.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\ZFBrowser\Materials\UnlitCursor.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\ZFBrowser\Plugins\w32\libEGL.dll" />
-    <None Include="Assets\ZFBrowser\Plugins\w64\zf_cef.dll" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -467,17 +423,11 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>D:\Software\GameDevelopment\2021.3.16f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Cecil.Pdb">
-      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
-    </Reference>
-    <Reference Include="ReportGeneratorMerged">
-      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Cecil.Mdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
@@ -490,6 +440,12 @@
     </Reference>
     <Reference Include="LitJSON">
       <HintPath>Assets\Plugins\LitJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportGeneratorMerged">
+      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:\Software\GameDevelopment\2021.3.16f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -982,21 +938,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="ZFBrowser.csproj">
-      <Project>{04E7FC0C-CD33-BDF6-91D5-9E563F1F85DD}</Project>
-      <Name>ZFBrowser</Name>
-    </ProjectReference>
-    <ProjectReference Include="XCharts.Examples.csproj">
-      <Project>{1541FD12-69C0-B861-B087-B9DDF2A7FDC7}</Project>
-      <Name>XCharts.Examples</Name>
-    </ProjectReference>
     <ProjectReference Include="XCharts.Runtime.csproj">
       <Project>{0643DB31-E1FF-3443-692D-895B65F556AA}</Project>
       <Name>XCharts.Runtime</Name>
     </ProjectReference>
-    <ProjectReference Include="ZFBrowser-Editor.csproj">
-      <Project>{0CC64751-9872-502D-2289-B0266AFABFB3}</Project>
-      <Name>ZFBrowser-Editor</Name>
+    <ProjectReference Include="XCharts.Examples.csproj">
+      <Project>{1541FD12-69C0-B861-B087-B9DDF2A7FDC7}</Project>
+      <Name>XCharts.Examples</Name>
     </ProjectReference>
     <ProjectReference Include="XCharts.Editor.csproj">
       <Project>{FE175CD1-341D-4506-6733-307BD26DCF45}</Project>

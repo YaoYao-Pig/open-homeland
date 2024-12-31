@@ -5,15 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCharts.Runtime", "XCharts.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{26C4FC66-B315-E994-EA80-C3BC2F50D5B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZFBrowser", "ZFBrowser.csproj", "{04E7FC0C-CD33-BDF6-91D5-9E563F1F85DD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCharts.Examples", "XCharts.Examples.csproj", "{1541FD12-69C0-B861-B087-B9DDF2A7FDC7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCharts.Editor", "XCharts.Editor.csproj", "{FE175CD1-341D-4506-6733-307BD26DCF45}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{E9525D31-1747-259E-873E-EAC860A7321F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZFBrowser-Editor", "ZFBrowser-Editor.csproj", "{0CC64751-9872-502D-2289-B0266AFABFB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +25,6 @@ Global
 		{26C4FC66-B315-E994-EA80-C3BC2F50D5B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26C4FC66-B315-E994-EA80-C3BC2F50D5B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26C4FC66-B315-E994-EA80-C3BC2F50D5B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{04E7FC0C-CD33-BDF6-91D5-9E563F1F85DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04E7FC0C-CD33-BDF6-91D5-9E563F1F85DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04E7FC0C-CD33-BDF6-91D5-9E563F1F85DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04E7FC0C-CD33-BDF6-91D5-9E563F1F85DD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1541FD12-69C0-B861-B087-B9DDF2A7FDC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1541FD12-69C0-B861-B087-B9DDF2A7FDC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1541FD12-69C0-B861-B087-B9DDF2A7FDC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,10 +37,6 @@ Global
 		{E9525D31-1747-259E-873E-EAC860A7321F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9525D31-1747-259E-873E-EAC860A7321F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9525D31-1747-259E-873E-EAC860A7321F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CC64751-9872-502D-2289-B0266AFABFB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CC64751-9872-502D-2289-B0266AFABFB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CC64751-9872-502D-2289-B0266AFABFB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CC64751-9872-502D-2289-B0266AFABFB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
