@@ -7,7 +7,9 @@
 
 ## 演示视频
 
-![perform](./assets/perform.gif)
+![gif](https://github.com/YaoYao-Pig/open-homeland/blob/main/Readme/perform.gif)
+
+
 
 视频：
 
