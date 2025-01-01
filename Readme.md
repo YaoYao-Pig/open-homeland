@@ -7,7 +7,7 @@
 
 ## 演示视频
 
-<video src="./复赛/11组-伊萨卡-复赛演示视频.mp4"></video>
+<video src="./Readme/perform.mp4"></video>
 
 ## PPT
 
