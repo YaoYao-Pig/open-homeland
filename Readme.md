@@ -5,4 +5,15 @@
 1. XChart：用于图表的管理和创建https://github.com/XCharts-Team/XCharts
 2. LiteJson:用于Json读取，直接在Unity插件商店里面下载就好
 
+## 演示视频
+
+<video src="./复赛/11组-伊萨卡-复赛演示视频.mp4"></video>
+
+## PPT
+
+复赛PPT位置在复赛文件夹下
+
+## 开发日志
+
+[Log](./Log.md)
 
