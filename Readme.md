@@ -7,7 +7,11 @@
 
 ## 演示视频
 
-<video src="./Readme/perform.mp4"></video>
+![perform](./assets/perform.gif)
+
+视频：
+
+[Video](./Readme/perform.mp4)
 
 ## PPT
 
