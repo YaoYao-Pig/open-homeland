@@ -7,7 +7,7 @@
 
 ## 演示视频
 
-gif:
+gif:(gif大小比较大，请等待加载)
 
 ![gif](https://github.com/YaoYao-Pig/open-homeland/blob/main/Readme/perform.gif)
 
