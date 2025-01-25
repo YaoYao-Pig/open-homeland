@@ -142,6 +142,11 @@
     <Compile Include="Assets\Scripts\Camera\Post\BloomEffect.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Event\Event\UI\UserUIClickedEvent.cs" />
+    <Compile Include="Assets\Prefab\GameResource\GameResource.cs" />
+    <Compile Include="Assets\Scripts\Event\Handler\UI\UserUIClicked.cs" />
+    <Compile Include="Assets\Scripts\Event\Event\UI\UserUIClickedOutEvent.cs" />
+    <Compile Include="Assets\Scripts\Event\Handler\UI\UserUIClickedOut.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
