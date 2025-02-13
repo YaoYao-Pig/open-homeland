@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Picture\DraggableSticker.cs" />
     <Compile Include="Assets\Scripts\Planet\Planet.cs" />
     <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementSystemController.cs" />
+    <Compile Include="Assets\Scripts\Event\Event\UI\UserUIClickedEvent.cs" />
     <Compile Include="Assets\Scripts\Camera\Post\OceanMaskRenderer.cs" />
     <Compile Include="Assets\Scripts\UI\Search\SearchItem.cs" />
     <Compile Include="Assets\Scripts\Planet\SimpleNoiseFilter.cs" />
@@ -86,9 +87,12 @@
     <Compile Include="Assets\Scripts\WorldInfo.cs" />
     <Compile Include="Assets\Scripts\Planet\TerrainFace.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_RepoDeveloperNet.cs" />
+    <Compile Include="Assets\Scripts\Event\Handler\UI\UserUIClickedOut.cs" />
     <Compile Include="Assets\Scripts\UI\HUDShow.cs" />
     <Compile Include="Assets\Scripts\UI\StarConnector.cs" />
+    <Compile Include="Assets\Prefab\GameResource\GameResource.cs" />
     <Compile Include="Assets\Scripts\CSVReader.cs" />
+    <Compile Include="Assets\Scripts\Event\Handler\UI\UserUIClicked.cs" />
     <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\ItemBoxIconClick.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\NoiseSettings.cs" />
     <Compile Include="Assets\Scripts\UI\DrawLineToParent.cs" />
@@ -128,6 +132,7 @@
     <Compile Include="Assets\Scripts\Planet\PlanetManager.cs" />
     <Compile Include="Assets\Scripts\UI\Detail\TopUITextController.cs" />
     <Compile Include="Assets\Scripts\Web\WebController.cs" />
+    <Compile Include="Assets\Scripts\Event\Event\UI\UserUIClickedOutEvent.cs" />
     <Compile Include="Assets\Scripts\Camera\Post\FXAAEffect.cs" />
     <Compile Include="Assets\Scripts\Camera\ScanEffect.cs" />
     <Compile Include="Assets\Scripts\Picture\PictureController.cs" />
@@ -142,11 +147,6 @@
     <Compile Include="Assets\Scripts\Camera\Post\BloomEffect.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Event\Event\UI\UserUIClickedEvent.cs" />
-    <Compile Include="Assets\Prefab\GameResource\GameResource.cs" />
-    <Compile Include="Assets\Scripts\Event\Handler\UI\UserUIClicked.cs" />
-    <Compile Include="Assets\Scripts\Event\Event\UI\UserUIClickedOutEvent.cs" />
-    <Compile Include="Assets\Scripts\Event\Handler\UI\UserUIClickedOut.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
