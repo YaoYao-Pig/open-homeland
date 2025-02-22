@@ -30,7 +30,7 @@ public class UserUIClicked : MonoBehaviour
     private void UserUIClickedEvent_OnUserUIClickedEvent(UserUIClickedEvent userUIClickedEvent, OnUserUIClickedEventArgs userUIClickedEventArgs)
     {
         GameResource.Instance.mainUserUIRoot.gameObject.SetActive(true);
-        GameResource.Instance.mainUserUIAnimator.SetBool("ui_out", true);
+        GameResource.Instance.mainUserUIAnimator.SetBool("ui_back", false);
     }
 
     void Start()

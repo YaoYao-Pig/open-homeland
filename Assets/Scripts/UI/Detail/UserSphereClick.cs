@@ -26,6 +26,10 @@ public class UserSphereClick : MonoBehaviour
 
     }
 
+    private void DealException()
+    {
+        Debug.Log("404");
+    }
 
     private void OnMouseDown()
     {
@@ -38,16 +42,21 @@ public class UserSphereClick : MonoBehaviour
         {
             AchievementSystemController.Instance.UpdateProgress("a_clickStar", 0);
         }
-        if (count % 2 == 0)
+        if (count == 0)
         {
             LookRepoDetails();
             userUIClickedEvent.CallOnUserUIClickedEvent(nodeSelf.node as UserNode, nodeSelf);
-            count++;
+            //Debug.Log(UIManager.Instance.userBarChart);
+            UIManager.Instance.userBarChart.ClearData();
+            Debug.Log(gameObject.name);
+
+            StartCoroutine(WebController.GetUserDeveloperOpenRank(gameObject.name, DealException));   
+            count=1;
         }
         else
         {
             userUIClickedOutEvent.CallOnUserUIClickedOutEvent(nodeSelf.node as UserNode, nodeSelf);
-            count++;
+            count=0;
         }
     }
 }

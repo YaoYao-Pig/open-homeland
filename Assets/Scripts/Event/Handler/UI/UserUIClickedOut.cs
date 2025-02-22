@@ -34,6 +34,7 @@ public class UserUIClickedOut : MonoBehaviour
 
     private IEnumerator ClickedOut()
     {
+        GameResource.Instance.mainUserUIAnimator.SetBool("ui_out", false);
         GameResource.Instance.mainUserUIAnimator.SetBool("ui_back", true);
         yield return new WaitForSeconds(1);
         GameResource.Instance.mainUserUIRoot.gameObject.SetActive(true);

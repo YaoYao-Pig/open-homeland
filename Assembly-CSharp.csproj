@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\HUDController.cs" />
+    <Compile Include="Assets\Scripts\ChatBot\UserDialog.cs" />
     <Compile Include="Assets\Scripts\Star\MoonController.cs" />
     <Compile Include="Assets\Scripts\UI\Detail\RepoSphereClick.cs" />
     <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementUIList.cs" />
@@ -71,6 +72,8 @@
     <Compile Include="Assets\Scripts\Graph\Node\NodeComponent.cs" />
     <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\SlidingInventory.cs" />
     <Compile Include="Assets\Scripts\Picture\DraggableSticker.cs" />
+    <Compile Include="Assets\Scripts\UI\UIManager.cs" />
+    <Compile Include="Assets\Scripts\ChatBot\ChatBotDialog.cs" />
     <Compile Include="Assets\Scripts\Planet\Planet.cs" />
     <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementSystemController.cs" />
     <Compile Include="Assets\Scripts\Event\Event\UI\UserUIClickedEvent.cs" />
@@ -104,6 +107,7 @@
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_DevelopNet_Node.cs" />
     <Compile Include="Assets\Scripts\UI\Main\MainUIController.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\RepoNode.cs" />
+    <Compile Include="Assets\Scripts\ChatBot\Dialog.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\ColourSettings.cs" />
     <Compile Include="Assets\Scripts\Graph\Repository.cs" />
     <Compile Include="Assets\Scripts\Planet\Noise.cs" />
@@ -113,11 +117,14 @@
     <Compile Include="Assets\Scripts\Star\MoonUIRotate.cs" />
     <Compile Include="Assets\RepoDevelopStar\StarController.cs" />
     <Compile Include="Assets\Scripts\UI\Charts\MouseUIAction.cs" />
+    <Compile Include="Assets\Scripts\UI\UIAutoSize.cs" />
     <Compile Include="Assets\Scripts\Planet\ShapeGenerator.cs" />
+    <Compile Include="Assets\Scripts\UI\ChatBot\ChatBotSubmitButton.cs" />
     <Compile Include="Assets\Scripts\Planet\RidgidNoiseFilfter.cs" />
     <Compile Include="Assets\Scripts\UI\MouseAction.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\UserNode.cs" />
     <Compile Include="Assets\RepoDevelopStar\PRNG.cs" />
+    <Compile Include="Assets\Scripts\ChatBot\ChatBotManager.cs" />
     <Compile Include="Assets\Scripts\Planet\StarRotate\PlanetOrbit.cs" />
     <Compile Include="Assets\RepoDevelopStar\SphereDivide.cs" />
     <Compile Include="Assets\Scripts\ForceDirectedGraph.cs" />
@@ -147,6 +154,8 @@
     <Compile Include="Assets\Scripts\Camera\Post\BloomEffect.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\ChatBot\ChatGPTRequest.cs" />
+    <Compile Include="Assets\Scripts\ChatBot\DeepSeekAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
