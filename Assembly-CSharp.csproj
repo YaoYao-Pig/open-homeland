@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\HUDController.cs" />
+    <Compile Include="Assets\Scripts\ChatBot\ChatGPTRequest.cs" />
     <Compile Include="Assets\Scripts\ChatBot\UserDialog.cs" />
     <Compile Include="Assets\Scripts\Star\MoonController.cs" />
     <Compile Include="Assets\Scripts\UI\Detail\RepoSphereClick.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Assets\Scripts\Planet\TerrainFace.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_RepoDeveloperNet.cs" />
     <Compile Include="Assets\Scripts\Event\Handler\UI\UserUIClickedOut.cs" />
+    <Compile Include="Assets\Scripts\ChatBot\DeepSeekAPI.cs" />
     <Compile Include="Assets\Scripts\UI\HUDShow.cs" />
     <Compile Include="Assets\Scripts\UI\StarConnector.cs" />
     <Compile Include="Assets\Prefab\GameResource\GameResource.cs" />
@@ -154,8 +156,6 @@
     <Compile Include="Assets\Scripts\Camera\Post\BloomEffect.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-    <Compile Include="Assets\Scripts\ChatBot\ChatGPTRequest.cs" />
-    <Compile Include="Assets\Scripts\ChatBot\DeepSeekAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
