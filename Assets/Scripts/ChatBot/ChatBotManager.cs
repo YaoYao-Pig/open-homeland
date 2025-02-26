@@ -21,7 +21,6 @@ public class ChatBotManager : MonoBehaviour
 
 
 
-
     private ChatGPTRequest chatGPTRequest=new ChatGPTRequest();
     private DeepSeekAPI deepSeekAPI = new DeepSeekAPI();
     private enum DialogTurn

@@ -11,11 +11,19 @@ public class DeepSeekAPI
 {
     private const string API_URL = "http://202.120.92.104:8000/v1/chat/completions";  // DeepSeek API URL
     private const string MODEL = "/models/DeepSeek-R1-Distill-Llama-70B/";  // 使用的模型
-
-    private List<string> previousContext=new List<string>();
+    private string prompt = "你是一个对话机器人，这是一个开源项目的影响力可视化系统，可视化由星球+随机化地形生成操控。随机化生成的方式是通过开源项目的两个影响力控制的，一个是OpenRank值一个是活跃度值，OpenRank值类似于PageRank算法，越高说明项目影响力越高。" +
+"这两个参数对于地形的控制如下：参数越高，地形越类似于地球，体现出平缓的地势和绿色。参数越低，项目活跃度越低，地形越崎岖，越红越不正常的颜色。OpenRank在0-1之间，活跃度在0-1之间。" +
+"现在，我会给你一个项目的OpenRank值和活跃度，请你根据这个来回答问题。" +
+"OpenRank：0.5，活跃度：0.2";
+    private List<string> previousContext=new List<string>() ;
     private List<string> backGroundPrompt=new List<string>();
+
+
+
     public IEnumerator CallDeepSeekAPI(string userInput,Action<string> onComplete)
     {
+        if(previousContext.Count==0)
+            previousContext.Add(prompt);
         // 准备构造请求的messages
         List<object> messages = new List<object>();
 
