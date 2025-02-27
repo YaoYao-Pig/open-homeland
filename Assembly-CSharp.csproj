@@ -156,6 +156,8 @@
     <Compile Include="Assets\Scripts\Camera\Post\BloomEffect.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\UI\ChatBot\ChatBotButton.cs" />
+    <Compile Include="Assets\Scripts\ChatBot\GitHubReadmeFetcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -19,9 +19,9 @@ public class ChatBotManager : MonoBehaviour
     private int chatBotID=0;
     private int userID=0;
 
+ 
 
-
-    private ChatGPTRequest chatGPTRequest=new ChatGPTRequest();
+    private ChatGPTRequest  chatGPTRequest=new ChatGPTRequest();
     private DeepSeekAPI deepSeekAPI = new DeepSeekAPI();
     private enum DialogTurn
     {
@@ -57,10 +57,10 @@ public class ChatBotManager : MonoBehaviour
 
     private void Start()
     {
-        Inite();
+        
     }
 
-    private void Inite()
+    public void Inite()
     {
         AddChatDialog("Hello!");
     }
@@ -73,6 +73,7 @@ public class ChatBotManager : MonoBehaviour
         userInputContext = text;
         AddUserDialog();
         //StartCoroutine(chatGPTRequest.CallChatGPT("API ≤‚ ‘", AddChatDialog));
+        deepSeekAPI.SetParam(1, 1);
         StartCoroutine(deepSeekAPI.CallDeepSeekAPI(userInputContext, AddChatDialog));
 
 
