@@ -145,6 +145,7 @@
     <Compile Include="Assets\Scripts\Camera\Post\FXAAEffect.cs" />
     <Compile Include="Assets\Scripts\Camera\ScanEffect.cs" />
     <Compile Include="Assets\Scripts\Picture\PictureController.cs" />
+    <Compile Include="Assets\Scripts\UI\ChatBot\ChatBotButton.cs" />
     <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\Scripts\WorldManager.cs" />
     <Compile Include="Assets\Scripts\GameData.cs" />
@@ -152,12 +153,11 @@
     <Compile Include="Assets\Scripts\UI\SceneTransition.cs" />
     <Compile Include="Assets\Scripts\Planet\NoiseFilterFactory.cs" />
     <Compile Include="Assets\Scripts\Planet\Ship\GravitySimulation.cs" />
+    <Compile Include="Assets\Scripts\ChatBot\GitHubReadmeFetcher.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Developer_OpenRank\Developer_Read_OneOpenRank.cs" />
     <Compile Include="Assets\Scripts\Camera\Post\BloomEffect.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-    <Compile Include="Assets\Scripts\UI\ChatBot\ChatBotButton.cs" />
-    <Compile Include="Assets\Scripts\ChatBot\GitHubReadmeFetcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
