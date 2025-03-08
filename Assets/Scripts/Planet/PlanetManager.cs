@@ -82,6 +82,8 @@ public class PlanetManager : MonoBehaviour
         ChartManager.Instance.IniteRepoOpenRankChart(repoOpenRankList);
         ChartManager.Instance.IniteDeveloperPercentChart(repository.developerNetwork);
 
+        ChatBotManager.Instance.SetParam(repository.developOpenRankAverage,repository.GetHeighestDeveloperOpenRank());
+
         topUITextController = GameObject.FindObjectOfType<TopUITextController>();
         if (topUITextController == null) throw new System.Exception("SceneTransition:topUITextController is null");
         topUITextController.SetTopUITextController(repository.GetRepoDevelopNetAverageOpenRank());

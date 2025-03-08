@@ -550,6 +550,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 1997056036}
+  currentState: 1
+  activity: 0
+  openRank: 0
+  currentRepoContext: 
 --- !u!1 &37039646
 GameObject:
   m_ObjectHideFlags: 0

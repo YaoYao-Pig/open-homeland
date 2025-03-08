@@ -81,7 +81,7 @@ public class SceneTransition : MonoBehaviour
             //WorldManager.Instance.moonController.GenerateMoon();
             //SolarSystemSpawner.Instance.Spawn(0);
 
-
+            SetUpChatBot(ChatBotEnum.RepoChat);
 
         }
         else if (_name == WorldInfo.mainScenceName)
@@ -98,7 +98,14 @@ public class SceneTransition : MonoBehaviour
             
             CameraController.Instance.SetCanMove(true);
             StartCoroutine(FadeIn());
+
+            SetUpChatBot(ChatBotEnum.MainChat);
         }
+    }
+
+    public void SetUpChatBot(ChatBotEnum status)
+    {
+        ChatBotManager.Instance.SetUp(status);
     }
     public void UpdateCameraPosAndRotate()
     {

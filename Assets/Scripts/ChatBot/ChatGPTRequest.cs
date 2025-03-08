@@ -8,15 +8,15 @@ using System;
 public class ChatGPTRequest
 {
     // ChatGPT API Endpoint和你的API密钥
-    private const string API_URL = "http://202.120.92.104:8000/v1/chat/completions";
-    private const string API_KEY = "sk-faba2a644baa48bc9d7c6b39b84ab487"; // 替换为你自己的API密钥
+    private const string API_URL = "https://api.deepseek.com/v1/chat/completions";
+    private const string API_KEY = "sk-fdabe410e2cd45fda569df4dd59d9fa2"; // 替换为你自己的API密钥
 
     
     // 定义请求的数据结构
     [System.Serializable]
     public class GPTRequestData
     {
-        public string model = "/models/DeepSeek-R1-Distill-Llama-70B/"; // 选择模型，可以替换为其他模型
+        public string model = "deepseek-chat"; // 选择模型，可以替换为其他模型
         public string prompt;
         public int max_tokens = 150;
         public float temperature = 0.7f;

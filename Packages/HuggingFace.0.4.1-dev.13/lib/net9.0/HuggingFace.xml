@@ -1,0 +1,1165 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HuggingFace</name>
+    </assembly>
+    <members>
+        <member name="T:HuggingFace.HuggingFaceClient">
+            <summary>
+            APIs for sampling from and fine-tuning language models<br/>
+            If no httpClient is provided, a new one will be created.<br/>
+            If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.HuggingFaceClient.Microsoft#Extensions#AI#IChatClient#GetService(System.Type,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:HuggingFace.HuggingFaceClient.Microsoft#Extensions#AI#IChatClient#GetResponseAsync(System.Collections.Generic.IList{Microsoft.Extensions.AI.ChatMessage},Microsoft.Extensions.AI.ChatOptions,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:HuggingFace.HuggingFaceClient.Microsoft#Extensions#AI#IChatClient#GetStreamingResponseAsync(System.Collections.Generic.IList{Microsoft.Extensions.AI.ChatMessage},Microsoft.Extensions.AI.ChatOptions,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:HuggingFace.HuggingFaceClient.AuthorizeUsingBearer(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:HuggingFace.HuggingFaceClient.#ctor(System.String,System.Net.Http.HttpClient,System.Uri,System.Collections.Generic.List{HuggingFace.EndPointAuthorization},System.Boolean)">
+            <inheritdoc cref="M:HuggingFace.HuggingFaceClient.#ctor(System.Net.Http.HttpClient,System.Uri,System.Collections.Generic.List{HuggingFace.EndPointAuthorization},System.Boolean)"/>
+        </member>
+        <member name="F:HuggingFace.HuggingFaceClient.DefaultBaseUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.HuggingFaceClient.HttpClient">
+            <inheritdoc/>
+        </member>
+        <member name="P:HuggingFace.HuggingFaceClient.BaseUri">
+            <inheritdoc/>
+        </member>
+        <member name="P:HuggingFace.HuggingFaceClient.Authorizations">
+            <inheritdoc/>
+        </member>
+        <member name="P:HuggingFace.HuggingFaceClient.ReadResponseAsString">
+            <inheritdoc/>
+        </member>
+        <member name="P:HuggingFace.HuggingFaceClient.JsonSerializerContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.HuggingFaceClient.#ctor(System.Net.Http.HttpClient,System.Uri,System.Collections.Generic.List{HuggingFace.EndPointAuthorization},System.Boolean)">
+            <summary>
+            Creates a new instance of the HuggingFaceClient.
+            If no httpClient is provided, a new one will be created.
+            If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+            </summary>
+            <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+            <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+            <param name="authorizations">The authorizations to use for the requests.</param>
+            <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        </member>
+        <member name="M:HuggingFace.HuggingFaceClient.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:HuggingFace.HuggingFaceClient.GenerateTextAsync(System.String,HuggingFace.GenerateTextRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a completion for the provided prompt and parameters.
+            </summary>
+            <param name="modelId"></param>
+            <param name="request"></param>
+            <param name="cancellationToken">The token to cancel the operation with</param>
+            <exception cref="T:HuggingFace.ApiException"></exception>
+        </member>
+        <member name="M:HuggingFace.HuggingFaceClient.GenerateTextAsync(System.String,System.String,HuggingFace.GenerateTextRequestParameters,HuggingFace.GenerateTextRequestOptions,System.Threading.CancellationToken)">
+            <summary>
+            Creates a completion for the provided prompt and parameters.
+            </summary>
+            <param name="modelId"></param>
+            <param name="inputs">
+            The prompt that you want to complete.<br/>
+            Example: This is a test.
+            </param>
+            <param name="parameters"></param>
+            <param name="options"></param>
+            <param name="cancellationToken">The token to cancel the operation with</param>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:HuggingFace.StringExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.StringExtensions.AsHumanMessage(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuggingFace.StringExtensions.AsAssistantMessage(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuggingFace.StringExtensions.AsPrompt(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuggingFace.StringExtensions.AsPrompt(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HuggingFace.AnyOf`2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.AnyOf`2.Value1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.AnyOf`2.IsValue1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.op_Implicit(`0)~HuggingFace.AnyOf{`0,`1}">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.op_Implicit(HuggingFace.AnyOf{`0,`1})~`0">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.#ctor(`0)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.AnyOf`2.Value2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.AnyOf`2.IsValue2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.op_Implicit(`1)~HuggingFace.AnyOf{`0,`1}">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.op_Implicit(HuggingFace.AnyOf{`0,`1})~`1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.#ctor(`1)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.#ctor(`0,`1)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.AnyOf`2.Object">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.Validate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.Match``1(System.Func{`0,``0},System.Func{`1,``0},System.Boolean)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.Match(System.Action{`0},System.Action{`1},System.Boolean)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.GetHashCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.Equals(HuggingFace.AnyOf{`0,`1})">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.op_Equality(HuggingFace.AnyOf{`0,`1},HuggingFace.AnyOf{`0,`1})">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.op_Inequality(HuggingFace.AnyOf{`0,`1},HuggingFace.AnyOf{`0,`1})">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.ToJson(System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.ToJson(System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.FromJson(System.String,System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Deserializes a JSON string using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.FromJson(System.String,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Deserializes a JSON string using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.FromJsonStreamAsync(System.IO.Stream,System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Deserializes a JSON stream using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.AnyOf`2.FromJsonStreamAsync(System.IO.Stream,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Deserializes a JSON stream using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="T:HuggingFace.ApiException">
+            <summary>
+            Represents an exception thrown by the API.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.ApiException.StatusCode">
+            <summary>
+            The HTTP status code of the response.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.ApiException.ResponseBody">
+            <summary>
+            The response body.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.ApiException.ResponseHeaders">
+            <summary>
+            The response headers.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.ApiException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.ApiException"/> class.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.ApiException.#ctor(System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.ApiException"/> class with a specified error message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="statusCode">The HTTP status code of the response.</param>
+        </member>
+        <member name="M:HuggingFace.ApiException.#ctor(System.String,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.ApiException"/> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+            <param name="statusCode">The HTTP status code of the response.</param>
+        </member>
+        <member name="T:HuggingFace.ApiException`1">
+            <summary>
+            Represents an exception thrown by the API.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:HuggingFace.ApiException`1.ResponseObject">
+            <summary>
+            The response object.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.ApiException`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.ApiException"/> class.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.ApiException`1.#ctor(System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.ApiException"/> class with a specified error message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="statusCode">The HTTP status code of the response.</param>
+        </member>
+        <member name="M:HuggingFace.ApiException`1.#ctor(System.String,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.ApiException"/> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+            <param name="statusCode">The HTTP status code of the response.</param>
+        </member>
+        <member name="T:HuggingFace.IHuggingFaceClient">
+            <summary>
+            APIs for sampling from and fine-tuning language models<br/>
+            If no httpClient is provided, a new one will be created.<br/>
+            If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.IHuggingFaceClient.AuthorizeUsingBearer(System.String)">
+            <summary>
+            Authorize using bearer authentication.
+            </summary>
+            <param name="apiKey"></param>
+        </member>
+        <member name="P:HuggingFace.IHuggingFaceClient.HttpClient">
+            <summary>
+            The HttpClient instance.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.IHuggingFaceClient.BaseUri">
+            <summary>
+            The base URL for the API.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.IHuggingFaceClient.Authorizations">
+            <summary>
+            The authorizations to use for the requests.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.IHuggingFaceClient.ReadResponseAsString">
+            <summary>
+            Gets or sets a value indicating whether the response content should be read as a string.
+            True by default in debug builds, false otherwise.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.IHuggingFaceClient.JsonSerializerContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HuggingFace.IHuggingFaceClient.GenerateTextAsync(System.String,HuggingFace.GenerateTextRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a completion for the provided prompt and parameters.
+            </summary>
+            <param name="modelId"></param>
+            <param name="request"></param>
+            <param name="cancellationToken">The token to cancel the operation with</param>
+            <exception cref="T:HuggingFace.ApiException"></exception>
+        </member>
+        <member name="M:HuggingFace.IHuggingFaceClient.GenerateTextAsync(System.String,System.String,HuggingFace.GenerateTextRequestParameters,HuggingFace.GenerateTextRequestOptions,System.Threading.CancellationToken)">
+            <summary>
+            Creates a completion for the provided prompt and parameters.
+            </summary>
+            <param name="modelId"></param>
+            <param name="inputs">
+            The prompt that you want to complete.<br/>
+            Example: This is a test.
+            </param>
+            <param name="parameters"></param>
+            <param name="options"></param>
+            <param name="cancellationToken">The token to cancel the operation with</param>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:HuggingFace.ErrorResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.ErrorResponse.Error">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.ErrorResponse.AdditionalProperties">
+            <summary>
+            Additional properties that are not explicitly defined in the schema
+            </summary>
+        </member>
+        <member name="M:HuggingFace.ErrorResponse.#ctor(HuggingFace.AnyOf{System.String,System.Collections.Generic.IList{System.String}})">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.ErrorResponse" /> class.
+            </summary>
+            <param name="error"></param>
+        </member>
+        <member name="M:HuggingFace.ErrorResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.ErrorResponse" /> class.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.ErrorResponse.ToJson(System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.ErrorResponse.ToJson(System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.ErrorResponse.FromJson(System.String,System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Deserializes a JSON string using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.ErrorResponse.FromJson(System.String,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Deserializes a JSON string using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.ErrorResponse.FromJsonStreamAsync(System.IO.Stream,System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Deserializes a JSON stream using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.ErrorResponse.FromJsonStreamAsync(System.IO.Stream,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Deserializes a JSON stream using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="T:HuggingFace.GenerateTextRequest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequest.Inputs">
+            <summary>
+            The prompt that you want to complete.<br/>
+            Example: This is a test.
+            </summary>
+            <example>This is a test.</example>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequest.Parameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequest.Options">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequest.AdditionalProperties">
+            <summary>
+            Additional properties that are not explicitly defined in the schema
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequest.#ctor(System.String,HuggingFace.GenerateTextRequestParameters,HuggingFace.GenerateTextRequestOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.GenerateTextRequest" /> class.
+            </summary>
+            <param name="inputs">
+            The prompt that you want to complete.<br/>
+            Example: This is a test.
+            </param>
+            <param name="parameters"></param>
+            <param name="options"></param>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.GenerateTextRequest" /> class.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequest.ToJson(System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequest.ToJson(System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequest.FromJson(System.String,System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Deserializes a JSON string using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequest.FromJson(System.String,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Deserializes a JSON string using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequest.FromJsonStreamAsync(System.IO.Stream,System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Deserializes a JSON stream using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequest.FromJsonStreamAsync(System.IO.Stream,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Deserializes a JSON stream using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="T:HuggingFace.GenerateTextRequestOptions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequestOptions.UseCache">
+            <summary>
+            There is a cache layer on the inference API to speedup requests we have already seen. Most models can use those results as is as models are deterministic (meaning the results will be the same anyway). However if you use a non deterministic model, you can set this parameter to prevent the caching mechanism from being used resulting in a real new query.<br/>
+            Default Value: true
+            </summary>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequestOptions.WaitForModel">
+            <summary>
+            If the model is not ready, wait for it instead of receiving 503. It limits the number of requests required to get your inference done. It is advised to only set this flag to true after receiving a 503 error as it will limit hanging in your application to known places.<br/>
+            Default Value: false
+            </summary>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequestOptions.AdditionalProperties">
+            <summary>
+            Additional properties that are not explicitly defined in the schema
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestOptions.#ctor(System.Object,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.GenerateTextRequestOptions" /> class.
+            </summary>
+            <param name="useCache">
+            There is a cache layer on the inference API to speedup requests we have already seen. Most models can use those results as is as models are deterministic (meaning the results will be the same anyway). However if you use a non deterministic model, you can set this parameter to prevent the caching mechanism from being used resulting in a real new query.<br/>
+            Default Value: true
+            </param>
+            <param name="waitForModel">
+            If the model is not ready, wait for it instead of receiving 503. It limits the number of requests required to get your inference done. It is advised to only set this flag to true after receiving a 503 error as it will limit hanging in your application to known places.<br/>
+            Default Value: false
+            </param>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestOptions.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.GenerateTextRequestOptions" /> class.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestOptions.ToJson(System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestOptions.ToJson(System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestOptions.FromJson(System.String,System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Deserializes a JSON string using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestOptions.FromJson(System.String,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Deserializes a JSON string using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestOptions.FromJsonStreamAsync(System.IO.Stream,System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Deserializes a JSON stream using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestOptions.FromJsonStreamAsync(System.IO.Stream,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Deserializes a JSON stream using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="T:HuggingFace.GenerateTextRequestParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequestParameters.TopK">
+            <summary>
+            Integer to define the top tokens considered within the sample operation to create new text.<br/>
+            Example: 1
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequestParameters.TopP">
+            <summary>
+            Float to define the tokens that are within the sample operation of text generation.<br/>
+            Add tokens in the sample for more probable to least probable until the sum of the probabilities is greater than top_p.<br/>
+            Example: 1
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequestParameters.Temperature">
+            <summary>
+            The temperature of the sampling operation.<br/>
+            1 means regular sampling,<br/>
+            0 means always take the highest score,<br/>
+            100.0 is getting closer to uniform probability.<br/>
+            Default Value: 1<br/>
+            Example: 1
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequestParameters.RepetitionPenalty">
+            <summary>
+            The more a token is used within generation the more it is penalized to not be picked in successive generation passes.<br/>
+            Example: 1
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequestParameters.MaxNewTokens">
+            <summary>
+            The amount of new tokens to be generated, this does not include the input length it is a estimate of the size of generated text you want.<br/>
+            Each new tokens slows down the request, so look for balance between response times and length of text generated.<br/>
+            Example: 250
+            </summary>
+            <example>250</example>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequestParameters.MaxTime">
+            <summary>
+            The amount of time in seconds that the query should take maximum. Network can cause some overhead so it will be a soft limit. Use that in combination with max_new_tokens for best results.<br/>
+            Example: 1
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequestParameters.ReturnFullText">
+            <summary>
+            If set to False, the return results will not contain the original query making it easier for prompting.<br/>
+            Default Value: true
+            </summary>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequestParameters.NumReturnSequences">
+            <summary>
+            The number of proposition you want to be returned.<br/>
+            Default Value: 1<br/>
+            Example: 1
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequestParameters.DoSample">
+            <summary>
+            Whether or not to use sampling, use greedy decoding otherwise.<br/>
+            Default Value: true
+            </summary>
+        </member>
+        <member name="P:HuggingFace.GenerateTextRequestParameters.AdditionalProperties">
+            <summary>
+            Additional properties that are not explicitly defined in the schema
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestParameters.#ctor(System.Nullable{System.Int32},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Int32},System.Nullable{System.Double},System.Object,System.Nullable{System.Int32},System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.GenerateTextRequestParameters" /> class.
+            </summary>
+            <param name="topK">
+            Integer to define the top tokens considered within the sample operation to create new text.<br/>
+            Example: 1
+            </param>
+            <param name="topP">
+            Float to define the tokens that are within the sample operation of text generation.<br/>
+            Add tokens in the sample for more probable to least probable until the sum of the probabilities is greater than top_p.<br/>
+            Example: 1
+            </param>
+            <param name="temperature">
+            The temperature of the sampling operation.<br/>
+            1 means regular sampling,<br/>
+            0 means always take the highest score,<br/>
+            100.0 is getting closer to uniform probability.<br/>
+            Default Value: 1<br/>
+            Example: 1
+            </param>
+            <param name="repetitionPenalty">
+            The more a token is used within generation the more it is penalized to not be picked in successive generation passes.<br/>
+            Example: 1
+            </param>
+            <param name="maxNewTokens">
+            The amount of new tokens to be generated, this does not include the input length it is a estimate of the size of generated text you want.<br/>
+            Each new tokens slows down the request, so look for balance between response times and length of text generated.<br/>
+            Example: 250
+            </param>
+            <param name="maxTime">
+            The amount of time in seconds that the query should take maximum. Network can cause some overhead so it will be a soft limit. Use that in combination with max_new_tokens for best results.<br/>
+            Example: 1
+            </param>
+            <param name="returnFullText">
+            If set to False, the return results will not contain the original query making it easier for prompting.<br/>
+            Default Value: true
+            </param>
+            <param name="numReturnSequences">
+            The number of proposition you want to be returned.<br/>
+            Default Value: 1<br/>
+            Example: 1
+            </param>
+            <param name="doSample">
+            Whether or not to use sampling, use greedy decoding otherwise.<br/>
+            Default Value: true
+            </param>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestParameters.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.GenerateTextRequestParameters" /> class.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestParameters.ToJson(System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestParameters.ToJson(System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestParameters.FromJson(System.String,System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Deserializes a JSON string using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestParameters.FromJson(System.String,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Deserializes a JSON string using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestParameters.FromJsonStreamAsync(System.IO.Stream,System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Deserializes a JSON stream using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextRequestParameters.FromJsonStreamAsync(System.IO.Stream,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Deserializes a JSON stream using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="T:HuggingFace.GenerateTextResponseValue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.GenerateTextResponseValue.GeneratedText">
+            <summary>
+            The resulting completion up to and excluding the stop sequences.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.GenerateTextResponseValue.AdditionalProperties">
+            <summary>
+            Additional properties that are not explicitly defined in the schema
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextResponseValue.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.GenerateTextResponseValue" /> class.
+            </summary>
+            <param name="generatedText">
+            The resulting completion up to and excluding the stop sequences.
+            </param>
+        </member>
+        <member name="M:HuggingFace.GenerateTextResponseValue.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.GenerateTextResponseValue" /> class.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextResponseValue.ToJson(System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextResponseValue.ToJson(System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextResponseValue.FromJson(System.String,System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Deserializes a JSON string using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextResponseValue.FromJson(System.String,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Deserializes a JSON string using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextResponseValue.FromJsonStreamAsync(System.IO.Stream,System.Text.Json.Serialization.JsonSerializerContext)">
+            <summary>
+            Deserializes a JSON stream using the provided JsonSerializerContext.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.GenerateTextResponseValue.FromJsonStreamAsync(System.IO.Stream,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Deserializes a JSON stream using the provided JsonSerializerOptions.
+            </summary>
+        </member>
+        <member name="T:HuggingFace.PathBuilder">
+            <summary>
+            A helper class to build URL paths with optional and required parameters.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.PathBuilder.#ctor(System.String,System.Uri)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HuggingFace.PathBuilder"/> class.
+            </summary>
+            <param name="path">The base path for the URL.</param>
+            <param name="baseUri">The base URI to prepend to the path, if any.</param>
+        </member>
+        <member name="M:HuggingFace.PathBuilder.AddRequiredParameter(System.String,System.String)">
+            <summary>
+            Adds a required parameter to the URL.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <returns>The current <see cref="T:HuggingFace.PathBuilder"/> instance.</returns>
+        </member>
+        <member name="M:HuggingFace.PathBuilder.AddRequiredParameter(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Boolean)">
+            <summary>
+            Adds a required parameter with multiple values to the URL.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The values of the parameter.</param>
+            <param name="delimiter">The delimiter to use between values.</param>
+            <param name="explode">Whether to explode the values into separate parameters.</param>
+            <returns>The current <see cref="T:HuggingFace.PathBuilder"/> instance.</returns>
+        </member>
+        <member name="M:HuggingFace.PathBuilder.AddRequiredParameter``1(System.String,System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.String,System.Boolean)">
+            <summary>
+            Adds a required parameter with multiple values to the URL, using a selector function.
+            </summary>
+            <typeparam name="T">The type of the values.</typeparam>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The values of the parameter.</param>
+            <param name="selector">The function to select the string representation of each value.</param>
+            <param name="delimiter">The delimiter to use between values.</param>
+            <param name="explode">Whether to explode the values into separate parameters.</param>
+            <returns>The current <see cref="T:HuggingFace.PathBuilder"/> instance.</returns>
+        </member>
+        <member name="M:HuggingFace.PathBuilder.AddOptionalParameter(System.String,System.String)">
+            <summary>
+            Adds an optional parameter to the URL.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter, or null if not present.</param>
+            <returns>The current <see cref="T:HuggingFace.PathBuilder"/> instance.</returns>
+        </member>
+        <member name="M:HuggingFace.PathBuilder.AddOptionalParameter(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Boolean)">
+            <summary>
+            Adds an optional parameter with multiple values to the URL.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The values of the parameter, or null if not present.</param>
+            <param name="delimiter">The delimiter to use between values.</param>
+            <param name="explode">Whether to explode the values into separate parameters.</param>
+            <returns>The current <see cref="T:HuggingFace.PathBuilder"/> instance.</returns>
+        </member>
+        <member name="M:HuggingFace.PathBuilder.AddOptionalParameter``1(System.String,System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.String,System.Boolean)">
+            <summary>
+            Adds an optional parameter with multiple values to the URL, using a selector function.
+            </summary>
+            <typeparam name="T">The type of the values.</typeparam>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The values of the parameter, or null if not present.</param>
+            <param name="selector">The function to select the string representation of each value.</param>
+            <param name="delimiter">The delimiter to use between values.</param>
+            <param name="explode">Whether to explode the values into separate parameters.</param>
+            <returns>The current <see cref="T:HuggingFace.PathBuilder"/> instance.</returns>
+        </member>
+        <member name="M:HuggingFace.PathBuilder.AddRequiredParameter``1(System.String,``0,System.String,System.IFormatProvider)">
+            <summary>
+            Adds a required parameter to the URL, using a formattable value.
+            </summary>
+            <typeparam name="T">The type of the value.</typeparam>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter.</param>
+            <param name="format">The format string.</param>
+            <param name="formatProvider">The format provider.</param>
+            <returns>The current <see cref="T:HuggingFace.PathBuilder"/> instance.</returns>
+        </member>
+        <member name="M:HuggingFace.PathBuilder.AddOptionalParameter``1(System.String,``0,System.String,System.IFormatProvider)">
+            <summary>
+            Adds an optional parameter to the URL, using a formattable value.
+            </summary>
+            <typeparam name="T">The type of the value.</typeparam>
+            <param name="name">The name of the parameter.</param>
+            <param name="value">The value of the parameter, or null if not present.</param>
+            <param name="format">The format string.</param>
+            <param name="formatProvider">The format provider.</param>
+            <returns>The current <see cref="T:HuggingFace.PathBuilder"/> instance.</returns>
+        </member>
+        <member name="M:HuggingFace.PathBuilder.ToString">
+            <summary>
+            Returns the constructed URL as a string.
+            </summary>
+            <returns>The constructed URL.</returns>
+        </member>
+        <member name="T:HuggingFace.EndPointAuthorization">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.EndPointAuthorization.Type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.EndPointAuthorization.Location">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.EndPointAuthorization.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.EndPointAuthorization.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HuggingFace.JsonConverters.AnyOfJsonConverter`2">
+            <inheritdoc />
+        </member>
+        <member name="M:HuggingFace.JsonConverters.AnyOfJsonConverter`2.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:HuggingFace.JsonConverters.AnyOfJsonConverter`2.Write(System.Text.Json.Utf8JsonWriter,HuggingFace.AnyOf{`0,`1},System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:HuggingFace.JsonConverters.UnixTimestampJsonConverter">
+            <inheritdoc />
+        </member>
+        <member name="M:HuggingFace.JsonConverters.UnixTimestampJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:HuggingFace.JsonConverters.UnixTimestampJsonConverter.Write(System.Text.Json.Utf8JsonWriter,System.DateTimeOffset,System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:HuggingFace.SourceGenerationContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.Boolean">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.Double">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.NullableDouble">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.AnyOfStringIListString">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.NullableAnyOfStringIListString">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.ErrorResponse">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.GenerateTextRequest">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.GenerateTextRequestOptions">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.GenerateTextRequestParameters">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.GenerateTextResponseValue">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.JsonSerializerContextTypes">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.DictionaryStringObject">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.DictionaryStringString">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.IDictionaryStringObject">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.IListGenerateTextResponseValue">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.IListString">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.JsonElement">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.NullableJsonElement">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.Int32">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.NullableInt32">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.Object">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:HuggingFace.SourceGenerationContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:HuggingFace.SourceGenerationContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:HuggingFace.SourceGenerationContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:HuggingFace.SourceGenerationContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="T:HuggingFace.JsonSerializerContextTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.StringStringDictionary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.StringObjectDictionary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.JsonElement">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.Type0">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.Type1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.Type2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.Type3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.Type4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.Type5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.Type6">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.Type7">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.Type8">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.Type9">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.Type10">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HuggingFace.JsonSerializerContextTypes.Type11">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\UI\Main\UserDetailController.cs" />
     <Compile Include="Assets\Scripts\UI\CircleText.cs" />
     <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementUI.cs" />
+    <Compile Include="Assets\Scripts\ChatBot\DeepSeekRequest.cs" />
     <Compile Include="Assets\Scripts\Planet\INoiseFilter.cs" />
     <Compile Include="Assets\Scripts\Planet\PlanetRotate.cs" />
     <Compile Include="Assets\Scripts\UI\Button\RepoDetailButton.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\Scripts\UI\Search\SearchBar.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\ShapeSettings.cs" />
     <Compile Include="Assets\Scripts\Camera\Post\PostProcessingEffect.cs" />
+    <Compile Include="Assets\Scripts\ChatBot\UnityChatClient.cs" />
     <Compile Include="Assets\Scripts\UI\AchievementSystem\Achievement.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\UserNodeComponent.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_DevelopNet_Node.cs" />
@@ -158,6 +160,7 @@
     <Compile Include="Assets\Scripts\Camera\Post\BloomEffect.cs" />
     <Compile Include="Assets\Scripts\Planet\MinMax.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\ChatBot\ChatBotEnum.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
