@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 934973458677004814, guid: a015ad499214ec542b035290297b7cea, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 164.41
+      value: 414.76
       objectReference: {fileID: 0}
     - target: {fileID: 934973458677004814, guid: a015ad499214ec542b035290297b7cea, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -150,6 +150,10 @@ PrefabInstance:
     - target: {fileID: 934973459431089557, guid: a015ad499214ec542b035290297b7cea, type: 3}
       propertyPath: m_Name
       value: UserDialog Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898391585613771972, guid: a015ad499214ec542b035290297b7cea, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7028239995347942541, guid: a015ad499214ec542b035290297b7cea, type: 3}
