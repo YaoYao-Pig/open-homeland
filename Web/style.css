@@ -1,0 +1,73 @@
+body {
+    padding-top: 56px; /* 为固定导航栏留出空间 */
+    padding-left: 0; /* 移除左侧边距，因为侧边栏会动态调整 */
+}
+
+.sidebar {
+    position: fixed;
+    top: 56px;
+    left: -200px; /* 初始隐藏状态 */
+    width: 200px;
+    height: calc(100% - 56px);
+    background-color: #d3d3d3; /* 灰色背景 */
+    padding: 20px;
+    overflow-y: auto;
+    transition: left 0.3s ease; /* 滑动动画 */
+}
+
+.sidebar:hover {
+    left: 0; /* 鼠标靠近时滑出 */
+}
+
+.sidebar h5 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.quick-links {
+    display: flex;
+    flex-direction: row; /* 水平布局 */
+    gap: 10px;
+    flex-wrap: wrap; /* 适应小屏幕 */
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #e0e0e0; /* 浅灰色背景 */
+    border-radius: 8px; /* 圆角 */
+    text-decoration: none;
+    color: #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.link-item:hover {
+    background-color: #c0c0c0; /* 悬停时变深 */
+    transform: scale(1.1); /* 放大效果 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 增强阴影 */
+}
+
+.link-item i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.card {
+    background-color: #d3d3d3; /* 卡片背景改为灰色 */
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.bi {
+    font-size: 2rem;
+}
+
+footer {
+    background-color: #d3d3d3; /* 页脚背景改为灰色 */
+}
