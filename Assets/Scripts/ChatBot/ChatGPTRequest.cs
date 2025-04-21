@@ -7,22 +7,22 @@ using System;
 
 public class ChatGPTRequest
 {
-    // ChatGPT API EndpointºÍÄãµÄAPIÃÜÔ¿
+    // ChatGPT API Endpointï¿½ï¿½ï¿½ï¿½ï¿½APIï¿½ï¿½Ô¿
     private const string API_URL = "https://api.deepseek.com/v1/chat/completions";
-    private const string API_KEY = "sk-fdabe410e2cd45fda569df4dd59d9fa2"; // Ìæ»»ÎªÄã×Ô¼ºµÄAPIÃÜÔ¿
+    private const string API_KEY = "sk-fdabe410e2cd45fda569df4dd59d9fa2"; // ï¿½æ»»Îªï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½APIï¿½ï¿½Ô¿
 
     
-    // ¶¨ÒåÇëÇóµÄÊý¾Ý½á¹¹
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý½á¹¹
     [System.Serializable]
     public class GPTRequestData
     {
-        public string model = "deepseek-chat"; // Ñ¡ÔñÄ£ÐÍ£¬¿ÉÒÔÌæ»»ÎªÆäËûÄ£ÐÍ
+        public string model = "deepseek-chat"; // Ñ¡ï¿½ï¿½Ä£ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ»»Îªï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½
         public string prompt;
         public int max_tokens = 150;
         public float temperature = 0.7f;
     }
 
-    // ¶¨ÒåAPIÏìÓ¦Êý¾Ý½á¹¹
+    // ï¿½ï¿½ï¿½ï¿½APIï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ý½á¹¹
     [System.Serializable]
     public class GPTResponseData
     {
@@ -38,48 +38,48 @@ public class ChatGPTRequest
         public string text;
     }
 
-    // ÔÚUnityÖÐµ÷ÓÃChatGPT APIµÄÐ­³Ì
+    // ï¿½ï¿½Unityï¿½Ðµï¿½ï¿½ï¿½ChatGPT APIï¿½ï¿½Ð­ï¿½ï¿½
     public IEnumerator CallChatGPT(string userPrompt,Action<string> onComplete)
     {
-        // ¹¹ÔìÇëÇóÊý¾Ý
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         GPTRequestData requestData = new GPTRequestData
         {
             prompt = userPrompt
         };
 
-        // ½«ÇëÇóÊý¾Ý×ª»»ÎªJSON
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ÎªJSON
         string jsonData = JsonConvert.SerializeObject(requestData);
 
-        // ´´½¨UnityWebRequest¶ÔÏó£¬ÉèÖÃÎªPOSTÇëÇó
-        using (UnityWebRequest www = UnityWebRequest.Post(API_URL, "POST"))
+        // ï¿½ï¿½ï¿½ï¿½UnityWebRequestï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªPOSTï¿½ï¿½ï¿½ï¿½
+        using (UnityWebRequest www = UnityWebRequest.PostWwwForm(API_URL, "POST"))
         {
-            // ÉèÖÃÇëÇóÍ·
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·
             www.SetRequestHeader("Authorization", "Bearer " + API_KEY);
             www.SetRequestHeader("Content-Type", "application/json");
 
-            // ½«JSONÊý¾ÝÐ´ÈëÇëÇóÌå
+            // ï¿½ï¿½JSONï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
             www.uploadHandler = new UploadHandlerRaw(bodyRaw);
             www.downloadHandler = new DownloadHandlerBuffer();
 
-            // µÈ´ýÇëÇóÏìÓ¦
+            // ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦
             yield return www.SendWebRequest();
 
-            // ¼ì²éÊÇ·ñ·¢Éú´íÎó
+            // ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if (www.result == UnityWebRequest.Result.Success)
             {
-                // ½âÎöJSONÏìÓ¦
+                // ï¿½ï¿½ï¿½ï¿½JSONï¿½ï¿½Ó¦
                 string responseText = www.downloadHandler.text;
                 GPTResponseData responseData = JsonConvert.DeserializeObject<GPTResponseData>(responseText);
 
-                // »ñÈ¡ChatGPTÉú³ÉµÄÎÄ±¾
+                // ï¿½ï¿½È¡ChatGPTï¿½ï¿½ï¿½Éµï¿½ï¿½Ä±ï¿½
                 string chatGPTResponse = responseData.choices[0].text;
                 Debug.Log("ChatGPT Response: " + chatGPTResponse);
                 onComplete(chatGPTResponse);
             }
             else
             {
-                // Êä³ö´íÎóÐÅÏ¢
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
                 Debug.LogError("Error: " + www.error);
             }
         }
