@@ -8,3 +8,11 @@ Build/
 ZFBrowser/
 Assets/Resources/SIMKAI SDF.asset
 Assets/Resources/SIMKAI SDF.asset.meta
+.idea/
+obj/
+/.vs
+/.vs
+.vs/open-homeland/v16/.suo
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp.csproj
+/ProjectSettings

@@ -1,0 +1,165 @@
+﻿# 数据驱动的环境效果使用指南
+
+本指南将帮助您在GitHub项目可视化中设置和使用数据驱动的环境效果。
+
+## 概述
+
+数据驱动的环境效果系统将GitHub项目的数据（如提交活动、项目活跃度）转化为视觉效果，使项目可视化更加生动和信息丰富。目前实现了两种主要效果：
+
+1. **代码提交流星雨** - 当检测到新的提交时，在星球周围显示流星雨效果
+2. **活跃度极光** - 基于项目活跃度在星球极点显示极光效果
+
+## 安装步骤
+
+1. **添加扩展组件到星球**：
+   - 选择您的Planet游戏对象
+   - 添加PlanetEnvironmentExtension组件
+   - 确保"Enable Environment Effects"选项被勾选
+
+2. **创建流星预制体**：
+   - 按照MeteorPrefab.txt中的说明创建流星预制体
+   - 将预制体保存在项目的Prefabs文件夹中
+
+3. **配置环境效果**：
+   - 环境效果会自动配置，但您可以通过PlanetEnvironmentExtensionEditor进行测试和调整
+
+## 效果说明
+
+### 代码提交流星雨
+
+流星雨效果会在以下情况触发：
+
+- 当检测到新的GitHub提交时
+- 当您手动触发测试效果时
+- 当星球首次加载完成时（作为演示）
+
+流星雨的特点：
+
+- 流星数量与提交大小（修改的文件数）成正比
+- 流星从随机方向飞向星球表面
+- 流星撞击星球表面时会产生粒子效果
+- 流星拖尾颜色可以在材质中自定义
+
+### 活跃度极光
+
+极光效果会根据项目的活跃度动态变化：
+
+- 活跃度高的项目会显示更强烈、更明亮的极光
+- 活跃度低的项目会显示较弱的极光
+- 极光颜色会随活跃度从蓝色（低活跃度）变为绿色（高活跃度）
+- 极光出现在星球的南北极点区域
+
+活跃度计算基于：
+
+- 项目的OpenRank值
+- 最近的提交频率
+- 贡献者活动
+
+## 自定义效果
+
+您可以通过以下方式自定义环境效果：
+
+### 流星雨自定义
+
+1. 编辑MeteorTrailMaterial材质：
+   - 修改Main Color和Tail Color改变流星颜色
+   - 调整Brightness增强或减弱发光效果
+   - 调整Width改变拖尾宽度
+
+2. 在CommitMeteorSystem组件中：
+   - 调整Meteor Speed控制流星速度
+   - 调整Spawn Height控制流星生成距离
+   - 调整Meteors Per Commit控制每次提交触发的流星数量
+
+### 极光自定义
+
+1. 在AuroraController组件中：
+   - 修改Low Activity Color和High Activity Color改变极光颜色
+   - 调整Min Intensity和Max Intensity控制极光强度范围
+   - 调整Update Interval控制极光更新频率
+
+## 故障排除
+
+如果环境效果不显示或不正常，请检查以下几点：
+
+1. **流星不可见**：
+   - 确保已正确创建流星预制体
+   - 检查Trail Renderer组件是否正确配置
+   - 确保MeteorTrailMaterial使用了正确的着色器
+
+2. **极光不可见**：
+   - 检查AuroraController组件是否正确配置
+   - 确保活跃度值在有效范围内
+   - 检查极光材质是否使用了正确的着色器
+
+3. **效果不更新**：
+   - 确保PlanetEnvironmentExtension组件已添加到星球
+   - 检查是否启用了"Enable Environment Effects"选项
+   - 尝试手动点击"Update Environment Effects"按钮
+
+## 高级用法
+
+### 与其他系统集成
+
+环境效果系统设计为可以与其他系统集成：
+
+1. **与通知系统集成**：
+   ```csharp
+   // 当收到新提交通知时
+   public void OnNewCommit(int commitSize)
+   {
+       PlanetEnvironmentExtension extension = FindObjectOfType<PlanetEnvironmentExtension>();
+       if (extension != null)
+       {
+           extension.TriggerMeteorShower(commitSize);
+       }
+   }
+   ```
+
+2. **与活跃度分析系统集成**：
+   ```csharp
+   // 当项目活跃度更新时
+   public void OnActivityUpdated(float activityLevel)
+   {
+       PlanetEnvironmentExtension extension = FindObjectOfType<PlanetEnvironmentExtension>();
+       if (extension != null)
+       {
+           extension.SetAuroraActivity(activityLevel);
+       }
+   }
+   ```
+
+### 添加新的环境效果
+
+系统设计为可扩展的，您可以添加新的环境效果：
+
+1. 创建新的效果控制器脚本
+2. 在EnvironmentalEffectsManager中添加对新效果的引用
+3. 实现数据到视觉效果的映射逻辑
+
+例如，添加"问题风暴"效果：
+
+```csharp
+// 在EnvironmentalEffectsManager中
+[SerializeField] private IssueStormSystem stormSystem;
+
+// 在UpdateWithRealData方法中
+int openIssuesCount = GetOpenIssuesCount();
+if (stormSystem != null)
+{
+    stormSystem.UpdateStormBasedOnIssues(openIssuesCount);
+}
+```
+
+## 性能考虑
+
+环境效果可能对性能有一定影响，特别是在低端设备上。如果遇到性能问题，可以：
+
+1. 减少流星数量（降低Meteors Per Commit值）
+2. 降低极光网格的复杂度
+3. 增加数据更新间隔（Data Update Interval）
+4. 在低端设备上完全禁用环境效果
+
+## 结语
+
+数据驱动的环境效果为GitHub项目可视化增添了生动的视觉元素，使项目状态和活动更加直观。通过这些效果，用户可以一目了然地感知项目的活跃度和最近的开发活动。

@@ -1,0 +1,30 @@
+﻿要创建彗星轨迹材质，请按照以下步骤操作：
+
+1. 在Unity编辑器中，右键点击Project窗口
+2. 选择Create > Material
+3. 将新材质命名为"CometTrail"
+4. 在Inspector窗口中，将Shader下拉菜单更改为"Planet/CometTrail"
+5. 调整以下参数：
+   - Main Color: 设置为亮白色 (例如 R:1.0, G:1.0, B:1.0, A:1.0)
+   - Tail Color: 设置为蓝色或您喜欢的颜色 (例如 R:0.5, G:0.7, B:1.0, A:1.0)
+   - Fade Length: 0.5 (控制尾迹的淡出长度)
+   - Width: 0.1 (控制尾迹的宽度)
+   - Brightness: 1.5 (控制尾迹的亮度)
+
+您可以创建多个材质变体，为不同的小行星使用不同的颜色：
+
+彗星蓝色尾迹:
+- Main Color: 白色 (R:1.0, G:1.0, B:1.0, A:1.0)
+- Tail Color: 蓝色 (R:0.5, G:0.7, B:1.0, A:1.0)
+
+火焰红色尾迹:
+- Main Color: 黄色 (R:1.0, G:1.0, B:0.5, A:1.0)
+- Tail Color: 红色 (R:1.0, G:0.3, B:0.1, A:1.0)
+
+能量绿色尾迹:
+- Main Color: 亮绿色 (R:0.7, G:1.0, B:0.7, A:1.0)
+- Tail Color: 深绿色 (R:0.0, G:0.8, B:0.4, A:1.0)
+
+紫色神秘尾迹:
+- Main Color: 亮紫色 (R:0.9, G:0.7, B:1.0, A:1.0)
+- Tail Color: 深紫色 (R:0.5, G:0.0, B:0.8, A:1.0)

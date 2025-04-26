@@ -1,0 +1,60 @@
+﻿要创建流星预制体，请按照以下步骤操作：
+
+1. 在Unity编辑器中，右键点击Hierarchy窗口
+2. 选择Create > Empty
+3. 将新对象命名为"Meteor"
+
+4. 添加基本组件：
+   - 添加Sphere组件：右键点击Meteor > 3D Object > Sphere
+   - 将Sphere重命名为"MeteorHead"
+   - 调整MeteorHead的Scale为(0.5, 0.5, 0.5)
+
+5. 添加Trail Renderer组件：
+   - 选择Meteor对象
+   - 在Inspector中点击Add Component
+   - 搜索并添加Trail Renderer
+   - 配置Trail Renderer：
+     - Time: 1.0
+     - Min Vertex Distance: 0.1
+     - Width: 从0.5到0.1
+     - Color: 从白色到蓝色的渐变
+
+6. 创建流星材质：
+   - 在Project窗口中，右键点击 > Create > Material
+   - 将材质命名为"MeteorTrailMaterial"
+   - 将Shader设置为"Planet/MeteorTrail"
+   - 配置材质参数：
+     - Main Color: 白色
+     - Tail Color: 蓝色 (R:0.3, G:0.7, B:1.0)
+     - Fade Length: 0.5
+     - Width: 0.1
+     - Brightness: 1.5
+
+7. 应用材质：
+   - 将MeteorTrailMaterial拖放到Trail Renderer的Material属性
+
+8. 添加粒子系统（可选）：
+   - 右键点击Meteor > Effects > Particle System
+   - 将粒子系统命名为"ImpactParticles"
+   - 配置粒子系统：
+     - Duration: 0.5
+     - Looping: 取消勾选
+     - Start Lifetime: 1.0
+     - Start Speed: 5.0
+     - Start Size: 0.2
+     - Start Color: 蓝色
+     - Gravity Modifier: 0.5
+     - Play On Awake: 取消勾选
+   - 在Emission模块中：
+     - Rate over Time: 0
+     - Bursts: 添加一个Burst，Count=30
+
+9. 添加MeteorController脚本：
+   - 选择Meteor对象
+   - 添加MeteorController组件
+
+10. 创建预制体：
+    - 将Meteor对象从Hierarchy拖到Project窗口
+    - 保存在适当的文件夹中，如"Assets/Prefabs/Effects"
+
+完成这些步骤后，您将拥有一个可以在代码中实例化的流星预制体。

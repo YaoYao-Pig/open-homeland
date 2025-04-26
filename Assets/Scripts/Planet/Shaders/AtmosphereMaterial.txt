@@ -1,0 +1,23 @@
+﻿要创建大气层材质，请按照以下步骤操作：
+
+1. 在Unity编辑器中，右键点击Project窗口
+2. 选择Create > Material
+3. 将新材质命名为"PlanetAtmosphere"
+4. 在Inspector窗口中，将Shader下拉菜单更改为"Planet/Atmosphere"
+5. 调整以下参数：
+   - Atmosphere Color: 设置为淡蓝色 (例如 R:0.5, G:0.7, B:1.0, A:1.0)
+   - Atmosphere Alpha: 0.5
+   - Atmosphere Height: 0.1
+   - Atmosphere Falloff: 3
+   - Atmosphere Rim Power: 5
+   - Sun Intensity: 1
+   - Rayleigh Coefficient: 1
+   - Mie Coefficient: 0.5
+   - Mie Directional G: 0.8
+
+这将创建一个基本的地球风格大气层。您可以根据需要调整这些参数，以创建不同类型的大气层效果。
+
+例如：
+- 对于火星风格的大气层，使用更红/橙色的Atmosphere Color
+- 对于金星风格的厚大气层，增加Atmosphere Alpha和降低Atmosphere Falloff
+- 对于气态巨行星，增加Atmosphere Height和Atmosphere Alpha

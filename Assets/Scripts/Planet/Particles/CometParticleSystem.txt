@@ -1,0 +1,47 @@
+﻿要创建彗星尾迹的粒子系统，请按照以下步骤操作：
+
+1. 在Unity编辑器中，右键点击Hierarchy窗口
+2. 选择Effects > Particle System
+3. 将新的粒子系统命名为"CometParticles"
+4. 在Inspector窗口中，配置以下参数：
+
+## 主模块 (Main)
+- Duration: 1
+- Looping: 勾选
+- Start Lifetime: 1-2 (Random Between Two Constants)
+- Start Speed: 0.5-1 (Random Between Two Constants)
+- Start Size: 0.05-0.2 (Random Between Two Constants)
+- Start Color: 白色到蓝色的渐变
+- Gravity Modifier: 0
+
+## 发射模块 (Emission)
+- Rate over Time: 20
+
+## 形状模块 (Shape)
+- Shape: Sphere
+- Radius: 0.1
+- Emit from: Shell
+
+## 颜色随时间变化模块 (Color over Lifetime)
+- 启用此模块
+- 设置颜色渐变从全不透明到全透明
+
+## 大小随时间变化模块 (Size over Lifetime)
+- 启用此模块
+- 设置大小曲线从1到0
+
+## 渲染器模块 (Renderer)
+- Render Mode: Billboard
+- Material: 创建一个新材质，使用"Particles/Additive" shader
+
+5. 将此粒子系统保存为预制体(Prefab)：
+   - 将配置好的粒子系统从Hierarchy拖到Project窗口中
+   - 将其保存在适当的文件夹中，如"Assets/Prefabs/Effects"
+
+6. 在CometTrailController脚本中引用此预制体：
+   - 选择带有CometTrailController组件的小行星
+   - 在Inspector中找到"Particle Prefab"字段
+   - 将保存的粒子系统预制体拖放到此字段中
+   - 勾选"Emit Particles"选项
+
+这将创建一个随着小行星移动而发射的粒子系统，增强彗星尾迹的视觉效果。
