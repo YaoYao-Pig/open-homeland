@@ -16,3 +16,9 @@ obj/
 Assembly-CSharp-Editor.csproj
 Assembly-CSharp.csproj
 /ProjectSettings
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp.csproj
+Assets/Scripts/Planet/Graphcis/PlanetMaterial.mat
+Packages/packages-lock.json
+ProjectSettings/ProjectVersion.txt
+UserSettings/Layouts/default-2022.dwlt
