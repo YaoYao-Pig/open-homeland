@@ -15,7 +15,7 @@ public class Planet : MonoBehaviour
     public ShapeSettings shapeSettings;
     public ColourSettings colourSettings;
 
-    private ShapeGenerator shapeGenerator=new ShapeGenerator();
+    public ShapeGenerator shapeGenerator=new ShapeGenerator();
     private ColourGenerator colourGenerator=new ColourGenerator();
     public int[] faceResolutions;
     private void Awake()

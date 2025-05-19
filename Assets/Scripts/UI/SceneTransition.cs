@@ -24,8 +24,11 @@ public class SceneTransition : MonoBehaviour
     }
     private void Start()
     {
-        cameraPositonDic = new Dictionary<string, Vector3>() { { WorldInfo.mainScenceName,Vector3.zero},
-            { WorldInfo.detailScenceName,repoCameraPos.transform.position} };
+        if (repoCameraPos != null)
+        {
+            cameraPositonDic = new Dictionary<string, Vector3>() { { WorldInfo.mainScenceName,Vector3.zero},
+                { WorldInfo.detailScenceName,repoCameraPos.transform.position} };
+        }
         
         StartCoroutine(FadeIn());
     }
@@ -63,7 +66,7 @@ public class SceneTransition : MonoBehaviour
         }
         color.a = 1f;
         fadeImage.color = color;
-        //µ­³ö£¬ÕâÀï¸Ä³ÉÇÐ»»Î»ÖÃ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½Ð»ï¿½Î»ï¿½ï¿½
         LoadScene(sceneName);
         //UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
     }

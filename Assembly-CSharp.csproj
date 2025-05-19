@@ -59,7 +59,9 @@
     <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementUIList.cs" />
     <Compile Include="Assets\Scripts\Planet\ColourGenerator.cs" />
     <Compile Include="Assets\Scripts\ChatBot\UserDialog.cs" />
+    <Compile Include="Assets\Scripts\Planet\PlanetUtils.cs" />
     <Compile Include="Assets\Scripts\Star\MoonUIRotate.cs" />
+    <Compile Include="Assets\Scripts\DialogController\DialogUI.cs" />
     <Compile Include="Assets\RepoDevelopStar\SphereDivide.cs" />
     <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\ItemBoxIconTime.cs" />
     <Compile Include="Assets\Scripts\Star\MoonController.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="Assets\Scripts\ChatBot\GitHubReadmeFetcher.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_DevelopNet_Edge.cs" />
     <Compile Include="Assets\Scripts\Planet\NoiseFilterFactory.cs" />
+    <Compile Include="Assets\Scripts\DialogController\DialogController.cs" />
     <Compile Include="Assets\Scripts\Camera\Post\BloomEffect.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Developer_OpenRank\Developer_Read_OneOpenRank.cs" />
     <Compile Include="Assets\Scripts\Planet\PlanetAtmosphereExtension.cs" />
