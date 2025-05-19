@@ -56,7 +56,7 @@ MonoBehaviour:
         persistence: 0
         minValue: 0
         weightMultiplier: 0
-  - enabled: 0
+  - enabled: 1
     useFirstLayerAsMask: 0
     noiseSettings:
       filterType: 1
