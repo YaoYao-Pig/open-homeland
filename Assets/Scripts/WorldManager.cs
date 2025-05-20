@@ -25,8 +25,8 @@ public class WorldManager : MonoBehaviour
         private set { }
     }
 
-    public GameObject repoPrefab; //repo½ÚµãµÄprefab
-    public GameObject userPrefab; //User½ÚµãµÄPrefab
+    public GameObject repoPrefab; //repoï¿½Úµï¿½ï¿½prefab
+    public GameObject userPrefab; //Userï¿½Úµï¿½ï¿½Prefab
 
 
 
@@ -35,7 +35,7 @@ public class WorldManager : MonoBehaviour
 
     [SerializeField] private List<Node> repoNodeList;
 
-    public Dictionary<Node,List<Node>> repo2UserNodeDic;//ÓÃÓÚ±íÊ¾repoNode->userNodeListµÄÓ³Éä¹ØÏµ
+    public Dictionary<Node,List<Node>> repo2UserNodeDic;//ï¿½ï¿½ï¿½Ú±ï¿½Ê¾repoNode->userNodeListï¿½ï¿½Ó³ï¿½ï¿½ï¿½Ïµ
 
     public MoonController moonController;
 
@@ -47,11 +47,11 @@ public class WorldManager : MonoBehaviour
     public Transform repoRoot;
     
 
-    public Dictionary<string, Node> userNodeDic; //user½ÚµãµÄ´æ´¢£¬´æ´¢Ò»¸öÍ³Ò»µÄÊµÀý£¬ËùÓÐÆäËûÎ»ÖÃ¶¼ÊÇ¶ÔÕâ¸öÊµÀýµÄÒýÓÃ
-    public Dictionary<string, GameObject> userNodeInstanceDic;//´æ´¢user½ÚµãµÄÊµÀý£¬ÊµÀý»¯Ö®ºó¾Í´æÈëÕâÀï£¬·ÀÖ¹Í¬Ò»¸öuser±»ÖØ¸´´´½¨.
+    public Dictionary<string, Node> userNodeDic; //userï¿½Úµï¿½Ä´æ´¢ï¿½ï¿½ï¿½æ´¢Ò»ï¿½ï¿½Í³Ò»ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã¶ï¿½ï¿½Ç¶ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public Dictionary<string, GameObject> userNodeInstanceDic;//ï¿½æ´¢userï¿½Úµï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½Í´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï£¬ï¿½ï¿½Ö¹Í¬Ò»ï¿½ï¿½userï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½.
 
     public List<GameObject> repoObjectList;
-    [SerializeField] private Material lineMaterial; //´æ´¢×Ó½ÚµãºÍ¸¸½ÚµãÁ¬ÏßµÄ²ÄÖÊ
+    [SerializeField] private Material lineMaterial; //ï¿½æ´¢ï¿½Ó½Úµï¿½Í¸ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ßµÄ²ï¿½ï¿½ï¿½
     
     
     
@@ -74,7 +74,7 @@ public class WorldManager : MonoBehaviour
         {
             Destroy(_instance);
         }
-
+        
 
         csvReader = GetComponent<CSVReader>();
         repoNodeList = new List<Node>();
@@ -88,15 +88,13 @@ public class WorldManager : MonoBehaviour
 
 
     }
-
-
     
 
     public void IniteByCSV()
     {
         node_CSVList=csvReader.ReadPositionCSV();
         repoEdgeNameDic=csvReader.ReadEdgCSV();
-        //½¨Ó³Éä
+        //ï¿½ï¿½Ó³ï¿½ï¿½
         Dictionary<string, Node_CSV> nameToCSVNodeDic = new Dictionary<string, Node_CSV>();
         foreach(var node_csv in node_CSVList)
         {
@@ -106,7 +104,7 @@ public class WorldManager : MonoBehaviour
         Dictionary<string, List<string>> repoToDeveloper = csvReader.ReadRepoCSV();
 
         
-        //Ìî³ärepositoryList
+        //ï¿½ï¿½ï¿½repositoryList
         foreach(var developerNames in repoToDeveloper)
         {
             Repository repository = new Repository();
@@ -151,7 +149,7 @@ public class WorldManager : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="_filepath">ÎÄ¼þ¼ÐÄ¿Â¼</param>
+    /// <param name="_filepath">ï¿½Ä¼ï¿½ï¿½ï¿½Ä¿Â¼</param>
     /// <param name="repositories"></param>
     private void LoadJsonData(string _filepath)
     {
@@ -160,7 +158,7 @@ public class WorldManager : MonoBehaviour
         {
             Repository repository = new Repository();
             repository.developerNetwork = LoadRepoDevelopNetData(path);
-            //¼ÓÔØRepo-DevelopNetÊý¾Ý
+            //ï¿½ï¿½ï¿½ï¿½Repo-DevelopNetï¿½ï¿½ï¿½ï¿½
             repositoryList.Add(repository);
         }
     }
@@ -170,9 +168,9 @@ public class WorldManager : MonoBehaviour
 
 
     /// <summary>
-    /// »ñµÃÒ»¸örepoµÄDeveloperNetData
+    /// ï¿½ï¿½ï¿½Ò»ï¿½ï¿½repoï¿½ï¿½DeveloperNetData
     /// </summary>
-    /// <param name="_filepath">¾ßÌåµÄÎ»ÖÃ</param>
+    /// <param name="_filepath">ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½</param>
     /// <returns></returns>
     public Repo_Read_RepoDeveloperNet LoadRepoDevelopNetData(string _filepath)
     {
@@ -184,9 +182,9 @@ public class WorldManager : MonoBehaviour
         return repoDNet;
     }
     /// <summary>
-    /// Í¨¹ýRepoList³õÊ¼»¯¸÷ÖÖ½Úµã
+    /// Í¨ï¿½ï¿½RepoListï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Ö½Úµï¿½
     /// </summary>
-    /// ToDO:È±ÉÙID£¬name£¬ÕâÖÖ³õÊ¼»¯·½·¨»¹ÊÇÓÐÎÊÌâ
+    /// ToDO:È±ï¿½ï¿½IDï¿½ï¿½nameï¿½ï¿½ï¿½ï¿½ï¿½Ö³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     private void IniteNodesByRepo()
     {
         int i = 0;
@@ -230,7 +228,7 @@ public class WorldManager : MonoBehaviour
                 Node userNode = new UserNode();
                 if (!userNodeDic.TryGetValue(u._name, out userNode))
                 {
-                    userNode = new UserNode(u._name, 0, NodeType.Repo, 1/repoNode.scale); //Æ½ºâËõ·Å
+                    userNode = new UserNode(u._name, 0, NodeType.Repo, 1/repoNode.scale); //Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     userNode.position = nameToCSVNodeDic[u._name].nodePosition;
                     userNodeDic[u._name] = userNode;
                 }
@@ -251,8 +249,8 @@ public class WorldManager : MonoBehaviour
 
     public void GiveRandomPosition()
     {
-        Vector3 areaCenter=Vector3.zero; // ÇøÓòÖÐÐÄ
-        Vector3 areaSize=new Vector3(1000, 1000, 1000); // ÇøÓòµÄ´óÐ¡
+        Vector3 areaCenter=Vector3.zero; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        Vector3 areaSize=new Vector3(1000, 1000, 1000); // ï¿½ï¿½ï¿½ï¿½Ä´ï¿½Ð¡
 
         Vector3 subAreaCenter = Vector3.zero;
         Vector3 subAreaSize = new Vector3(100, 100, 100);
@@ -264,21 +262,21 @@ public class WorldManager : MonoBehaviour
                 Random.Range(areaCenter.z - areaSize.z / 2, areaCenter.z + areaSize.z / 2)
                 );
 
-            // ÉèÖÃ½ÚµãµÄÎ»ÖÃ
+            // ï¿½ï¿½ï¿½Ã½Úµï¿½ï¿½Î»ï¿½ï¿½
             repoNode.position = randomPosition;
 
             subAreaCenter = repoNode.position;
-            //¶ÔÓÚÃ¿¸öRepoNode£¬¶ÔÓ¦µÄUserNodeList
+            //ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½RepoNodeï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½UserNodeList
             foreach (UserNode userNode in repo2UserNodeDic[repoNode])
             {
-                // ¼ÆËãËæ»úÎ»ÖÃ
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
                 Vector3 nodeRandomPosition = new Vector3(
                     Random.Range(subAreaCenter.x - subAreaSize.x / 2, subAreaCenter.x + subAreaSize.x / 2),
                     Random.Range(subAreaCenter.y - subAreaSize.y / 2, subAreaCenter.y + subAreaSize.y / 2),
                     Random.Range(subAreaCenter.z - subAreaSize.z / 2, subAreaCenter.z + subAreaSize.z / 2)
                 );
 
-                // ÉèÖÃ½ÚµãµÄÎ»ÖÃ
+                // ï¿½ï¿½ï¿½Ã½Úµï¿½ï¿½Î»ï¿½ï¿½
                 userNode.position = nodeRandomPosition;
             }
         }
@@ -292,14 +290,14 @@ public class WorldManager : MonoBehaviour
         {
             GameObject rg = GameObject.Instantiate(repoPrefab, repoRoot);
             rg.name = rn.nodeName;
-            //Ìí¼ÓNodeComponet
+            //ï¿½ï¿½ï¿½NodeComponet
             RepoNodeComponent repoNode = rg.GetComponent<RepoNodeComponent>();
             repoNode.lineMaterial = lineMaterial;
             repoNode.repository = repositoryList[i++];
 
             repoNode.node = rn;
 
-            //ÉèÖÃÉú³É½ÚµãÎ»ÖÃºÍËõ·Å
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É½Úµï¿½Î»ï¿½Ãºï¿½ï¿½ï¿½ï¿½ï¿½
             rg.transform.position = rn.position;
             rg.transform.localScale *= rn.scale;
             repoObjectList.Add(rg);
@@ -330,7 +328,7 @@ public class WorldManager : MonoBehaviour
                 
             }
         }
-        
+        AchievementSystemController.Instance.UpdateProgress("a_gameStart",0);
 
         return true;
     }

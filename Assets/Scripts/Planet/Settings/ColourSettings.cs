@@ -17,7 +17,7 @@ public class ColourSettings : ScriptableObject
     public Gradient[] oceanColours;
    
     /// <summary>
-    /// 生物群系过渡
+    /// 鐢熺墿缇ょ郴杩囨浮
     /// </summary>
     [System.Serializable]
     public class BiomeColourSettings
@@ -27,7 +27,7 @@ public class ColourSettings : ScriptableObject
         public NoiseSettings noise;
 
         /// <summary>
-        /// 噪声用来混合群系边界
+        /// 鍣０鐢ㄦ潵娣峰悎缇ょ郴杈圭晫
         /// </summary>
         public float noiseOffset;
         public float noiseStrength;

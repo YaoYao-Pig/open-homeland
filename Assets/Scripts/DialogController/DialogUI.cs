@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogUI : MonoBehaviour
 {
@@ -46,7 +47,24 @@ public class DialogUI : MonoBehaviour
         {
             
             //gameObject.SetActive(false);
-            StartCoroutine(PlanetUtils.CorotinuePlanet(gameObject ,(gameObject)=> gameObject.SetActive(true)));
+            StartCoroutine(PlanetUtils.CorotinuePlanet(()=>
+            {
+                DialogController.Instance.index = DialogController.Instance.checkPoint5 + 1;
+                SetText(DialogController.Instance.dialogList[DialogController.Instance.index]);
+            }));
+        }
+        else if (DialogController.Instance.index == DialogController.Instance.checkPoint6)
+        {
+            DialogController.Instance.star.SetActive(true);
+            DialogController.Instance.index++;
+            SetText(DialogController.Instance.dialogList[DialogController.Instance.index]);
+        }
+        else if (DialogController.Instance.index == DialogController.Instance.checkPoint7)
+        {
+            DialogController.Instance.star.transform.localScale = new Vector3(1, 1, 1);
+            DialogController.Instance.GenerateStar();
+            DialogController.Instance.index++;
+            SetText(DialogController.Instance.dialogList[DialogController.Instance.index]);
         }
         else if(DialogController.Instance.index < DialogController.Instance.dialogList.Count -1)
         {
@@ -55,7 +73,8 @@ public class DialogUI : MonoBehaviour
         }
         else if (DialogController.Instance.index == DialogController.Instance.dialogList.Count - 1)
         {
-            gameObject.SetActive(false);
+            SceneManager.LoadScene("MainScence");
+            //gameObject.SetActive(false);
         }
         
     }

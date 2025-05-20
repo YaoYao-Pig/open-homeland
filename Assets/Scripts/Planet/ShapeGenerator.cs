@@ -12,7 +12,7 @@ public class ShapeGenerator
     public void UpdateSettings(ShapeSettings settings)
     {
         this.settings = settings;
-        noiseFilters = new INoiseFilter[settings.noiseLayers.Length];
+        noiseFilters = new INoiseFilter[settings.noiseLayers.Length - 1];
         for (int i=0; i < noiseFilters.Length; ++i){
             noiseFilters[i] = NoiseFilterFactory.CreateNoiseFilter(settings.noiseLayers[i].noiseSettings); 
         }
@@ -21,13 +21,13 @@ public class ShapeGenerator
 
 
     /// <summary>
-    /// ¼ÆËãÄ³µãµÄº£°Î£¬¸ù¾İÔëÉùÒÔ¼°¸÷ÖÖËõ·ÅÒò×Ó£¬·µ»Ø½á¹ûÊÇÒ»¸öÔÚµ¥Î»ÇòÌåÉÏµÄelevation£¬Èç¹ûÒªÓ¦ÓÃÔÚ°ë¾¶²»ÊÇµ¥Î»µÄÇòÌåÉÏ£¬ĞèÒª½øĞĞËõ·Å
+    /// ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½Äºï¿½ï¿½Î£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Úµï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½elevationï¿½ï¿½ï¿½ï¿½ï¿½ÒªÓ¦ï¿½ï¿½ï¿½Ú°ë¾¶ï¿½ï¿½ï¿½Çµï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     public float CalculateUnscaledElevation(Vector3 pointOnUnitSphere)
     {
         float firstLayerValue = 0;
         float elevation = 0;
-        //µÚÒ»²ãÕÚÕÖ
+        //ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (noiseFilters.Length > 0)
         {
             firstLayerValue = noiseFilters[0].Evaluate(pointOnUnitSphere);
@@ -51,13 +51,13 @@ public class ShapeGenerator
         }
         
 
-        //ÔÚMinMaxÀïÃæ¸üĞÂ¸ß¶ÈÖµ
+        //ï¿½ï¿½MinMaxï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¸ß¶ï¿½Öµ
         elevationMinMax.AddValue(elevation);
         return elevation;
     }
 
     /// <summary>
-    //  ¸ù¾İĞÇÇòµÄ°ë¾¶¶Ô¸ß¶ÈÖµ½øĞĞËõ·Å
+    //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä°ë¾¶ï¿½Ô¸ß¶ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     /// <param name="unscaleElevation"></param>
     /// <returns></returns>

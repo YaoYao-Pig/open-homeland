@@ -10,7 +10,7 @@ public class PlanetSettings
 }
 public static class PlanetUtils 
 {
-    public static IEnumerator CorotinuePlanet(GameObject dialogUI, Action<GameObject> onComplete)
+    public static IEnumerator CorotinuePlanet(Action onComplete)
     {
         yield return new WaitForSeconds(1f);
         int index = 2;
@@ -21,6 +21,6 @@ public static class PlanetUtils
         }
         
         
-        onComplete?.Invoke(dialogUI);
+        onComplete?.Invoke();
     }
 }

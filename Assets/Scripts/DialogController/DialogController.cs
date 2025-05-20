@@ -23,8 +23,11 @@ public class DialogController : MonoBehaviour
     public int checkPoint3;
     public int checkPoint4;
     public int checkPoint5;
-
+    public int checkPoint6;
+    public int checkPoint7;
     public List<PlanetSettings> settingsList;
+    public GameObject star;
+    public StarController starController;
     private void Awake()
     {
         Instance = this;
@@ -40,10 +43,14 @@ public class DialogController : MonoBehaviour
         planet.colourSettings.biomeColourSettings.biomes[1].gradient = defaultColour;
         planet.colourSettings.biomeColourSettings.biomes[2].gradient = defaultColour;
         planet.OnColourSettingsUpdated();
-
+        
         
     }
 
+    public void GenerateStar()
+    {
+        starController.GenerateStars();
+    }
     public void InitGradientSettings(int index)
     {
         if (index == 0)
@@ -69,7 +76,7 @@ public class DialogController : MonoBehaviour
             t2.colourSettings = planet.colourSettings;
             t2.shapeSettings.noiseLayers[0].enabled = true;
             t2.shapeSettings.noiseLayers[1].enabled = true;
-            t2.shapeSettings.noiseLayers[2].enabled = true;
+            t2.shapeSettings.noiseLayers[2].enabled = false;
             t2.colourSettings.oceanColour = oceanColour;
             t2.colourSettings.biomeColourSettings.biomes[0].gradient = groundColour1;
             t2.colourSettings.biomeColourSettings.biomes[1].gradient = groundColour2;

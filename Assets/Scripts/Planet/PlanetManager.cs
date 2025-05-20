@@ -17,6 +17,9 @@ public class PlanetManager : MonoBehaviour
     private static PlanetManager _instance;
     private TopUITextController topUITextController;
     public Action OnPlanetEnd;
+    
+    public string musicPrompt = "This is a GitHub project. The project's activity change curve is: 1, 2, 3, 4, 7, 10, 7, 5, 6, 1, 10.";
+
     public static PlanetManager Instance
     {
         get
@@ -55,7 +58,8 @@ public class PlanetManager : MonoBehaviour
 
     public IEnumerator Initialize(string _m = "openrank")
     {
-        //获取GameData
+       // SendTestPrompt();
+        //锟斤拷取GameData
         string repoName = GameData.Instance.GetRepoName();
         gameObject.name = repoName;
         yield return StartCoroutine(GetData(gameObject.name));
@@ -64,18 +68,21 @@ public class PlanetManager : MonoBehaviour
         OnPlanetEnd?.Invoke();
         
     }
-
+    public void SendTestPrompt()
+    {
+        MusicGenClient.Instance.RequestMusic(musicPrompt);
+    }
 
     public IEnumerator GetData(string _repoName, string _m = "openrank")
     {
 
         yield return StartCoroutine(WebController.GetRepoOpenRank(_repoName, _m));
         yield return StartCoroutine(WebController.GetRepoDetail(_repoName, "developer_network"));
-        //找到最新的openRank
+        //锟揭碉拷锟斤拷锟铰碉拷openRank
         openRankList = GameData.Instance.GetRepoOpenRankList();
 
         var repoOpenRankList = openRankList.repoOpenrankList;
-        //获取项目（目前就是Repository-DeveloperNet）
+        //锟斤拷取锟斤拷目锟斤拷目前锟斤拷锟斤拷Repository-DeveloperNet锟斤拷
         repository =(Repository) GameData.Instance.gameParams["Repo_Develop_Net"];
         
         ChartManager.Instance.IniteTopKDeveloperChart(repository.developerNetwork);
@@ -101,7 +108,7 @@ public class PlanetManager : MonoBehaviour
     /// 
     /// </summary>
     /// <param name="layer"></param>
-    /// <param name="param">平均的OpenRank</param>
+    /// <param name="param">平锟斤拷锟斤拷OpenRank</param>
     private void GenrateGradint(int layer,float param)
     {
 
@@ -114,15 +121,15 @@ public class PlanetManager : MonoBehaviour
             Gradient gradient = new Gradient();
 
             GradientColorKey[] colorKeys = new GradientColorKey[3];
-            colorKeys[0] = new GradientColorKey(Color.black, 0.0f);    // 0% 位置为红色
-            colorKeys[1] = new GradientColorKey(Color.gray, 0.5f);  // 50% 位置为绿色
-            colorKeys[2] = new GradientColorKey(Color.white, 1.0f);   // 100% 位置为蓝色
+            colorKeys[0] = new GradientColorKey(Color.black, 0.0f);    // 0% 位锟斤拷为锟斤拷色
+            colorKeys[1] = new GradientColorKey(Color.gray, 0.5f);  // 50% 位锟斤拷为锟斤拷色
+            colorKeys[2] = new GradientColorKey(Color.white, 1.0f);   // 100% 位锟斤拷为锟斤拷色
             gradient.colorKeys = colorKeys;
 
             colourSettings.biomeColourSettings.biomes[layer].gradient = gradient;
 
 
-            //设置OceanColour
+            //锟斤拷锟斤拷OceanColour
             colourSettings.oceanColour = colourSettings.oceanColours[index % colourSettings.oceanColours.Length];
 
         }
@@ -132,9 +139,9 @@ public class PlanetManager : MonoBehaviour
             Gradient gradient = new Gradient();
 
             GradientColorKey[] colorKeys = new GradientColorKey[3];
-            colorKeys[0] = new GradientColorKey(new Color(0.545f, 0.271f, 0.149f), 0.0f);    // 0% 位置为棕色
-            colorKeys[1] = new GradientColorKey(new Color(0.65f, 0.16f, 0.16f), 0.5f);  // 50% 位置为深棕色
-            colorKeys[2] = new GradientColorKey(Color.blue, 1.0f);   // 100% 位置为蓝色
+            colorKeys[0] = new GradientColorKey(new Color(0.545f, 0.271f, 0.149f), 0.0f);    // 0% 位锟斤拷为锟斤拷色
+            colorKeys[1] = new GradientColorKey(new Color(0.65f, 0.16f, 0.16f), 0.5f);  // 50% 位锟斤拷为锟斤拷锟斤拷色
+            colorKeys[2] = new GradientColorKey(Color.blue, 1.0f);   // 100% 位锟斤拷为锟斤拷色
             gradient.colorKeys = colorKeys;
 
 
@@ -148,9 +155,9 @@ public class PlanetManager : MonoBehaviour
             Gradient gradient = new Gradient();
 
             GradientColorKey[] colorKeys = new GradientColorKey[3];
-            colorKeys[0] = new GradientColorKey(Color.red, 0.0f);    // 0% 位置为红色
-            colorKeys[1] = new GradientColorKey(new Color(0.65f, 0.16f, 0.16f), 0.5f);  // 50% 位置为绿色
-            colorKeys[2] = new GradientColorKey(Color.blue, 1.0f);   // 100% 位置为蓝色
+            colorKeys[0] = new GradientColorKey(Color.red, 0.0f);    // 0% 位锟斤拷为锟斤拷色
+            colorKeys[1] = new GradientColorKey(new Color(0.65f, 0.16f, 0.16f), 0.5f);  // 50% 位锟斤拷为锟斤拷色
+            colorKeys[2] = new GradientColorKey(Color.blue, 1.0f);   // 100% 位锟斤拷为锟斤拷色
             gradient.colorKeys = colorKeys;
 
             colourSettings.biomeColourSettings.biomes[layer].gradient = gradient;
@@ -162,10 +169,10 @@ public class PlanetManager : MonoBehaviour
             int index = 3;
             Gradient gradient = new Gradient();
             GradientColorKey[] colorKeys = new GradientColorKey[5];
-            colorKeys[0] = new GradientColorKey(ColorTransfer(218f, 226f, 50f), 0.0f);    // 0% 位置为白色
-            colorKeys[1] = new GradientColorKey(ColorTransfer(66.0f, 111f, 41f), 0.25f);  // 50% 位置为绿色
-            colorKeys[2] = new GradientColorKey(ColorTransfer(73,125,17), 0.5f);  // 50% 位置为绿色
-            colorKeys[3] = new GradientColorKey(ColorTransfer(94,28,5), 0.75f);   // 75%深棕色
+            colorKeys[0] = new GradientColorKey(ColorTransfer(218f, 226f, 50f), 0.0f);    // 0% 位锟斤拷为锟斤拷色
+            colorKeys[1] = new GradientColorKey(ColorTransfer(66.0f, 111f, 41f), 0.25f);  // 50% 位锟斤拷为锟斤拷色
+            colorKeys[2] = new GradientColorKey(ColorTransfer(73,125,17), 0.5f);  // 50% 位锟斤拷为锟斤拷色
+            colorKeys[3] = new GradientColorKey(ColorTransfer(94,28,5), 0.75f);   // 75%锟斤拷锟斤拷色
             colorKeys[4] = new GradientColorKey(ColorTransfer(34,17,17), 1.0f);   // 100% 
 
             gradient.colorKeys = colorKeys;
@@ -185,7 +192,7 @@ public class PlanetManager : MonoBehaviour
     private void InitializePlanets()
     {
 
-        //加载配置文件
+        //锟斤拷锟斤拷锟斤拷锟斤拷锟侥硷拷
         colourSettings = Resources.Load<ColourSettings>("Settings/Colour");
         shapeSettings = Resources.Load<ShapeSettings>("Settings/Shape");
 
@@ -194,12 +201,12 @@ public class PlanetManager : MonoBehaviour
         {
             NoiseSettings.SimpleNoiseSettings simpleNoiseSettings = noiseLayer.noiseSettings.simpleNoiseSettings;
 
-            //通过openRank值来控制baseRoughness
+            //通锟斤拷openRank值锟斤拷锟斤拷锟斤拷baseRoughness
             simpleNoiseSettings.strength = Sigmoid(openRankList.lastOpenRank / 100.0f)/10f;
             simpleNoiseSettings.baseRoughness = Sigmoid(openRankList.lastOpenRank/100.0f);
 
             Debug.Log(repository.GetRepoDevelopNetAverageOpenRank());
-            //通过Openrank均值来控制颜色
+            //通锟斤拷Openrank锟斤拷值锟斤拷锟斤拷锟斤拷锟斤拷色
             GenrateGradint(1, repository.GetRepoDevelopNetAverageOpenRank());
             
 

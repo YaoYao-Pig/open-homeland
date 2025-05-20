@@ -7,6 +7,7 @@ using UnityEngine.Networking; // 对于 UnityWebRequestMultimedia
 
 public class MusicGenClient : MonoBehaviour
 {
+    public static MusicGenClient Instance;
     public string serverHost = "192.168.1.114"; // 例如 "192.168.1.100" 或域名
 public int serverPort = 65432;
     public AudioSource audioSource; // 在Inspector中指定一个AudioSource组件
