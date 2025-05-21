@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Net.Sockets;
 using System.Text;
@@ -15,6 +16,11 @@ public int serverPort = 65432;
     private TcpClient client;
     private NetworkStream stream;
     private bool isProcessing = false;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {

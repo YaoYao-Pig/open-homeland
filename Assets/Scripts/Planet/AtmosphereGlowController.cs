@@ -167,6 +167,17 @@ public class AtmosphereGlowController : MonoBehaviour
     {
         if (planet != null)
         {
+            if (planet.shapeSettings == null)
+            {
+                if (PlanetManager.Instance.currentScence == ScenceType.Main)
+                {
+                    planet.shapeSettings = Resources.Load<ShapeSettings>("Settings/Shape_main");
+                }
+                else if (PlanetManager.Instance.currentScence == ScenceType.Start)
+                {
+                    planet.shapeSettings = Resources.Load<ShapeSettings>("Settings/Shape_start");
+                }
+            }
             // Scale the atmosphere based on the planet's radius
             float planetRadius = planet.shapeSettings.planetRadius;
             transform.localScale = Vector3.one * planetRadius;
