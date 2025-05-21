@@ -12,6 +12,17 @@ public class ColourGenerator
 
     public void UpdateSettings(ColourSettings settings)
     {
+        if (settings == null)
+        {
+            if (PlanetManager.Instance.currentScence == ScenceType.Main)
+            {
+                settings = Resources.Load<ColourSettings>("Settings/Colour_main");
+            }
+            else if (PlanetManager.Instance.currentScence == ScenceType.Start)
+            {
+                settings = Resources.Load<ColourSettings>("Settings/Colour_start");
+            }
+        }
         this.settings = settings;
         if (texture == null || texture.height!=settings.biomeColourSettings.biomes.Length)
         {
