@@ -45,11 +45,15 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.55f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\UI\AudioDataTextureGenerator.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\Node.cs" />
     <Compile Include="Assets\Scripts\Planet\Planet.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\NodeComponent.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioAtmosphereLargeDemo.cs" />
     <Compile Include="Assets\Scripts\ChatBot\ChatBotManager.cs" />
+    <Compile Include="Assets\Scripts\UI\CircularSpectrumController.cs" />
     <Compile Include="Assets\Scripts\WorldManager.cs" />
+    <Compile Include="Assets\Scripts\UI\CircularSpectrumDemo.cs" />
     <Compile Include="Assets\Scripts\UI\Charts\MouseUIAction.cs" />
     <Compile Include="Assets\Scripts\Planet\Ship\GravitySimulation.cs" />
     <Compile Include="Assets\Scripts\ForceDirectedGraph.cs" />
@@ -65,6 +69,7 @@
     <Compile Include="Assets\RepoDevelopStar\SphereDivide.cs" />
     <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\ItemBoxIconTime.cs" />
     <Compile Include="Assets\Scripts\Star\MoonController.cs" />
+    <Compile Include="Assets\Scripts\Planet\AudioReactiveAtmosphereLargeExtension.cs" />
     <Compile Include="Assets\RepoDevelopStar\StarController.cs" />
     <Compile Include="Assets\Scripts\UI\StarConnector.cs" />
     <Compile Include="Assets\Scripts\Planet\ShapeGenerator.cs" />
@@ -75,18 +80,23 @@
     <Compile Include="Assets\Scripts\Music\UnityMainThreadDispatcher.cs" />
     <Compile Include="Assets\Scripts\UI\AchievementSystem\Achievement.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_OpenRank\Repo_Read_OpenRank.cs" />
+    <Compile Include="Assets\Scripts\Planet\AudioReactiveAtmosphereController.cs" />
     <Compile Include="Assets\Scripts\UI\AchievementSystem\AchievementSystemController.cs" />
     <Compile Include="Assets\Scripts\Planet\CometTrailController.cs" />
     <Compile Include="Assets\Scripts\Event\Event\UI\UserUIClickedEvent.cs" />
     <Compile Include="Assets\Scripts\Picture\PictureController.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioAtmosphereDemo.cs" />
     <Compile Include="Assets\Scripts\UI\ChatBot\ChatBotSubmitButton.cs" />
     <Compile Include="Assets\Scripts\Camera\ScanEffect.cs" />
     <Compile Include="Assets\Scripts\UI\Button\RepoDetailButton.cs" />
+    <Compile Include="Assets\Scripts\UI\AudioReactiveUICreator.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\NoiseSettings.cs" />
     <Compile Include="Assets\Scripts\Planet\OctocatGenerator.cs" />
     <Compile Include="Assets\Scripts\UI\Detail\TopUITextController.cs" />
     <Compile Include="Assets\Scripts\UI\Search\SearchBar.cs" />
     <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\SkyBoxController.cs" />
+    <Compile Include="Assets\Scripts\UI\AudioReactiveUIDemo.cs" />
+    <Compile Include="Assets\Scripts\Planet\AudioReactiveAtmosphereExtension.cs" />
     <Compile Include="Assets\Scripts\UI\ChatBot\ChatBotButton.cs" />
     <Compile Include="Assets\Scripts\Picture\DraggableSticker.cs" />
     <Compile Include="Assets\Scripts\Planet\Settings\ColourSettings.cs" />
@@ -99,6 +109,7 @@
     <Compile Include="Assets\Scripts\UI\SceneTransition.cs" />
     <Compile Include="Assets\Scripts\ChatBot\GitHubReadmeFetcher.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_DevelopNet_Edge.cs" />
+    <Compile Include="Assets\Scripts\Planet\AudioReactiveAtmosphere.cs" />
     <Compile Include="Assets\Scripts\Planet\NoiseFilterFactory.cs" />
     <Compile Include="Assets\Scripts\DialogController\DialogController.cs" />
     <Compile Include="Assets\Scripts\Camera\Post\BloomEffect.cs" />
@@ -123,12 +134,15 @@
     <Compile Include="Assets\Scripts\ChatBot\ChatGPTRequest.cs" />
     <Compile Include="Assets\Scripts\UI\Main\MainUIController.cs" />
     <Compile Include="Assets\Scripts\UI\MaterialController.cs" />
+    <Compile Include="Assets\Scripts\Planet\AudioReactiveAtmosphereLargeController.cs" />
     <Compile Include="Assets\Scripts\Camera\Post\CustomPostProcessing.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\RepoNodeComponent.cs" />
     <Compile Include="Assets\Scripts\Event\Handler\UI\UserUIClickedOut.cs" />
     <Compile Include="Assets\Scripts\ChatBot\ChatBotEnum.cs" />
     <Compile Include="Assets\Scripts\Planet\StarRotate\PlanetOrbit.cs" />
     <Compile Include="Assets\Scripts\Planet\PlanetManager.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioAnalyzer.cs" />
+    <Compile Include="Assets\Scripts\UI\CircularSpectrumCreator.cs" />
     <Compile Include="Assets\Scripts\Event\Handler\UI\UserUIClicked.cs" />
     <Compile Include="Assets\Scripts\Graph\Edge\Edge.cs" />
     <Compile Include="Assets\Scripts\Graph\Node\UserNodeComponent.cs" />
@@ -151,6 +165,7 @@
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_RepoDeveloperNet.cs" />
     <Compile Include="Assets\Scripts\Star\StarSphere.cs" />
     <Compile Include="Assets\Scripts\Web\WebController.cs" />
+    <Compile Include="Assets\Scripts\UI\AudioReactiveUIController.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\UI\StarSelected.cs" />
     <Compile Include="Assets\Scripts\WorldInfo.cs" />
@@ -319,6 +334,7 @@
     <None Include="Assets\Resources\repo\develop\rstudio_rstudio_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\lichess-org_lila_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\signumsoftware_framework_developer_network.json" />
+    <None Include="Assets\Scripts\Planet\Shaders\AudioReactiveAtmosphere.shader" />
     <None Include="Assets\Resources\repo\grpc_grpc_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\getsentry_sentry_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\dokuwiki_dokuwiki_developer_network.json" />
@@ -341,6 +357,7 @@
     <None Include="Assets\Resources\repo\develop\apache_avro_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\php_web-php_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\Automattic_mongoose_developer_network.json" />
+    <None Include="Assets\Scripts\Planet\Shaders\AudioReactiveAtmosphereLarge.shader" />
     <None Include="Assets\Resources\repo\develop\sopel-irc_sopel_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\burnash_gspread_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\FreezingMoon_AncientBeast_developer_network.json" />
@@ -516,6 +533,7 @@
     <None Include="Assets\Resources\repo\develop\bblimke_webmock_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\xapi-project_xen-api_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\mapeditor_tiled_developer_network.json" />
+    <None Include="Assets\Scripts\UI\Shaders\AudioReactiveCircle.shader" />
     <None Include="Assets\Resources\repo\develop\PHPMailer_PHPMailer_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\apache_httpd_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\QuiltMC_developer-wiki_developer_network.json" />
@@ -576,6 +594,7 @@
     <None Include="Assets\Resources\repo\develop\gephi_gephi_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\scipy_scipy_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\gbdev_rgbds_developer_network.json" />
+    <None Include="Assets\Scripts\UI\Shaders\CircularSpectrum.shader" />
     <None Include="Assets\Resources\repo\develop\danmar_cppcheck_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\Kozea_WeasyPrint_developer_network.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />

@@ -295,6 +295,57 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3124.2568, y: 3238.141, z: 1071.9376}
   m_Center: {x: 101.26611, y: -199.36969, z: -1690.6694}
+--- !u!1 &80236375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 80236377}
+  - component: {fileID: 80236376}
+  m_Layer: 0
+  m_Name: PlanetManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &80236376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80236375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ebe2b123584694880046249a62fa8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerPlanet: {fileID: 139884505}
+  colourSettings: {fileID: 11400000, guid: d821579dd390a2c47887dafefccda525, type: 2}
+  shapeSettings: {fileID: 11400000, guid: e0ca0f76f88eb5241ba4922406a14525, type: 2}
+  planet: {fileID: 139884507}
+  currentScence: 0
+  musicPrompt: 'This is a GitHub project. The project''s activity change curve is:
+    1, 2, 3, 4, 7, 10, 7, 5, 6, 1, 10.'
+--- !u!4 &80236377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80236375}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19992.594, y: 19997.906, z: 19998.527}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &139884505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,7 +1141,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 552556820}
-  - component: {fileID: 552556821}
   - component: {fileID: 552556823}
   m_Layer: 0
   m_Name: Planet
@@ -1117,23 +1167,6 @@ Transform:
   - {fileID: 619176372}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &552556821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552556819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84ebe2b123584694880046249a62fa8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerPlanet: {fileID: 139884505}
-  colourSettings: {fileID: 11400000, guid: 258260897342c5f44a7ba54627fe0d93, type: 2}
-  shapeSettings: {fileID: 11400000, guid: 086bba87e7830c344a1a60c37d113e98, type: 2}
-  musicPrompt: 'This is a GitHub project. The project''s activity change curve is:
-    1, 2, 3, 4, 7, 10, 7, 5, 6, 1, 10.'
 --- !u!114 &552556823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4597,3 +4630,4 @@ SceneRoots:
   - {fileID: 2118463187}
   - {fileID: 563647317}
   - {fileID: 787833667}
+  - {fileID: 80236377}

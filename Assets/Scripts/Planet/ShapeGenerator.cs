@@ -11,8 +11,23 @@ public class ShapeGenerator
 
     public void UpdateSettings(ShapeSettings settings)
     {
+        if (settings == null)
+        {
+            if (PlanetManager.Instance.currentScence == ScenceType.Main)
+            {
+                settings = Resources.Load<ShapeSettings>("Settings/Shape_main");
+            }
+            else if (PlanetManager.Instance.currentScence == ScenceType.Start)
+            {
+                settings = Resources.Load<ShapeSettings>("Settings/Shape_start");
+            }
+        }
+
         this.settings = settings;
-        noiseFilters = new INoiseFilter[settings.noiseLayers.Length - 1];
+        
+        Debug.LogError(settings.noiseLayers);
+        Debug.LogError(settings.noiseLayers.Length);
+        noiseFilters = new INoiseFilter[settings.noiseLayers.Length];
         for (int i=0; i < noiseFilters.Length; ++i){
             noiseFilters[i] = NoiseFilterFactory.CreateNoiseFilter(settings.noiseLayers[i].noiseSettings); 
         }

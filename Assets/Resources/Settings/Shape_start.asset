@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c440c91eadb04524ba5099c801323758, type: 3}
+  m_Name: Shape_start
+  m_EditorClassIdentifier: 
+  planetRadius: 1000
+  noiseLayers:
+  - enabled: 1
+    useFirstLayerAsMask: 1
+    noiseSettings:
+      filterType: 0
+      simpleNoiseSettings:
+        strength: 0.17
+        numLayers: 2
+        baseRoughness: 0.9
+        roughness: 1.67
+        centre: {x: 0.27, y: 0.39, z: 0}
+        persistence: 1.58
+        minValue: 1.14
+      ridgidNoiseSettings:
+        strength: 1.1
+        numLayers: 2
+        baseRoughness: 0
+        roughness: 0
+        centre: {x: 0, y: 0, z: 0}
+        persistence: 0
+        minValue: 0
+        weightMultiplier: 0
+  - enabled: 1
+    useFirstLayerAsMask: 0
+    noiseSettings:
+      filterType: 0
+      simpleNoiseSettings:
+        strength: 0.06
+        numLayers: 2
+        baseRoughness: 5.72
+        roughness: 0
+        centre: {x: 0, y: 0, z: 0}
+        persistence: 0
+        minValue: 0
+      ridgidNoiseSettings:
+        strength: 0
+        numLayers: 0
+        baseRoughness: 0
+        roughness: 0
+        centre: {x: 0, y: 0, z: 0}
+        persistence: 0
+        minValue: 0
+        weightMultiplier: 0
+  - enabled: 0
+    useFirstLayerAsMask: 0
+    noiseSettings:
+      filterType: 1
+      simpleNoiseSettings:
+        strength: 0.2
+        numLayers: 1
+        baseRoughness: 0.93
+        roughness: 0.6
+        centre: {x: 0, y: 0, z: 0}
+        persistence: 0.01
+        minValue: 0.18
+      ridgidNoiseSettings:
+        strength: 0.64
+        numLayers: 2
+        baseRoughness: 0.57
+        roughness: 0
+        centre: {x: 0, y: 0, z: 0}
+        persistence: 0
+        minValue: 0
+        weightMultiplier: 0

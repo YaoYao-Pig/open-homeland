@@ -5,27 +5,27 @@ using UnityEngine;
 
 public class StarCompute : MonoBehaviour
 {
-    public ComputeShader craterComputeShader;  // ÒıÓÃ Compute Shader
+    public ComputeShader craterComputeShader;  // å¼•ç”¨ Compute Shader
     //public int craterNum = 1;
-    public float rimSteepness = 10.0f;  // »·ĞÎ¶¸ÇÍ¶È
-    public float rimWidth = 0.2f;  // »·ĞÎ¿í¶È
+    public float rimSteepness = 10.0f;  // ç¯å½¢é™¡å³­åº¦
+    public float rimWidth = 0.2f;  // ç¯å½¢å®½åº¦
     public Vector2 craterSizeMinMax = new Vector2(0.01f, 0.1f);
-    public float smoothFactor = 0.1f;  // Æ½»¬¶È
+    public float smoothFactor = 0.1f;  // å¹³æ»‘åº¦
     public Vector2 smoothMinMax = new Vector2 (0.4f, 1.5f);
-    public float floorHeight = 0.0f;  // µØÃæ¸ß¶È
+    public float floorHeight = 0.0f;  // åœ°é¢é«˜åº¦
     public int craterSeed=0;
     public int masterSeed=1;
     [Range(0, 1)]
     public float sizeDistribution = 0.6f;
 
 
-    private ComputeBuffer vertexBuffer;  // ¶¥µãÊı¾İ»º³åÇø
-    private ComputeBuffer heightBuffer;  // ¸ß¶ÈÊı¾İ»º³åÇø
-    private ComputeBuffer craterBuffer;  // ÔÉÊ¯¿ÓÊı¾İ»º³åÇø
+    private ComputeBuffer vertexBuffer;  // é¡¶ç‚¹æ•°æ®ç¼“å†²åŒº
+    private ComputeBuffer heightBuffer;  // é«˜åº¦æ•°æ®ç¼“å†²åŒº
+    private ComputeBuffer craterBuffer;  // é™¨çŸ³å‘æ•°æ®ç¼“å†²åŒº
 
     public float[] Initialize(Mesh mesh,int craterNum)
     {
-        // »ñÈ¡Ô­Ê¼¶¥µãÊı¾İ
+        // è·å–åŸå§‹é¡¶ç‚¹æ•°æ®
         Vector3[] vertices = mesh.vertices;
         int numVertices = vertices.Length;
 
@@ -33,31 +33,31 @@ public class StarCompute : MonoBehaviour
         Random.InitState(craterSeed + masterSeed);
         PRNG prng = new PRNG(masterSeed);
 
-        // ´´½¨ ComputeBuffer ÓÃÓÚ´æ´¢¶¥µãÊı¾İºÍ¸ß¶ÈÊı¾İ
-        vertexBuffer = new ComputeBuffer(numVertices, sizeof(float) * 3);  // float3 ´óĞ¡
-        heightBuffer = new ComputeBuffer(numVertices, sizeof(float));  // ´æ´¢¼ÆËã³öµÄ¸ß¶È
+        // åˆ›å»º ComputeBuffer ç”¨äºå­˜å‚¨é¡¶ç‚¹æ•°æ®å’Œé«˜åº¦æ•°æ®
+        vertexBuffer = new ComputeBuffer(numVertices, sizeof(float) * 3);  // float3 å¤§å°
+        heightBuffer = new ComputeBuffer(numVertices, sizeof(float));  // å­˜å‚¨è®¡ç®—å‡ºçš„é«˜åº¦
         craterBuffer = new ComputeBuffer(craterNum, System.Runtime.InteropServices.Marshal.SizeOf(typeof(Crater))); 
-        // ´´½¨ÔÉÊ¯¿ÓÊı¾İ²¢´«µİ¸ø Shader
-        Crater[] craters = new Crater[craterNum];  // ¼ÙÉèÓĞ 5 ¸öÔÉÊ¯¿Ó
+        // åˆ›å»ºé™¨çŸ³å‘æ•°æ®å¹¶ä¼ é€’ç»™ Shader
+        Crater[] craters = new Crater[craterNum];  // å‡è®¾æœ‰ 5 ä¸ªé™¨çŸ³å‘
         for (int i = 0; i < craterNum; i++)
         {
             float t = prng.ValueBiasLower(sizeDistribution);
             craters[i] = new Crater
             {
-                centre = Random.onUnitSphere,  // ¼ÙÉèÃ¿¸öÔÉÊ¯¿Ó¼ä¸ô 5 µ¥Î»
-                radius = Mathf.Lerp(craterSizeMinMax.x, craterSizeMinMax.y, t),  // ÔÉÊ¯¿Ó°ë¾¶Ëæ±àºÅµİÔö
-                floor = Mathf.Lerp(-1.2f, -0.2f, t + prng.ValueBiasLower(0.3f)),  // ÔÉÊ¯¿ÓµÄµ×²¿¸ß¶È
-                smoothness = Mathf.Lerp(smoothMinMax.x, smoothMinMax.y, 1 - t)  // ÔÉÊ¯¿ÓµÄÆ½»¬¶È
+                centre = Random.onUnitSphere,  // å‡è®¾æ¯ä¸ªé™¨çŸ³å‘é—´éš” 5 å•ä½
+                radius = Mathf.Lerp(craterSizeMinMax.x, craterSizeMinMax.y, t),  // é™¨çŸ³å‘åŠå¾„éšç¼–å·é€’å¢
+                floor = Mathf.Lerp(-1.2f, -0.2f, t + prng.ValueBiasLower(0.3f)),  // é™¨çŸ³å‘çš„åº•éƒ¨é«˜åº¦
+                smoothness = Mathf.Lerp(smoothMinMax.x, smoothMinMax.y, 1 - t)  // é™¨çŸ³å‘çš„å¹³æ»‘åº¦
             };
         }
-        // ½«¶¥µãÊı¾İ´«µİµ½ ComputeShader
+        // å°†é¡¶ç‚¹æ•°æ®ä¼ é€’åˆ° ComputeShader
         vertexBuffer.SetData(vertices);
         craterBuffer.SetData(craters);
 
-        // »ñÈ¡ÄÚºË¾ä±ú
+        // è·å–å†…æ ¸å¥æŸ„
         int kernelHandle = craterComputeShader.FindKernel("CSMain");
         Debug.Log("kernelHandle:" + kernelHandle);
-        // ÉèÖÃ Shader ²ÎÊı
+        // è®¾ç½® Shader å‚æ•°
         craterComputeShader.SetBuffer(kernelHandle, "vertices", vertexBuffer);
         craterComputeShader.SetBuffer(kernelHandle, "heights", heightBuffer);
         craterComputeShader.SetBuffer(kernelHandle, "craters", craterBuffer);
@@ -67,11 +67,11 @@ public class StarCompute : MonoBehaviour
         craterComputeShader.SetFloat("rimWidth", rimWidth);
         craterComputeShader.SetFloat("smoothFactor", smoothFactor);
 
-        // Ö´ĞĞ¼ÆËã
-        int threadGroups = Mathf.CeilToInt(numVertices / 512.0f);  // ¼ÆËãĞèÒªµÄÏß³Ì×éÊıÁ¿
+        // æ‰§è¡Œè®¡ç®—
+        int threadGroups = Mathf.CeilToInt(numVertices / 512.0f);  // è®¡ç®—éœ€è¦çš„çº¿ç¨‹ç»„æ•°é‡
         craterComputeShader.Dispatch(kernelHandle, threadGroups,1, 1);
 
-        // ´Ó GPU ÖĞ¶ÁÈ¡¼ÆËã½á¹û
+        // ä» GPU ä¸­è¯»å–è®¡ç®—ç»“æœ
         float[] heights = new float[numVertices];
         heightBuffer.GetData(heights);
 
@@ -80,12 +80,12 @@ public class StarCompute : MonoBehaviour
             Debug.Log(heights[i]);
         }*/
 
-        // ½«ĞÂµÄ¶¥µãÊı¾İ¸³»Ø Mesh
+        // å°†æ–°çš„é¡¶ç‚¹æ•°æ®èµ‹å› Mesh
         mesh.vertices = vertices;
         mesh.RecalculateNormals();
         mesh.RecalculateBounds();
 
-        // ÇåÀí ComputeBuffer
+        // æ¸…ç† ComputeBuffer
         vertexBuffer.Release();
         heightBuffer.Release();
         craterBuffer.Release();

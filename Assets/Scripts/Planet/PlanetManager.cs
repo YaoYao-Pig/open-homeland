@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+public enum ScenceType
+{
+    Start,
+    Main,
+}
 public class PlanetManager : MonoBehaviour
 {
     public GameObject centerPlanet;
@@ -11,12 +16,13 @@ public class PlanetManager : MonoBehaviour
     public ShapeSettings shapeSettings;
 
     private Repo_Read_OpenRank openRankList;
-    private Planet planet;
+    public Planet planet;
     private Repository repository;
 
     private static PlanetManager _instance;
     private TopUITextController topUITextController;
     public Action OnPlanetEnd;
+    public ScenceType currentScence;
     
     public string musicPrompt = "This is a GitHub project. The project's activity change curve is: 1, 2, 3, 4, 7, 10, 7, 5, 6, 1, 10.";
 
@@ -24,15 +30,6 @@ public class PlanetManager : MonoBehaviour
     {
         get
         {
-            if (_instance == null)
-            {
-                _instance = GameObject.FindObjectOfType<PlanetManager>();
-                if (_instance==null)
-                {
-                    GameObject g = new GameObject(typeof(PlanetManager).ToString());
-                    g.AddComponent<PlanetManager>();
-                }
-            }
             return _instance;
         }
         private set { }
@@ -57,8 +54,8 @@ public class PlanetManager : MonoBehaviour
     
 
     public IEnumerator Initialize(string _m = "openrank")
-    {
-       // SendTestPrompt();
+    { 
+        SendTestPrompt();
         //��ȡGameData
         string repoName = GameData.Instance.GetRepoName();
         gameObject.name = repoName;
@@ -191,10 +188,18 @@ public class PlanetManager : MonoBehaviour
     }
     private void InitializePlanets()
     {
-
+        if (currentScence == ScenceType.Main)
+        {
+            colourSettings = Resources.Load<ColourSettings>("Settings/Colour_main");
+            shapeSettings = Resources.Load<ShapeSettings>("Settings/Shape_main");
+        }
+        else if (currentScence == ScenceType.Start)
+        {
+            colourSettings = Resources.Load<ColourSettings>("Settings/Colour_start");
+            shapeSettings = Resources.Load<ShapeSettings>("Settings/Shape_start");
+        }
         //���������ļ�
-        colourSettings = Resources.Load<ColourSettings>("Settings/Colour");
-        shapeSettings = Resources.Load<ShapeSettings>("Settings/Shape");
+
 
         ShapeSettings.NoiseLayer noiseLayer = shapeSettings.GetIndexNoiseLayer(0);
         if(noiseLayer.noiseSettings.filterType== NoiseSettings.FilterType.Simple)

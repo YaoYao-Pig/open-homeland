@@ -22,6 +22,8 @@ public class Planet : MonoBehaviour
     {
         GeneratePlanet();
         faceResolutions = new int[6] { resolution, resolution, resolution, resolution, resolution, resolution };
+        shapeSettings = PlanetManager.Instance.shapeSettings;
+        colourSettings = PlanetManager.Instance.colourSettings;
     }
     
     /*    [Range(2, 1024)] public int resolutionUp = 10;
@@ -32,8 +34,8 @@ public class Planet : MonoBehaviour
     [Range(2, 1024)] public int resolutionBack = 10;*/
     private void Initialize()
     {
-        shapeGenerator.UpdateSettings(shapeSettings);
-        colourGenerator.UpdateSettings(colourSettings);
+        shapeGenerator.UpdateSettings(PlanetManager.Instance.shapeSettings);
+        colourGenerator.UpdateSettings(PlanetManager.Instance.colourSettings);
         if (meshFilters == null || meshFilters.Length == 0)
         {
             meshFilters = new MeshFilter[6];
@@ -58,7 +60,7 @@ public class Planet : MonoBehaviour
                 meshFilters[i] = meshObject.AddComponent<MeshFilter>();
                 meshFilters[i].sharedMesh = new Mesh();
             }
-            meshFilters[i].GetComponent<MeshRenderer>().sharedMaterial = colourSettings.planetMaterial;
+            meshFilters[i].GetComponent<MeshRenderer>().sharedMaterial = PlanetManager.Instance.colourSettings.planetMaterial;
             terrainFaces[i] = new TerrainFace(shapeGenerator,gameObject,meshFilters[i].sharedMesh, faceResolutions[i], directions[i]);
             
         }

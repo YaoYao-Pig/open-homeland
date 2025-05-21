@@ -32,28 +32,28 @@ public class StarController : MonoBehaviour
 
     private void UpdateSphereHeight(Mesh mesh, float[] heights)
     {
-        // »ñÈ¡µ±Ç°ÇòÌåµÄ¶¥µã
+        // è·å–å½“å‰çƒä½“çš„é¡¶ç‚¹
         Vector3[] vertices = mesh.vertices;
 
-        // È·±£ heights Êı×éµÄ³¤¶ÈÓë¶¥µãÊıÁ¿Ò»ÖÂ
+        // ç¡®ä¿ heights æ•°ç»„çš„é•¿åº¦ä¸é¡¶ç‚¹æ•°é‡ä¸€è‡´
         if (vertices.Length != heights.Length)
         {
             Debug.LogError("Height array size does not match vertex count!");
             return;
         }
 
-        // ¸üĞÂ¶¥µãµÄ¸ß¶È
+        // æ›´æ–°é¡¶ç‚¹çš„é«˜åº¦
         for (int i = 0; i < vertices.Length; i++)
         {
-            // ¸üĞÂ¶¥µãµÄ y ×ø±êÎª¼ÆËã³öÀ´µÄ¸ß¶È
+            // æ›´æ–°é¡¶ç‚¹çš„ y åæ ‡ä¸ºè®¡ç®—å‡ºæ¥çš„é«˜åº¦
             vertices[i]*= heights[i];
             vertices[i] *= radius;
         }
 
-        // ½«¸üĞÂºóµÄ¶¥µãÖØĞÂÓ¦ÓÃµ½ Mesh ÉÏ
+        // å°†æ›´æ–°åçš„é¡¶ç‚¹é‡æ–°åº”ç”¨åˆ° Mesh ä¸Š
         mesh.vertices = vertices;
 
-        // ÖØĞÂ¼ÆËã·¨Ïß£¬Ê¹ÇòÌå¿´ÆğÀ´¸ü×ÔÈ»
+        // é‡æ–°è®¡ç®—æ³•çº¿ï¼Œä½¿çƒä½“çœ‹èµ·æ¥æ›´è‡ªç„¶
         mesh.RecalculateNormals();
 
     }
