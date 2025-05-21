@@ -69,6 +69,7 @@
     <Compile Include="Assets\RepoDevelopStar\SphereDivide.cs" />
     <Compile Include="Assets\Scripts\UI\Main\SkyBoxItem\ItemBoxIconTime.cs" />
     <Compile Include="Assets\Scripts\Star\MoonController.cs" />
+    <Compile Include="Assets\Scripts\UI\CircularSpectrumEnhancedCreator.cs" />
     <Compile Include="Assets\Scripts\Planet\AudioReactiveAtmosphereLargeExtension.cs" />
     <Compile Include="Assets\RepoDevelopStar\StarController.cs" />
     <Compile Include="Assets\Scripts\UI\StarConnector.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="Assets\Scripts\GameData.cs" />
     <Compile Include="Assets\Scripts\JsonParse\Repo_DevelopNet\Repo_Read_DevelopNet_Node.cs" />
     <Compile Include="Assets\Scripts\Star\StarFace.cs" />
+    <Compile Include="Assets\Scripts\UI\CircularSpectrumEnhancedController.cs" />
     <Compile Include="Assets\Scripts\Camera\Post\PostProcessingEffect.cs" />
     <Compile Include="Assets\Scripts\Planet\Noise.cs" />
     <Compile Include="Assets\Scripts\Music\MusicGenClient.cs" />
@@ -454,6 +456,7 @@
     <None Include="Assets\Resources\repo\develop\meteor_meteor_developer_network.json" />
     <None Include="Assets\Resources\repo\develop\wmo-im_GRIB2_developer_network.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\Scripts\UI\Shaders\CircularSpectrumEnhanced.shader" />
     <None Include="Assets\Resources\repo\develop\libevent_libevent_developer_network.json" />
     <None Include="Assets\Material\Shader\LineShader.shader" />
     <None Include="Assets\Resources\repo\develop\pytube_pytube_developer_network.json" />
