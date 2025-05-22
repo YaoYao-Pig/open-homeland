@@ -24,9 +24,9 @@ public class ShapeGenerator
         }
 
         this.settings = settings;
-        
-        Debug.LogError(settings.noiseLayers);
-        Debug.LogError(settings.noiseLayers.Length);
+        //
+        // Debug.LogError(settings.noiseLayers);
+        // Debug.LogError(settings.noiseLayers.Length);
         noiseFilters = new INoiseFilter[settings.noiseLayers.Length];
         for (int i=0; i < noiseFilters.Length; ++i){
             noiseFilters[i] = NoiseFilterFactory.CreateNoiseFilter(settings.noiseLayers[i].noiseSettings); 

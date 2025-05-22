@@ -22,8 +22,8 @@ public class AtmosphereGlowController : MonoBehaviour
     [SerializeField] private Vector3 customLightDirection = new Vector3(0, 1, 0);
     
     [Header("Animation")]
-    [SerializeField] private bool animateSun = false;
-    [SerializeField] private float rotationSpeed = 10f;
+    [SerializeField] private bool animateSun = true;
+    [SerializeField] private float rotationSpeed = 30f;
     
     private Material atmosphereMaterial;
     private MeshRenderer meshRenderer;
@@ -34,7 +34,7 @@ public class AtmosphereGlowController : MonoBehaviour
         // Get references
         meshRenderer = GetComponent<MeshRenderer>();
         planet = GetComponentInParent<Planet>();
-        transform.localScale = new Vector3(1100, 1100, 1100);
+        transform.localScale = new Vector3(1150, 1150, 1150);
         // Create a new material instance
         atmosphereMaterial = new Material(Shader.Find("Planet/AtmosphereGlow"));
         meshRenderer.material = atmosphereMaterial;
