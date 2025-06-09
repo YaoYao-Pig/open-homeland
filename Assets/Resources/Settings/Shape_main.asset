@@ -15,13 +15,13 @@ MonoBehaviour:
   planetRadius: 1000
   noiseLayers:
   - enabled: 1
-    useFirstLayerAsMask: 1
+    useFirstLayerAsMask: 0
     noiseSettings:
       filterType: 0
       simpleNoiseSettings:
-        strength: 0.0501175
+        strength: 0.05071745
         numLayers: 2
-        baseRoughness: 0.501175
+        baseRoughness: 0.5071745
         roughness: 1.57
         centre: {x: 0.27, y: 0.39, z: 0}
         persistence: 2
@@ -36,24 +36,24 @@ MonoBehaviour:
         minValue: 0.44
         weightMultiplier: 0
   - enabled: 1
-    useFirstLayerAsMask: 0
+    useFirstLayerAsMask: 1
     noiseSettings:
       filterType: 0
       simpleNoiseSettings:
-        strength: -0.11
-        numLayers: 2
-        baseRoughness: 5.72
-        roughness: 0
-        centre: {x: 0, y: 0, z: 0}
-        persistence: 0
-        minValue: 0
+        strength: 1.57
+        numLayers: 3
+        baseRoughness: 6.7
+        roughness: 1.24
+        centre: {x: 1.39, y: -0.47, z: 0}
+        persistence: 0.17
+        minValue: 0.1
       ridgidNoiseSettings:
-        strength: 0
-        numLayers: 0
-        baseRoughness: 0
-        roughness: 0
+        strength: 1.66
+        numLayers: 2
+        baseRoughness: 0.07
+        roughness: 0.26
         centre: {x: 0, y: 0, z: 0}
-        persistence: 0
+        persistence: 0.03
         minValue: 0
         weightMultiplier: 0
   - enabled: 1
@@ -61,8 +61,8 @@ MonoBehaviour:
     noiseSettings:
       filterType: 1
       simpleNoiseSettings:
-        strength: 1.54
-        numLayers: 1
+        strength: 3.66
+        numLayers: 2
         baseRoughness: 1.49
         roughness: 0.6
         centre: {x: -0.05, y: 0, z: 0}
